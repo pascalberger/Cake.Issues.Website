@@ -1,0 +1,12 @@
+Name: Cake.Issues.Testing
+NuGet: Cake.Issues.Testing
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues
+Documentation: /docs/extending/testing
+Assemblies:
+- "/**/Cake.Issues.Testing.dll"
+Author: BBT Software AG and contributors
+Description: "Testing utilities for Cake.Issues addins."
+Categories:
+- Core
