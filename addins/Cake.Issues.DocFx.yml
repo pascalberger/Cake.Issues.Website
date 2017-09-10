@@ -4,7 +4,7 @@ Prerelease: true
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.DocFx
 Documentation: /docs/issue-providers/docfx
-ReleaseNotesFilePath: "input/docs/issue-provider/docfx/release-notes.md"
+ReleaseNotesFilePath: "input/docs/issue-providers/docfx/release-notes.md"
 Assemblies:
 - "/**/Cake.Issues.DocFx.dll"
 Author: BBT Software AG and contributors

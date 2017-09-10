@@ -4,7 +4,7 @@ Prerelease: true
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.EsLint
 Documentation: /docs/issue-providers/eslint
-ReleaseNotesFilePath: "input/docs/issue-provider/eslint/release-notes.md"
+ReleaseNotesFilePath: "input/docs/issue-providers/eslint/release-notes.md"
 Assemblies:
 - "/**/Cake.Issues.EsLint.dll"
 Author: BBT Software AG and contributors
