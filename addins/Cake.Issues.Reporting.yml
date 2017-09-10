@@ -1,0 +1,13 @@
+Name: Cake.Issues.Reporting
+NuGet: Cake.Issues.Reporting
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.Reporting
+Documentation: /docs/usage/creating-reports/
+ReleaseNotesFilePath: "input/docs/overview/release-notes/Cake.Issues.Reporting.md"
+Assemblies:
+- "/**/Cake.Issues.Reporting.dll"
+Author: BBT Software AG and contributors
+Description: "The issues reporting addin for Cake allows you to create reports from issues read with Cake.Issues."
+Categories:
+- Core
