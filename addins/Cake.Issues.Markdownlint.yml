@@ -4,7 +4,7 @@ Prerelease: true
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.Markdownlint
 Documentation: /docs/issue-providers/markdownlint
-ReleaseNotesFilePath: "input/docs/issue-provider/markdownlint/release-notes.md"
+ReleaseNotesFilePath: "input/docs/issue-providers/markdownlint/release-notes.md"
 Assemblies:
 - "/**/Cake.Issues.Markdownlint.dll"
 Author: BBT Software AG and contributors
