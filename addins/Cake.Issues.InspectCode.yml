@@ -1,0 +1,13 @@
+Name: JetBrains Inspect Code Support
+NuGet: Cake.Issues.InspectCode
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.InspectCode
+Documentation: /docs/issue-providers/inspectcode
+ReleaseNotesFilePath: "input/docs/issue-providers/inspectcode/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.InspectCode.dll"
+Author: BBT Software AG and contributors
+Description: "Support for reading issues reported by JetBrains Inspect Code"
+Categories:
+- Issue Provider

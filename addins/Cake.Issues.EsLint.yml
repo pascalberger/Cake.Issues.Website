@@ -1,0 +1,13 @@
+Name: ESLint Support
+NuGet: Cake.Issues.EsLint
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.EsLint
+Documentation: /docs/issue-providers/eslint
+ReleaseNotesFilePath: "input/docs/issue-providers/eslint/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.EsLint.dll"
+Author: BBT Software AG and contributors
+Description: "Support for reading issues reported by ESLint"
+Categories:
+- Issue Provider

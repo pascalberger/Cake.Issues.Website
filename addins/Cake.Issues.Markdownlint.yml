@@ -1,0 +1,13 @@
+Name: Markdownlint Support
+NuGet: Cake.Issues.Markdownlint
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.Markdownlint
+Documentation: /docs/issue-providers/markdownlint
+ReleaseNotesFilePath: "input/docs/issue-providers/markdownlint/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.Markdownlint.dll"
+Author: BBT Software AG and contributors
+Description: "Support for reading issues reported by Markdownlint"
+Categories:
+- Issue Provider

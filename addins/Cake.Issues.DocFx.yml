@@ -1,0 +1,13 @@
+Name: DocFx Support
+NuGet: Cake.Issues.DocFx
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.DocFx
+Documentation: /docs/issue-providers/docfx
+ReleaseNotesFilePath: "input/docs/issue-providers/docfx/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.DocFx.dll"
+Author: BBT Software AG and contributors
+Description: "Support for reading warnings reported by DocFx"
+Categories:
+- Issue Provider

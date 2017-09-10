@@ -1,0 +1,13 @@
+Name: Team Foundation Server (TFS) & Visual Studio Team Services (VSTS) Support
+NuGet: Cake.Issues.PullRequests.Tfs
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.PullRequests.Tfs
+Documentation: /docs/pull-request-systems/tfs
+ReleaseNotesFilePath: "input/docs/pull-request-systems/tfs/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.PullRequests.Tfs.dll"
+Author: BBT Software AG and contributors
+Description: "Support for writing issues as comments to Team Foundation Server or Visual Studio Team Services pull requests."
+Categories:
+- Pull Request System
