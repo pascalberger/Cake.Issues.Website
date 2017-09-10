@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - API - Aliases.CreateIssueReport(ICakeContext, IEnumerable&lt;IIssueProvider&gt;, IIssueReportFormat, RepositorySettings) Method</title>
+        <title>Cake Issues - API - Aliases.CreateIssueReport(ICakeContext, IEnumerable&lt;IIssueProvider&gt;, IIssueReportFormat, DirectoryPath) Method</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -136,10 +136,10 @@
 		<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases">Aliases</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Method Members</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/9442634F">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>DirectoryPath)<wbr></a></li>
-				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/C6BB85DC">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>RepositorySettings)<wbr></a></li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/86C8A35F">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>DirectoryPath)<wbr></a></li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/AE7D7A1C">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>RepositorySettings)<wbr></a></li>
+				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/3494B7C1">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>DirectoryPath)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/7D45BEF7">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>RepositorySettings)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/6DCF510B">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>DirectoryPath)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/C0BBC752">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>RepositorySettings)<wbr></a></li>
 
 
                     </ul>
@@ -154,7 +154,7 @@
 
 <section class="content-header">
 			<h3><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases">Aliases</a>.</h3>
-	<h1>CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>RepositorySettings)<wbr> <small>Method</small></h1>
+	<h1>CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>DirectoryPath)<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
@@ -181,7 +181,7 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public static FilePath CreateIssueReport(this ICakeContext context, IEnumerable&lt;IIssueProvider&gt; issueProviders, IIssueReportFormat reportFormat, RepositorySettings settings)</code></pre>
+	<pre><code>public static FilePath CreateIssueReport(this ICakeContext context, IEnumerable&lt;IIssueProvider&gt; issueProviders, IIssueReportFormat reportFormat, DirectoryPath repositoryRoot)</code></pre>
 
 
 
@@ -235,9 +235,9 @@
 						<td>Format in which the report should be generated.</td>
 					</tr>
 					<tr>
-						<td>settings</td>
-						<td><a href="/Cake.Issues.Website/api/Cake.Issues/RepositorySettings">RepositorySettings</a></td>
-						<td>The settings.</td>
+						<td>repositoryRoot</td>
+						<td>DirectoryPath</td>
+						<td>Root path of the repository.</td>
 					</tr>
 			</tbody></table>
 		</div>
