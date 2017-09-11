@@ -135,6 +135,7 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Class Types</li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases">Aliases</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/CreateIssueReportSettings">Create<wbr>Issue<wbr>Report<wbr>Settings</a></li>
 				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/IssueReportFormat">IssueReportFormat</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/ReportingAliasConstants">Reporting<wbr>Alias<wbr>Constants</a></li>
 			<li class="header">Interface Types</li>
@@ -177,7 +178,7 @@
 								<dd>
 									<ul class="list-unstyled">
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/IIssueReportFormat">IIssueReportFormat</a></li>								
-											<li>IBaseIssueComponent<wbr>&lt;<wbr>Repository<wbr>Settings&gt;<wbr></li>								
+											<li>IBaseIssueComponent<wbr>&lt;<wbr>Create<wbr>Issue<wbr>Report<wbr>Settings&gt;<wbr></li>								
 									</ul>
 								</dd>
 							
@@ -185,7 +186,7 @@
 								<dd>
 									<ul class="list-unstyled">										
 											<li>object</li>								
-											<li>BaseIssueComponent<wbr>&lt;<wbr>Repository<wbr>Settings&gt;<wbr></li>								
+											<li>BaseIssueComponent<wbr>&lt;<wbr>Create<wbr>Issue<wbr>Report<wbr>Settings&gt;<wbr></li>								
 									</ul>
 								</dd>				
 							
@@ -195,11 +196,11 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["BaseIssueComponent&lt;RepositorySettings&gt;"]--&gt;Type
+	Base0["BaseIssueComponent&lt;CreateIssueReportSettings&gt;"]--&gt;Type
 	Base1["object"]--&gt;Base0
 	Interface0["IIssueReportFormat"]-.-&gt;Type
 	click Interface0 "/Cake.Issues.Website/api/Cake.Issues.Reporting/IIssueReportFormat"
-	Interface1["IBaseIssueComponent&lt;RepositorySettings&gt;"]-.-&gt;Type
+	Interface1["IBaseIssueComponent&lt;CreateIssueReportSettings&gt;"]-.-&gt;Type
 	Type["IssueReportFormat"]
 class Type type-node
 
@@ -210,8 +211,8 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public abstract class IssueReportFormat : BaseIssueComponent&lt;RepositorySettings&gt;, 
-    IIssueReportFormat, IBaseIssueComponent&lt;RepositorySettings&gt;</code></pre>
+	<pre><code>public abstract class IssueReportFormat : BaseIssueComponent&lt;CreateIssueReportSettings&gt;, 
+    IIssueReportFormat, IBaseIssueComponent&lt;CreateIssueReportSettings&gt;</code></pre>
 
 
 
