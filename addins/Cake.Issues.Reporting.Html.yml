@@ -1,0 +1,13 @@
+Name: Cake.Issues.Reporting.Html
+NuGet: Cake.Issues.Reporting.Html
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.Reporting.Html
+Documentation: /docs/report-formats/html
+ReleaseNotesFilePath: "input/docs/report-formats/html/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.Reporting.Html.dll"
+Author: Pascal Berger
+Description: "Support for creating HTML issue reports"
+Categories:
+- Reporting Format
