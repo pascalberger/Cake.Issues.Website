@@ -75,6 +75,7 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Examples">Examples</a></p>
 <p><a href="#Attributes">Attributes</a></p>
 <p><a href="#Parameters">Parameters</a></p>
 <p><a href="#ReturnValue">Return Value</a></p>
@@ -183,6 +184,15 @@
 	<h1 id="Syntax">Syntax</h1>
 	<pre><code>public static FilePath CreateIssueReport(this ICakeContext context, IEnumerable&lt;IIssue&gt; issues, IIssueReportFormat reportFormat, DirectoryPath repositoryRoot, FilePath outputFilePath)</code></pre>
 
+	<h1 id="Examples">Examples</h1>
+	<div>
+            <p>Create HTML report using the diagnostic template:</p>
+            <pre><code class="cs">CreateIssueReport(
+        issues,
+        HtmlIssueReportFormatFromEmbeddedTemplate(HtmlIssueReportTemplate.Diagnostic),
+        @"c:\repo",
+        @"c:\report.html");</code></pre>
+            </div>
 
 
 	<h1 id="Attributes">Attributes</h1>
