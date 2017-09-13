@@ -165,7 +165,7 @@
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-            Gets an instance of a provider for code analysis issues reported as MsBuild warnings using a log file from disk.
+            Gets an instance of a provider for issues reported as MsBuild warnings using a log file from disk.
             </div>
 
 		<div class="panel panel-default">
@@ -189,13 +189,13 @@
 
 	<h1 id="Examples">Examples</h1>
 	<div>
-            <p>Read code analysis issues reported as MsBuild warnings:</p>
+            <p>Read issues reported as MsBuild warnings:</p>
             <pre><code class="cs">var issues =
         ReadIssues(
             MsBuildIssuesFromFilePath(
                 new FilePath(@"c:\build\InspectCode.log"),
                 MsBuildXmlFileLoggerFormat),
-            new DirectoryPath(@"c:\repo")));</code></pre>
+            new DirectoryPath(@"c:\repo"));</code></pre>
             </div>
 
 
@@ -265,7 +265,7 @@
 				</thead>
 				<tbody><tr>
 					<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
-					<td>Instance of a provider for code analysis issues reported as MsBuild warnings.</td>
+					<td>Instance of a provider for issues reported as MsBuild warnings.</td>
 				</tr>
 			</tbody></table>
 		</div>

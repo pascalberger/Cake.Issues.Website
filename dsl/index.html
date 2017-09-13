@@ -71,7 +71,7 @@
                     	
         <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/dsl/index.cshtml"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"><h6>On This Page</h6><p><a href="#Creating-Issue-Reports">Creating Issue Reports</a></p>
-<p><a href="#Issue-Provider">Issue Provider</a></p>
+<p><a href="#Issue-Providers">Issue Providers</a></p>
 <p><a href="#Pull-Request-System">Pull Request System</a></p>
 <p><a href="#Reading-Issues">Reading Issues</a></p>
 <p><a href="#Reporting-Formats">Reporting Formats</a></p>
@@ -165,7 +165,7 @@
             </tbody></table>
         </div>
     </div>
-    <h1 id="Issue-Provider">Issue Provider</h1>  
+    <h1 id="Issue-Providers">Issue Providers</h1>  
     <div class="box">
         <div class="box-body no-padding">
             <table class="table table-striped table-hover two-cols">
@@ -334,7 +334,7 @@
 <a href="/Cake.Issues.Website/api/Cake.Issues.InspectCode/InspectCodeIssuesAliases/BC12879B">InspectCodeIssues<wbr>(ICakeContext, <wbr>Inspect<wbr>Code<wbr>Issues<wbr>Settings)<wbr></a>                        </td>
                         <td>
                             
-             Gets an instance of a provider for code analysis issues reported by JetBrains Inspect Code using specified settings.
+             Gets an instance of a provider for issues reported by JetBrains Inspect Code using specified settings.
              
 
                                         <br>
@@ -346,7 +346,7 @@
 <a href="/Cake.Issues.Website/api/Cake.Issues.InspectCode/InspectCodeIssuesAliases/7EBACB69">Inspect<wbr>Code<wbr>Issues<wbr>From<wbr>Content<wbr>(ICakeContext, <wbr>string)<wbr></a>                        </td>
                         <td>
                             
-            Gets an instance of a provider for code analysis issues reported by JetBrains Inspect Code using log file content.
+            Gets an instance of a provider for issues reported by JetBrains Inspect Code using log file content.
             
 
                                         <br>
@@ -358,7 +358,7 @@
 <a href="/Cake.Issues.Website/api/Cake.Issues.InspectCode/InspectCodeIssuesAliases/AC7EC72E">Inspect<wbr>Code<wbr>Issues<wbr>From<wbr>File<wbr>Path<wbr>(ICakeContext, <wbr>FilePath)<wbr></a>                        </td>
                         <td>
                             
-            Gets an instance of a provider for code analysis issues reported by JetBrains Inspect Code using a log file from disk.
+            Gets an instance of a provider for issues reported by JetBrains Inspect Code using a log file from disk.
             
 
                                         <br>
@@ -456,7 +456,7 @@
 <a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesAliases/D6A5EC15">MsBuildIssues<wbr>(ICakeContext, <wbr>Ms<wbr>Build<wbr>Issues<wbr>Settings)<wbr></a>                        </td>
                         <td>
                             
-             Gets an instance of a provider for code analysis issues reported as MsBuild warnings using specified settings.
+             Gets an instance of a provider for issues reported as MsBuild warnings using specified settings.
              
 
                                         <br>
@@ -468,7 +468,7 @@
 <a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesAliases/7B460097">Ms<wbr>Build<wbr>Issues<wbr>From<wbr>Content<wbr>(ICakeContext, <wbr>string, <wbr>ILogFileFormat)<wbr></a>                        </td>
                         <td>
                             
-            Gets an instance of a provider for code analysis issues reported as MsBuild warnings using log content.
+            Gets an instance of a provider for issues reported as MsBuild warnings using log content.
             
 
                                         <br>
@@ -480,7 +480,7 @@
 <a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesAliases/4612F849">Ms<wbr>Build<wbr>Issues<wbr>From<wbr>File<wbr>Path<wbr>(ICakeContext, <wbr>FilePath, <wbr>ILogFileFormat)<wbr></a>                        </td>
                         <td>
                             
-            Gets an instance of a provider for code analysis issues reported as MsBuild warnings using a log file from disk.
+            Gets an instance of a provider for issues reported as MsBuild warnings using a log file from disk.
             
 
                                         <br>
@@ -511,14 +511,14 @@
             </p>
             <p>
             You can add the logger to the MSBuildSettings like this:
-            </p><pre><code class="cs">var settings = new MsBuildSettings()
+            </p><pre><code class="cs">var settings = new MSBuildSettings()
     .WithLogger(
         Context.Tools.Resolve("MSBuild.ExtensionPack.Loggers.dll").FullPath,
         "XmlFileLogger",
         string.Format(
             "logfile=\"{0}\";verbosity=Detailed;encoding=UTF-8",
             @"c:\build\msbuild.log")
-    )</code></pre>
+    );</code></pre>
             <p></p>
             <p>
             In order to use the above logger, include the following in your build.cake file to download and

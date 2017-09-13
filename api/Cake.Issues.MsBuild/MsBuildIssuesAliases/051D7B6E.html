@@ -170,14 +170,14 @@
             </p>
             <p>
             You can add the logger to the MSBuildSettings like this:
-            </p><pre><code class="cs">var settings = new MsBuildSettings()
+            </p><pre><code class="cs">var settings = new MSBuildSettings()
     .WithLogger(
         Context.Tools.Resolve("MSBuild.ExtensionPack.Loggers.dll").FullPath,
         "XmlFileLogger",
         string.Format(
             "logfile=\"{0}\";verbosity=Detailed;encoding=UTF-8",
             @"c:\build\msbuild.log")
-    )</code></pre>
+    );</code></pre>
             <p></p>
             <p>
             In order to use the above logger, include the following in your build.cake file to download and

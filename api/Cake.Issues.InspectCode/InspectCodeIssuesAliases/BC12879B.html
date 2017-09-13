@@ -162,7 +162,7 @@
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-             Gets an instance of a provider for code analysis issues reported by JetBrains Inspect Code using specified settings.
+             Gets an instance of a provider for issues reported by JetBrains Inspect Code using specified settings.
              </div>
 
 		<div class="panel panel-default">
@@ -186,15 +186,15 @@
 
 	<h1 id="Examples">Examples</h1>
 	<div>
-             <p>Read code analysis issues reported by JetBrains Inspect Code:</p>
+             <p>Read issues reported by JetBrains Inspect Code:</p>
              <pre><code class="cs"> var settings =
          new InspectCodeIssuesSettings(
-             new FilePath(@"c:\build\InspectCode.log"));
+             @"c:\build\InspectCode.log));
 
-     var issues = 
+     var issues =
          ReadIssues(
              InspectCodeIssues(settings),
-             new DirectoryPath(@"c:\repo")));</code></pre>
+             @"c:\repo");</code></pre>
              </div>
 
 
@@ -258,7 +258,7 @@
 				</thead>
 				<tbody><tr>
 					<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
-					<td>Instance of a provider for code analysis issues reported by JetBrains Inspect Code.</td>
+					<td>Instance of a provider for issues reported by JetBrains Inspect Code.</td>
 				</tr>
 			</tbody></table>
 		</div>

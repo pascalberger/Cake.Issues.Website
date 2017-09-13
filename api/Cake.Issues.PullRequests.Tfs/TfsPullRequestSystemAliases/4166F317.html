@@ -193,8 +193,7 @@
 	<h1 id="Examples">Examples</h1>
 	<div>
              <p>Report code analysis issues reported as MsBuild warnings to a TFS pull request:</p>
-             <pre><code class="cs"> var repoRoot = new DirectoryPath("c:\repo");
-     var pullRequestSettings =
+             <pre><code class="cs"> var pullRequestSettings =
          new TfsPullRequestSettings(
              new Uri("http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository"),
              "refs/heads/feature/myfeature",
@@ -202,10 +201,10 @@
 
      ReportCodeAnalysisIssuesToPullRequest(
          MsBuildCodeAnalysis(
-             @"C:\build\msbuild.log",
+             @"c:\build\msbuild.log",
              MsBuildXmlFileLoggerFormat),
          TfsPullRequests(pullRequestSettings),
-         repoRoot);</code></pre>
+         @"c:\repo");</code></pre>
              </div>
 
 

@@ -262,7 +262,7 @@ class Type type-node
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
 								<td>
 									<div>
-             Gets an instance of a provider for code analysis issues reported as MsBuild warnings using specified settings.
+             Gets an instance of a provider for issues reported as MsBuild warnings using specified settings.
              </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -272,7 +272,7 @@ class Type type-node
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
 								<td>
 									<div>
-            Gets an instance of a provider for code analysis issues reported as MsBuild warnings using log content.
+            Gets an instance of a provider for issues reported as MsBuild warnings using log content.
             </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -282,7 +282,7 @@ class Type type-node
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
 								<td>
 									<div>
-            Gets an instance of a provider for code analysis issues reported as MsBuild warnings using a log file from disk.
+            Gets an instance of a provider for issues reported as MsBuild warnings using a log file from disk.
             </div>
 											<div><small><em>static</em></small></div>
 								</td>
@@ -309,14 +309,14 @@ class Type type-node
             </p>
             <p>
             You can add the logger to the MSBuildSettings like this:
-            </p><pre><code class="cs">var settings = new MsBuildSettings()
+            </p><pre><code class="cs">var settings = new MSBuildSettings()
     .WithLogger(
         Context.Tools.Resolve("MSBuild.ExtensionPack.Loggers.dll").FullPath,
         "XmlFileLogger",
         string.Format(
             "logfile=\"{0}\";verbosity=Detailed;encoding=UTF-8",
             @"c:\build\msbuild.log")
-    )</code></pre>
+    );</code></pre>
             <p></p>
             <p>
             In order to use the above logger, include the following in your build.cake file to download and

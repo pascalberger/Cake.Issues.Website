@@ -189,9 +189,8 @@
             <p>Read issues reported by Markdownlint:</p>
             <pre><code class="cs">var issues =
         ReadIssues(
-            MarkdownlintIssuesFromFilePath(
-                new FilePath(@"C:\build\Markdownlint.log")),
-            new DirectoryPath(@"c:\repo"));</code></pre>
+            MarkdownlintIssuesFromFilePath(@"c:\build\Markdownlint.log"),
+            @"c:\repo");</code></pre>
             </div>
 
 
