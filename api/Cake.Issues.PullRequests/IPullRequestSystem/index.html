@@ -109,7 +109,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -121,6 +121,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -184,7 +191,7 @@
 								<dt>Interfaces</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li>IBaseIssueComponent<wbr>&lt;<wbr>Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>Settings&gt;<wbr></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1">IBaseIssueComponent<wbr>&lt;T&gt;<wbr></a></li>								
 									</ul>
 								</dd>
 							
@@ -201,7 +208,8 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Interface0["IBaseIssueComponent&lt;ReportIssuesToPullRequestSettings&gt;"]-.-&gt;Type
+	Interface0["IBaseIssueComponent&lt;T&gt;"]-.-&gt;Type
+	click Interface0 "/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1"
 	Type["IPullRequestSystem"]
 class Type type-node
 	Type-.-&gt;Implementing0["PullRequestSystem"]
@@ -238,7 +246,7 @@ class Type type-node
 						</thead>
 							<tbody><tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/46BB87FB">Fetch<wbr>Active<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             Returns a list of all active discussion threads.
@@ -247,7 +255,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/8F85EAE4">Get<wbr>Modified<wbr>Files<wbr>In<wbr>Pull<wbr>Request<wbr>()<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;FilePath&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             Returns a list of all files modified in a pull request.

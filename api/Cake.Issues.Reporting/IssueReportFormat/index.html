@@ -76,6 +76,7 @@
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Constructors">Constructors</a></p>
+<p><a href="#Properties">Properties</a></p>
 <p><a href="#Methods">Methods</a></p>
 <p><a href="#ExtensionMethods">Extension Methods</a></p>
 <hr class="infobar-hidden">
@@ -110,7 +111,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -122,6 +123,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -178,7 +186,7 @@
 								<dd>
 									<ul class="list-unstyled">
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/IIssueReportFormat">IIssueReportFormat</a></li>								
-											<li>IBaseIssueComponent<wbr>&lt;<wbr>Create<wbr>Issue<wbr>Report<wbr>Settings&gt;<wbr></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1">IBaseIssueComponent<wbr>&lt;T&gt;<wbr></a></li>								
 									</ul>
 								</dd>
 							
@@ -186,7 +194,7 @@
 								<dd>
 									<ul class="list-unstyled">										
 											<li>object</li>								
-											<li>BaseIssueComponent<wbr>&lt;<wbr>Create<wbr>Issue<wbr>Report<wbr>Settings&gt;<wbr></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1">BaseIssueComponent<wbr>&lt;T&gt;<wbr></a></li>								
 									</ul>
 								</dd>				
 							
@@ -196,11 +204,13 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["BaseIssueComponent&lt;CreateIssueReportSettings&gt;"]--&gt;Type
+	Base0["BaseIssueComponent&lt;T&gt;"]--&gt;Type
+	click Base0 "/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1"
 	Base1["object"]--&gt;Base0
 	Interface0["IIssueReportFormat"]-.-&gt;Type
 	click Interface0 "/Cake.Issues.Website/api/Cake.Issues.Reporting/IIssueReportFormat"
-	Interface1["IBaseIssueComponent&lt;CreateIssueReportSettings&gt;"]-.-&gt;Type
+	Interface1["IBaseIssueComponent&lt;T&gt;"]-.-&gt;Type
+	click Interface1 "/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1"
 	Type["IssueReportFormat"]
 class Type type-node
 
@@ -242,6 +252,42 @@ class Type type-node
 
 
 
+			<h1 id="Properties">Properties</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/144FE95A">Log</a></td>
+								<td>ICakeLog</td>
+								<td>
+									<div>
+            Gets the Cake log context.
+            </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1">BaseIssueComponent<wbr>&lt;T&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/73197E19">Settings</a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1#typeparam-T">T</a></td>
+								<td>
+									<div>
+            Gets the settings.
+            Is set after <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/25DD28E4">Initialize(T)</a></code> was called from the core addin.
+            </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1">BaseIssueComponent<wbr>&lt;T&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
 
 			<h1 id="Methods">Methods</h1>
 			<div class="box">
@@ -255,12 +301,32 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/CCF3A13F">AssertSettings<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Asserts that settings are set.
+            </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1">BaseIssueComponent<wbr>&lt;T&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/IssueReportFormat/BDF99F36">CreateReport<wbr>(IEnumerable<wbr>&lt;IIssue&gt;<wbr>)<wbr></a></td>
 								<td>FilePath</td>
 								<td>
 									<div>
             Creates a report from a list of issues.
             </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/25DD28E4">Initialize<wbr>(T)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Initializes the issue provider.
+            </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1">BaseIssueComponent<wbr>&lt;T&gt;<wbr></a></em></small></div>
 								</td>
 							</tr>
 							<tr>

@@ -109,7 +109,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -121,6 +121,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -138,12 +145,16 @@
 				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider/FEBA0B66">FakeIssueProvider<wbr>(ICakeLog)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider/1E870847">FakeIssueProvider<wbr>(ICakeLog, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>)<wbr></a></li>
 			<li class="header">Method Members</li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/CCF3A13F">AssertSettings<wbr>()<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/25DD28E4">Initialize<wbr>(T)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider/800286AE">InternalReadIssues<wbr>(IssueCommentFormat)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider/15A3CC87">ReadIssues<wbr>(IssueCommentFormat)<wbr></a></li>
 			<li class="header">Property Members</li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider/4944471C">Format</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider/60F44029">Log</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/144FE95A">Log</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider/3DDAE40D">Settings</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/73197E19">Settings</a></li>
 
 
                     </ul>

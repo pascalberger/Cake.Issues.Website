@@ -111,7 +111,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -123,6 +123,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -178,7 +185,7 @@
 								<dd>
 									<ul class="list-unstyled">
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></li>								
-											<li>IBaseIssueComponent<wbr>&lt;<wbr>Repository<wbr>Settings&gt;<wbr></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1">IBaseIssueComponent<wbr>&lt;T&gt;<wbr></a></li>								
 									</ul>
 								</dd>
 							
@@ -186,7 +193,7 @@
 								<dd>
 									<ul class="list-unstyled">										
 											<li>object</li>								
-											<li>BaseIssueComponent<wbr>&lt;<wbr>Repository<wbr>Settings&gt;<wbr></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1">BaseIssueComponent<wbr>&lt;T&gt;<wbr></a></li>								
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider">IssueProvider</a></li>								
 									</ul>
 								</dd>				
@@ -199,11 +206,13 @@
 							graph TD
 	Base0["IssueProvider"]--&gt;Type
 	click Base0 "/Cake.Issues.Website/api/Cake.Issues/IssueProvider"
-	Base1["BaseIssueComponent&lt;RepositorySettings&gt;"]--&gt;Base0
+	Base1["BaseIssueComponent&lt;T&gt;"]--&gt;Base0
+	click Base1 "/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1"
 	Base2["object"]--&gt;Base1
 	Interface0["IIssueProvider"]-.-&gt;Type
 	click Interface0 "/Cake.Issues.Website/api/Cake.Issues/IIssueProvider"
-	Interface1["IBaseIssueComponent&lt;RepositorySettings&gt;"]-.-&gt;Type
+	Interface1["IBaseIssueComponent&lt;T&gt;"]-.-&gt;Type
+	click Interface1 "/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1"
 	Type["FakeIssueProvider"]
 class Type type-node
 
@@ -281,12 +290,33 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/144FE95A">Log</a></td>
+								<td>ICakeLog</td>
+								<td>
+									<div>
+            Gets the Cake log context.
+            </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1">BaseIssueComponent<wbr>&lt;T&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider/3DDAE40D">Settings</a></td>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/RepositorySettings">RepositorySettings</a></td>
 								<td>
 									<div>
             Gets the settings.
             </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/73197E19">Settings</a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1#typeparam-T">T</a></td>
+								<td>
+									<div>
+            Gets the settings.
+            Is set after <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/25DD28E4">Initialize(T)</a></code> was called from the core addin.
+            </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1">BaseIssueComponent<wbr>&lt;T&gt;<wbr></a></em></small></div>
 								</td>
 							</tr>
 					</tbody></table>
@@ -306,8 +336,28 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/CCF3A13F">AssertSettings<wbr>()<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Asserts that settings are set.
+            </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1">BaseIssueComponent<wbr>&lt;T&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/25DD28E4">Initialize<wbr>(T)<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Initializes the issue provider.
+            </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1">BaseIssueComponent<wbr>&lt;T&gt;<wbr></a></em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider/800286AE">InternalReadIssues<wbr>(IssueCommentFormat)<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;IIssue&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             Gets all issues.
@@ -317,7 +367,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider/15A3CC87">ReadIssues<wbr>(IssueCommentFormat)<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;IIssue&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             Gets all issues.

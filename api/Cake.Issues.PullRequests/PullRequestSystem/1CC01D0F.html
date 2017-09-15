@@ -109,7 +109,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -121,6 +121,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -137,15 +144,20 @@
 			<li class="header">Constructors</li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/E44FFA2F">PullRequestSystem<wbr>(ICakeLog)<wbr></a></li>
 			<li class="header">Method Members</li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/CCF3A13F">AssertSettings<wbr>()<wbr></a></li>
 				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/1CC01D0F">Fetch<wbr>Active<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/63AC0228">Get<wbr>Modified<wbr>Files<wbr>In<wbr>Pull<wbr>Request<wbr>()<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/2A2B7AF0">Get<wbr>Preferred<wbr>Comment<wbr>Format<wbr>()<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/25DD28E4">Initialize<wbr>(T)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/ADC58E1A">Internal<wbr>Fetch<wbr>Active<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/3F148C60">Internal<wbr>Get<wbr>Modified<wbr>Files<wbr>In<wbr>Pull<wbr>Request<wbr>()<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/9017509F">Internal<wbr>Mark<wbr>Threads<wbr>As<wbr>Fixed<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/B159747C">Internal<wbr>Post<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>string)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/0A79169A">MarkThreadsAsFixed<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/F041B923">Post<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>string)<wbr></a></li>
+			<li class="header">Property Members</li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/144FE95A">Log</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/73197E19">Settings</a></li>
 
 
                     </ul>
@@ -224,7 +236,7 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td>IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr></td>
+					<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
 					<td>List of all active discussion threads.</td>
 				</tr>
 			</tbody></table>

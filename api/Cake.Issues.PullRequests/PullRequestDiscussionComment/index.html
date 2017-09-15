@@ -110,7 +110,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -122,6 +122,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -258,14 +265,18 @@ class Type type-node
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionComment/1713169A">Content</a></td>
 								<td>string</td>
 								<td>
-									<div></div>
+									<div>
+            Gets or sets the content of the comment.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionComment/648BDD55">IsDeleted</a></td>
 								<td>bool</td>
 								<td>
-									<div></div>
+									<div>
+            Gets or sets a value indicating whether the comment is deleted or not.
+            </div>
 								</td>
 							</tr>
 					</tbody></table>

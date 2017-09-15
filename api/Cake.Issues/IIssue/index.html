@@ -109,7 +109,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -121,6 +121,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -192,8 +199,8 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></li>								
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue<wbr>&lt;T&gt;<wbr></a></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -203,10 +210,10 @@
 							graph TD
 	Type["IIssue"]
 class Type type-node
-	Type-.-&gt;Implementing0["Issue"]
-	click Implementing0 "/Cake.Issues.Website/api/Cake.Issues/Issue"
-	Type-.-&gt;Implementing1["Issue&lt;T&gt;"]
-	click Implementing1 "/Cake.Issues.Website/api/Cake.Issues/Issue_1"
+	Type-.-&gt;Implementing0["Issue&lt;T&gt;"]
+	click Implementing0 "/Cake.Issues.Website/api/Cake.Issues/Issue_1"
+	Type-.-&gt;Implementing1["Issue"]
+	click Implementing1 "/Cake.Issues.Website/api/Cake.Issues/Issue"
 
 						</div>
 					</div>
@@ -249,7 +256,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/F2A42E89">Line</a></td>
-								<td>int?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
 									<div>
             Gets the line in the file where the issues has occurred.

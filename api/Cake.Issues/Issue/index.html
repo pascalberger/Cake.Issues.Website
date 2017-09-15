@@ -110,7 +110,7 @@
             } else {					
                 for(var i = 0; i < results.length; ++i){
                     var res = results[i];
-                    listHtml += "<li><a href='" + res.url + "'>" + res.title + "</a></li>";
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
                 }				
             }
             listHtml += "</ul>";				
@@ -122,6 +122,13 @@
                 runSearch($("#search").val());
             });
         });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
     </script>
 	
     <hr>
@@ -279,49 +286,67 @@ class Type type-node
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/47EECE2B">Affected<wbr>File<wbr>Relative<wbr>Path</a></td>
 								<td>FilePath</td>
 								<td>
-									<div></div>
+									<div>
+            Gets the path to the file affacted by the issue.
+            The path is relative to the repository root.
+            Can be <code class="cs">null</code> if issue is not related to a change in a file.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/A382E571">Line</a></td>
-								<td>int?</td>
+								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
 								<td>
-									<div></div>
+									<div>
+            Gets the line in the file where the issues has occurred.
+            Nothing if the issue affects the whole file or an asssembly.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/7B8F6C9F">Message</a></td>
 								<td>string</td>
 								<td>
-									<div></div>
+									<div>
+            Gets the message of the issue.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/81C9E265">Priority</a></td>
 								<td>int</td>
 								<td>
-									<div></div>
+									<div>
+            Gets the priority of the message. A higher value indicates a higher priority.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/C0A8C644">ProviderType</a></td>
 								<td>string</td>
 								<td>
-									<div></div>
+									<div>
+            Gets the type of the issue provider.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/999A29E6">Rule</a></td>
 								<td>string</td>
 								<td>
-									<div></div>
+									<div>
+            Gets the rule of the issue.
+            </div>
 								</td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/2B7AE5F7">RuleUrl</a></td>
 								<td>Uri</td>
 								<td>
-									<div></div>
+									<div>
+            Gets the URL containing information about the failing rule.
+            Can be <code class="cs">null</code> if the issue provider provides no URL.
+            </div>
 								</td>
 							</tr>
 					</tbody></table>
