@@ -199,9 +199,8 @@
             <p>Read issues reported by ESLint:</p>
             <pre><code class="cs">var issues =
         ReadIssues(
-            EsLintIssuesFromFilePath(
-                new FilePath(@"c:\build\ESLint.log")),
-            new DirectoryPath(@"c:\repo"));</code></pre>
+            EsLintIssuesFromFilePath(@"c:\build\ESLint.log"),
+            @"c:\repo");</code></pre>
             </div>
 
 

@@ -198,13 +198,12 @@
 	<div>
              <p>Read issues reported by ESLint:</p>
              <pre><code class="cs"> var settings =
-         new EsLintIssuesSettings(
-             new FilePath(@"c:\build\ESLint.log"));
+         new EsLintIssuesSettings(@"c:\build\ESLint.log");
 
      var issues =
          ReadIssues(
              EsLintIssues(settings),
-             new DirectoryPath(@"c:\repo"));</code></pre>
+             @"c:\repo");</code></pre>
              </div>
 
 
