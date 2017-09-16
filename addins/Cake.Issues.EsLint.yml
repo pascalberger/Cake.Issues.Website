@@ -1,6 +1,5 @@
 Name: ESLint Support
 NuGet: Cake.Issues.EsLint
-Prerelease: true
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.EsLint
 Documentation: /docs/issue-providers/eslint
