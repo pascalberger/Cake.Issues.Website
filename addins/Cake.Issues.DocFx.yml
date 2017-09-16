@@ -1,6 +1,5 @@
 Name: DocFx Support
 NuGet: Cake.Issues.DocFx
-Prerelease: true
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.DocFx
 Documentation: /docs/issue-providers/docfx
