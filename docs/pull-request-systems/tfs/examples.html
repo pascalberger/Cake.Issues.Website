@@ -92,9 +92,9 @@
                 <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/overview/release-notes">Release Notes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
+                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
                 <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
-                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
 
                     </ul>
                 </li>
@@ -127,7 +127,6 @@
                     <a href="/Cake.Issues.Website/docs/usage/reporting-issues-to-pull-requests">Reporting Issues To Pull Requests</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/usage/reporting-issues-to-pull-requests/basic-usage">Basic usage</a></li>
-                <li><a href="/Cake.Issues.Website/docs/usage/reporting-issues-to-pull-requests/teamcity-with-tfs">Using with TeamCity and TFS</a></li>
 
                     </ul>
                 </li>
@@ -161,6 +160,7 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/features">Features</a></li>
+                <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -179,6 +179,7 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/features">Features</a></li>
+                <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -266,14 +267,47 @@
 		<h1>Examples</h1>
 	</section>
 	<section class="content">
-		<h2 id="voting-for-pull-requests">Voting for pull requests</h2>
+		<h2 id="using-with-repository-remote-url-and-source-branch-name">Using with repository remote url and source branch name</h2>
+<p>This example shows how to write issues as comments to a Team Foundation Server (TFS) or
+Visual Studio Team Services (VSTS) pull request while using repository information.</p>
+<p>For determing the remote repository URL and source branch of the pull request you need the <a href="https://www.nuget.org/packages/Cake.Git/">Cake.Git</a> addin:</p>
+<pre><code class="language-csharp">#addin &quot;Cake.Git&quot;
+</code></pre>
+<p>To write issues as comments to TFS or VSTS pull requests you need to import the core addin,
+the core pull request addin, the TFS/VSTS support and one or more issue provider, in this example
+for JetBrains InspectCode:</p>
+<pre><code class="language-csharp">#addin &quot;Cake.Issues&quot;
+#addin &quot;Cake.Issues.InspectCode&quot;
+#addin &quot;Cake.Issues.PullRequests&quot;
+#addin &quot;Cake.Issues.PullRequests.Tfs&quot;
+</code></pre>
+<p>In the following task we'll first determine the remote repository URL and
+source branch of the pull request and with this information call the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/">TfsPullRequests</a> alias:</p>
+<pre><code class="language-csharp">Task(&quot;ReportIssuesToPullRequest&quot;).Does(() =&gt;
+{
+    var repoRootFolder = MakeAbsolute(Directory(&quot;./&quot;));
+    var currentBranch = GitBranchCurrent(repoRootFolder);
+    var repoRemoteUrl = new Uri(currentBranch.Remotes.Single(x =&gt; x.Name == &quot;origin&quot;).Url);
+    var sourceBranchName = currentBranch.CanonicalName;
+
+    ReportIssuesToPullRequest(
+        InspectCodeIssuesFromFilePath(
+            &#64;&quot;C:\build\inspectcode.log&quot;),
+        TfsPullRequests(
+            repoRemoteUrl,
+            sourceBranchName,
+            TfsAuthenticationNtlm()),
+        repoRootFolder);
+});
+</code></pre>
+<h2 id="voting-for-pull-requests">Voting for pull requests</h2>
 <p>The <a href="https://www.nuget.org/packages/Cake.Issues.PullRequests.Tfs">Cake.Issues.PullRequests.Tfs addin</a> also provides an alias for approving or voting for pull requests.</p>
 <div class="alert alert-info"><p>The approve functionality can be used without using the <a href="https://www.nuget.org/packages/Cake.Issues">Cake.Issues addin</a>.</p>
 </div>
 <p>The following example will approve a pull request on a Team Foundation Server:</p>
 <pre><code class="language-csharp">#addin &quot;Cake.Issues.PullRequests.Tfs&quot;
 
-Task(&quot;vote-pullrequest&quot;).Does(() =&gt;
+Task(&quot;Vote-PullRequest&quot;).Does(() =&gt;
 {
     var pullRequestSettings =
         new TfsPullRequestSettings(
@@ -287,33 +321,37 @@ Task(&quot;vote-pullrequest&quot;).Does(() =&gt;
 });
 </code></pre>
 <p>You can also vote based on the issues provided to the <a href="https://www.nuget.org/packages/Cake.Issues">Cake.Issues addin</a>.</p>
-<p>The following example will mark the pull request as waiting for author if any MsBuild warnings have
-occurred and approves the pull request otherwise:</p>
-<pre><code class="language-csharp">#addin &quot;Cake.Issues&quot;
-#addin &quot;Cake.Issues.Issues.MsBuild&quot;
-#addin &quot;Cake.Issues.PullRequests&quot;
+<p>The following example will mark the pull request as waiting for author if any JetBrains InspectCode
+warnings have occurred and approves the pull request otherwise:</p>
+<pre><code class="language-csharp">#tool &quot;nuget:?package=JetBrains.ReSharper.CommandLineTools&quot;
+#addin &quot;Cake.Issues&quot;
+#addin &quot;Cake.Issues.Issues.InspectCode&quot;
 #addin &quot;Cake.Issues.PullRequests.Tfs&quot;
 
-Task(&quot;ReportIssuesToPullRequest&quot;).Does(() =&gt;
-{
-    var repoRootFolder = new DirectoryPath(&#64;&quot;c:\repo&quot;);
-    var pullRequestSettings =
-        new TfsPullRequestSettings(
-            new Uri(&quot;http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository&quot;),
-            &quot;refs/heads/feature/myfeature&quot;,
-            TfsAuthenticationNtlm());
+var logPath = &#64;&quot;c:\build\inspectcode.xml&quot;;
+var repoRootPath = &#64;&quot;c:\repo&quot;;
 
-    // Write issues as comments to pull request.
-    var result =
-        ReportIssuesToPullRequest(
-            MsBuildIssuesFromFilePath(
-                &#64;&quot;c:\build\msbuild.log&quot;,
-                &#64;&quot;c:\repo\docs&quot;),
-            TfsPullRequests(pullRequestSettings),
-            repoRootFolder);
+Task(&quot;Analyze-Project&quot;).Does(() =&gt;
+{
+    // Run InspectCode.
+    var settings = new InspectCodeSettings() {
+        OutputFile = logPath
+    };
+
+    InspectCode(repoRootPath.CombineWithFilePath(&quot;MySolution.sln&quot;), settings);
+});
+
+Task(&quot;Vote-Pullrequest&quot;)
+.IsDependentOn(&quot;Analyze-Project&quot;)
+.Does(() =&gt;
+{
+    // Read Issues.
+    var issues = ReadIssues(
+        InspectCodeIssuesFromFilePath(logPath),
+        repoRootPath);
 
     // Vote for pull request.
-    var vote = result.PostedIssues.Any() ? TfsPullRequestVote.WaitingForAuthor : TfsPullRequestVote.Approved;
+    var vote = issues.Any() ? TfsPullRequestVote.WaitingForAuthor : TfsPullRequestVote.Approved;
     TfsVotePullRequest(
         pullRequestSettings,
         vote);

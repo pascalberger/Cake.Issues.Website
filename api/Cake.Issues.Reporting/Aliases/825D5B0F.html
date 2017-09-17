@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - API - Aliases.CreateIssueReport(ICakeContext, IEnumerable&lt;IIssueProvider&gt;, IIssueReportFormat, DirectoryPath, FilePath) Method</title>
+        <title>Cake Issues - API - Aliases.CreateIssueReport(ICakeContext, IIssueProvider, IIssueReportFormat, DirectoryPath, FilePath) Method</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -144,9 +144,9 @@
 		<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases">Aliases</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Method Members</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/825D5B0F">CreateIssueReport<wbr>(ICakeContext, <wbr>IIssueProvider, <wbr>IIssueReportFormat, <wbr>DirectoryPath, <wbr>FilePath)<wbr></a></li>
+				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/825D5B0F">CreateIssueReport<wbr>(ICakeContext, <wbr>IIssueProvider, <wbr>IIssueReportFormat, <wbr>DirectoryPath, <wbr>FilePath)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/13468484">CreateIssueReport<wbr>(ICakeContext, <wbr>IIssueProvider, <wbr>IIssueReportFormat, <wbr>Create<wbr>Issue<wbr>Report<wbr>Settings)<wbr></a></li>
-				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/57F58AC8">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>DirectoryPath, <wbr>FilePath)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/57F58AC8">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>DirectoryPath, <wbr>FilePath)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/68278482">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>Create<wbr>Issue<wbr>Report<wbr>Settings)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/71086B8E">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>DirectoryPath, <wbr>FilePath)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases/C778C70A">CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>Create<wbr>Issue<wbr>Report<wbr>Settings)<wbr></a></li>
@@ -164,14 +164,14 @@
 
 <section class="content-header">
 			<h3><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases">Aliases</a>.</h3>
-	<h1>CreateIssueReport<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IIssueReportFormat, <wbr>DirectoryPath, <wbr>FilePath)<wbr> <small>Method</small></h1>
+	<h1>CreateIssueReport<wbr>(ICakeContext, <wbr>IIssueProvider, <wbr>IIssueReportFormat, <wbr>DirectoryPath, <wbr>FilePath)<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-            Creates a report for a list of issues in the specified format.
+            Creates a report for a the issues from an issue provider in the specified format.
             </div>
 
 		<div class="panel panel-default">
@@ -191,21 +191,15 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public static FilePath CreateIssueReport(this ICakeContext context, IEnumerable&lt;IIssueProvider&gt; issueProviders, IIssueReportFormat reportFormat, DirectoryPath repositoryRoot, FilePath outputFilePath)</code></pre>
+	<pre><code>public static FilePath CreateIssueReport(this ICakeContext context, IIssueProvider issueProvider, IIssueReportFormat reportFormat, DirectoryPath repositoryRoot, FilePath outputFilePath)</code></pre>
 
 	<h1 id="Examples">Examples</h1>
 	<div>
             <p>Create HTML report using the diagnostic template:</p>
             <pre><code class="cs">CreateIssueReport(
-        new List&lt;IIssueProvider&gt;
-        {
-            MsBuildIssuesFromFilePath(
-                @"C:\build\msbuild.log",
-                MsBuildXmlFileLoggerFormat),
-            InspectCodeIssuesFromFilePath(
-                @"C:\build\inspectcode.log",
-                MsBuildXmlFileLoggerFormat)
-        },
+        InspectCodeIssuesFromFilePath(
+            @"C:\build\inspectcode.log",
+            MsBuildXmlFileLoggerFormat),
         HtmlIssueReportFormatFromEmbeddedTemplate(HtmlIssueReportTemplate.Diagnostic),
         @"c:\repo",
         @"c:\report.html");</code></pre>
@@ -252,9 +246,9 @@
 						<td>The context.</td>
 					</tr>
 					<tr>
-						<td>issueProviders</td>
-						<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
-						<td>Issue providers for whose issues the report should be generated.</td>
+						<td>issueProvider</td>
+						<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
+						<td>Issue provider for whose issues the report should be generated.</td>
 					</tr>
 					<tr>
 						<td>reportFormat</td>

@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - Testing</title>
+        <title>Cake Issues - Examples</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -75,7 +75,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/extending/testing.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/issue-providers/msbuild/examples.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"></div>
 
                 </section>
@@ -133,7 +133,7 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/issue-providers">Issue Providers</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li class="treeview">
@@ -174,12 +174,12 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/issue-providers/msbuild">MsBuild</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/features">Features</a></li>
-                <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/examples">Examples</a></li>
+                <li class="selected"><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -219,7 +219,7 @@
 
                     </ul>
                 </li>
-                <li class="treeview active">
+                <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/extending">Extending</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li class="treeview">
@@ -248,7 +248,7 @@
 
                     </ul>
                 </li>
-                <li class="selected"><a href="/Cake.Issues.Website/docs/extending/testing">Testing</a></li>
+                <li><a href="/Cake.Issues.Website/docs/extending/testing">Testing</a></li>
 
                     </ul>
                 </li>
@@ -264,12 +264,56 @@
 
 
 	<section class="content-header">
-		<h1>Testing</h1>
+		<h1>Examples</h1>
 	</section>
 	<section class="content">
-		<p>The <code>Cake.Issues.Testing</code> provides different helper classes for writing test cases
-for issue provider, report format or pull request system addins.</p>
-<p>See <a href="../../api/Cake.Issues.Testing/">API</a> for a list of available classes.</p>
+		<p>The following example will call MsBuild to build the solution and outputs the number of warnings.</p>
+<p>To read issues from MsBuild log files you need to import the core addin and the MsBuild support:</p>
+<pre><code class="language-csharp">#addin &quot;Cake.Issues&quot;
+#addin &quot;Cake.Issues.MsBuild&quot;
+</code></pre>
+<p>In this example the log file is written by the <code>XmlFileLogger</code> class from <a href="http://www.msbuildextensionpack.com/">MSBuild Extension Pack</a>.
+In order to use the above logger, the following line will download and install the tool from NuGet.org:</p>
+<pre><code class="language-csharp">#tool &quot;nuget:?package=MSBuild.Extension.Pack&quot;
+</code></pre>
+<p>We need some global variables:</p>
+<pre><code class="language-csharp">var logPath = &#64;&quot;c:\build\msbuild.log&quot;;
+var repoRootPath = &#64;&quot;c:\repo&quot;;
+</code></pre>
+<p>The following task will build the solution and write a log file:</p>
+<pre><code class="language-csharp">Task(&quot;Build-Solution&quot;).Does(() =&gt;
+{
+    // Build solution.
+    var settings =
+        new MSBuildSettings()
+            .WithLogger(
+                Context.Tools.Resolve(&quot;MSBuild.ExtensionPack.Loggers.dll&quot;).FullPath,
+                &quot;XmlFileLogger&quot;,
+                string.Format(
+                    &quot;logfile=\&quot;{0}\&quot;;verbosity=Detailed;encoding=UTF-8&quot;,
+                logPath)
+    );
+
+    MSBuild(repoRootPath.CombineWithFilePath(&quot;MySolution.sln&quot;), settings);
+});
+</code></pre>
+<p>Finally you can define a task where you call the core addin with the desired issue provider.
+The following example reads issues reported as MsBuild warnings by the <code>XmlFileLogger</code>
+class from <a href="http://www.msbuildextensionpack.com/">MSBuild Extension Pack</a>:</p>
+<pre><code class="language-csharp">Task(&quot;Analyze-Log&quot;)
+.IsDependentOn(&quot;Build-Solution&quot;)
+.Does(() =&gt;
+{
+    // Read Issues.
+    var issues = ReadIssues(
+        MsBuildIssuesFromFilePath(
+            logPath,
+            MsBuildXmlFileLoggerFormat),
+        repoRootFolder);
+
+    Information(&quot;{0} issues are found.&quot;, issues.Count());
+});
+</code></pre>
 
 	</section>
                 

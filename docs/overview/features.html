@@ -92,9 +92,9 @@
                 <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/overview/release-notes">Release Notes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
+                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
                 <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
-                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
 
                     </ul>
                 </li>
@@ -127,7 +127,6 @@
                     <a href="/Cake.Issues.Website/docs/usage/reporting-issues-to-pull-requests">Reporting Issues To Pull Requests</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/usage/reporting-issues-to-pull-requests/basic-usage">Basic usage</a></li>
-                <li><a href="/Cake.Issues.Website/docs/usage/reporting-issues-to-pull-requests/teamcity-with-tfs">Using with TeamCity and TFS</a></li>
 
                     </ul>
                 </li>
@@ -161,6 +160,7 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/features">Features</a></li>
+                <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -179,6 +179,7 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/features">Features</a></li>
+                <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -272,22 +273,24 @@ create reports or write issues to comments in pull requests.</p>
 <p>The core addins provide the following functionality:</p>
 <ul>
 <li>Modular architecture, allowing to easily enhance it for supporting additional analyzers, linters,
-report formarts and code review systems.</li>
+report formats and code review systems.</li>
 <li><code>Cake.Issues</code> addin for reading issues
 <ul>
-<li><code>ReadIssues</code> alias for reading issues.
+<li><code>ReadIssues</code> aliases for reading issues.
 This can for example be used to fail builds on certain conditions.</li>
-<li>Support for reporting issues from multiple issue providers.</li>
+<li>Support for reading issues from multiple issue providers.</li>
+<li>Support for reading issues in specific format (Plain text, Markdown, HTML) if supported by issue provider.</li>
 </ul>
 </li>
 <li><code>Cake.Issues.Reporting</code> addin for creating reports
 <ul>
-<li><code>CreateIssueReport</code> alias for creating reports about issues.</li>
+<li><code>CreateIssueReport</code> aliases for creating reports about issues.</li>
+<li>Support for creating reports with issues from multiple issue providers.</li>
 </ul>
 </li>
 <li><code>Cake.Issues.PullRequests</code> addin for writing issues as comments to pull requests
 <ul>
-<li><code>ReportIssuesToPullRequest</code> alias for writing issues as comments to pull requests.</li>
+<li><code>ReportIssuesToPullRequest</code> aliases for writing issues as comments to pull requests.</li>
 <li>Support for reporting issues from multiple issue providers.</li>
 <li>Filtering issues to only those related to changes in a pull request.</li>
 <li>Automatic resolving of issues fixed in subsequent commits.</li>

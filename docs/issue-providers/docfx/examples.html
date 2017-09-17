@@ -92,9 +92,9 @@
                 <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/overview/release-notes">Release Notes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
+                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
                 <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
-                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
 
                     </ul>
                 </li>
@@ -127,7 +127,6 @@
                     <a href="/Cake.Issues.Website/docs/usage/reporting-issues-to-pull-requests">Reporting Issues To Pull Requests</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/usage/reporting-issues-to-pull-requests/basic-usage">Basic usage</a></li>
-                <li><a href="/Cake.Issues.Website/docs/usage/reporting-issues-to-pull-requests/teamcity-with-tfs">Using with TeamCity and TFS</a></li>
 
                     </ul>
                 </li>
@@ -161,6 +160,7 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/features">Features</a></li>
+                <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/inspectcode/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -179,6 +179,7 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/features">Features</a></li>
+                <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/msbuild/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -266,35 +267,40 @@
 		<h1>Examples</h1>
 	</section>
 	<section class="content">
-		<p>The following example will call <a href="https://dotnet.github.io/docfx/">DocFx</a> to generate the documentation and report any warnings from
-the build as comments to the Team Foundation Server pull request.</p>
-<p>To call <a href="https://dotnet.github.io/docfx/">DocFx</a> from a Cake script you can use the <a href="https://www.nuget.org/packages/Cake.DocFx/">Cake.DocFx</a> addin.</p>
+		<p>The following example will call [DocFx] to generate the documentation and outputs the number of warnings.</p>
+<p>To call [DocFx] from a Cake script you can use the <a href="https://www.nuget.org/packages/Cake.DocFx/">Cake.DocFx</a> addin.</p>
 <pre><code class="language-csharp">#addin &quot;Cake.DocFx&quot;
-#addin &quot;Cake.Issues&quot;
-#addin &quot;Cake.Issues.MsBuild&quot;
-#addin &quot;Cake.PullRequests&quot;
-#addin &quot;Cake.PullRequests.Tfs&quot;
-
-Task(&quot;Build-Documentation&quot;).Does(() =&gt;
+</code></pre>
+<p>To read issues from DocFx log files you need to import the core addin and the DocFx support:</p>
+<pre><code class="language-csharp">#addin &quot;Cake.Issues&quot;
+#addin &quot;Cake.Issues.DocFx&quot;
+</code></pre>
+<p>We need some global variables:</p>
+<pre><code class="language-csharp">var logPath = &#64;&quot;c:\build\docfx.log&quot;;
+var repoRootPath = &#64;&quot;c:\repo&quot;;
+var docRootPath = &#64;&quot;docs&quot;;
+</code></pre>
+<p>The following task will build the [DocFx] project and write a log file:</p>
+<pre><code class="language-csharp">Task(&quot;Build-Documentation&quot;).Does(() =&gt;
 {
     // Run DocFx.
-    var logPath = &#64;&quot;c:\build\docfx.log&quot;;
     DocFxBuild(new DocFxBuildSettings()
     {
         LogPath = logPath
     });
+});
+</code></pre>
+<p>Finally you can define a task where you call the core addin with the desired issue provider.</p>
+<pre><code class="language-csharp">Task(&quot;Analyze-Log&quot;)
+.IsDependentOn(&quot;Build-Documentation&quot;)
+.Does(() =&gt;
+{
+    // Read Issues.
+    var issues = ReadIssues(
+        DocFxIssuesFromFilePath(logPath, docRootPath),
+        repoRootPath);
 
-    // Report issues to pull request.
-    var repoRootFolder = new DirectoryPath(&#64;&quot;c:\repo&quot;);
-    ReportIssuesToPullRequest(
-        DocFxIssuesFromFilePath(
-            logPath,
-            &#64;&quot;c:\repo\docs&quot;),
-        TfsPullRequests(
-            new Uri(&quot;http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository&quot;),
-            &quot;refs/heads/feature/myfeature&quot;,
-            TfsAuthenticationNtlm()),
-        repoRootFolder);
+    Information(&quot;{0} issues are found.&quot;, issues.Count());
 });
 </code></pre>
 
