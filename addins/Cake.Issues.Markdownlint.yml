@@ -1,6 +1,5 @@
 Name: Markdownlint Support
 NuGet: Cake.Issues.Markdownlint
-Prerelease: true
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.Markdownlint
 Documentation: /docs/issue-providers/markdownlint

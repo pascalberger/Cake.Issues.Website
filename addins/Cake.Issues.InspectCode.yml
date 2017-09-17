@@ -1,6 +1,5 @@
 Name: JetBrains Inspect Code Support
 NuGet: Cake.Issues.InspectCode
-Prerelease: true
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.InspectCode
 Documentation: /docs/issue-providers/inspectcode
