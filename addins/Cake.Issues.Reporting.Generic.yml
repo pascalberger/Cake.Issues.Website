@@ -1,0 +1,13 @@
+Name: Cake.Issues.Reporting.Generic
+NuGet: Cake.Issues.Reporting.Generic
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.Reporting.Generic
+Documentation: /docs/report-formats/generic
+ReleaseNotesFilePath: "input/docs/report-formats/generic/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.Reporting.Generic.dll"
+Author: Pascal Berger
+Description: "Support for creating issue reports in any text based format (HTML, Markdown, ...)"
+Categories:
+- Reporting Format
