@@ -75,7 +75,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/report-formats/html/examples.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/report-formats/generic/examples.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"></div>
 
                 </section>
@@ -92,9 +92,9 @@
                 <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/overview/release-notes">Release Notes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
                 <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
-                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
+                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
 
                     </ul>
                 </li>
@@ -191,12 +191,12 @@
                     <a href="/Cake.Issues.Website/docs/report-formats">Report Formats</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li class="treeview active">
-                    <a href="/Cake.Issues.Website/docs/report-formats/html">HTML</a> <a href="#" class="expand"></a>
+                    <a href="/Cake.Issues.Website/docs/report-formats/generic">HTML</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/report-formats/html/requirements">Requirements</a></li>
-                <li><a href="/Cake.Issues.Website/docs/report-formats/html/features">Features</a></li>
-                <li class="selected"><a href="/Cake.Issues.Website/docs/report-formats/html/examples">Examples</a></li>
-                <li><a href="/Cake.Issues.Website/docs/report-formats/html/release-notes">Release Notes</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/report-formats/generic/requirements">Requirements</a></li>
+                <li><a href="/Cake.Issues.Website/docs/report-formats/generic/features">Features</a></li>
+                <li class="selected"><a href="/Cake.Issues.Website/docs/report-formats/generic/examples">Examples</a></li>
+                <li><a href="/Cake.Issues.Website/docs/report-formats/generic/release-notes">Release Notes</a></li>
 
                     </ul>
                 </li>
@@ -272,7 +272,7 @@
 #addin &quot;Cake.Issues&quot;
 #addin &quot;Cake.Issues.MsBuild&quot;
 #addin &quot;Cake.Reporting&quot;
-#addin &quot;Cake.Reporting.Html&quot;
+#addin &quot;Cake.Reporting.Generic&quot;
 
 Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
 {
@@ -299,7 +299,7 @@ Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
                 msBuildLogFile,
                 MsBuildXmlFileLoggerFormat)
         },
-        HtmlIssueReportFormatFromEmbeddedTemplate(HtmlIssueReportTemplate.Diagnostic),
+        GenericIssueReportFormatFromEmbeddedTemplate(HtmlIssueReportTemplate.HtmlDiagnostic),
         repoRootFolder,
         &#64;&quot;c:\report.html&quot;);
 });
