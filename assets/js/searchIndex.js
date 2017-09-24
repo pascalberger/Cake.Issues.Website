@@ -34,142 +34,6 @@ var searchModule = function() {
 
     a({
         id:0,
-        title:"IIssueReportFormat",
-        content:"IIssueReportFormat",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:1,
-        title:"LogFileFormat",
-        content:"LogFileFormat",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:2,
-        title:"PullRequestDiscussionComment",
-        content:"PullRequestDiscussionComment",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:3,
-        title:"IssuesArgumentChecks",
-        content:"IssuesArgumentChecks",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:4,
-        title:"CreateIssueReportSettings",
-        content:"CreateIssueReportSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:5,
-        title:"ReportingAliasConstants",
-        content:"ReportingAliasConstants",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:6,
-        title:"FakeRuleDescription",
-        content:"FakeRuleDescription",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:7,
-        title:"TfsPullRequestSettings",
-        content:"TfsPullRequestSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:8,
-        title:"IIssueProvider",
-        content:"IIssueProvider",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:9,
-        title:"GenericIssueReportFormatSettings",
-        content:"GenericIssueReportFormatSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:10,
-        title:"IPullRequestSystem",
-        content:"IPullRequestSystem",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:11,
-        title:"Aliases",
-        content:"Aliases",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:12,
-        title:"ILogFileFormat",
-        content:"ILogFileFormat",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:13,
-        title:"MsBuildRuleDescription",
-        content:"MsBuildRuleDescription",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:14,
-        title:"IssueProvider",
-        content:"IssueProvider",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:15,
-        title:"InspectCodeIssuesAliases",
-        content:"InspectCodeIssuesAliases",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:16,
-        title:"PullRequestDiscussionStatus",
-        content:"PullRequestDiscussionStatus",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:17,
         title:"MarkdownlintIssuesSettings",
         content:"MarkdownlintIssuesSettings",
         description:'',
@@ -177,87 +41,7 @@ var searchModule = function() {
     });
 
     a({
-        id:18,
-        title:"ILogFileFormat",
-        content:"ILogFileFormat",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:19,
-        title:"FakeIssueComponent",
-        content:"FakeIssueComponent",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:20,
-        title:"IssueReportFormat",
-        content:"IssueReportFormat",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:21,
-        title:"DocFxIssuesAliases",
-        content:"DocFxIssuesAliases",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:22,
-        title:"PullRequestIssuesException",
-        content:"PullRequestIssuesException",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:23,
-        title:"BaseIssueComponent",
-        content:"BaseIssueComponent",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:24,
-        title:"PullRequestIssueResult",
-        content:"PullRequestIssueResult",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:25,
-        title:"ReportIssuesToPullRequestSettings",
-        content:"ReportIssuesToPullRequestSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:26,
-        title:"BaseRuleDescription",
-        content:"BaseRuleDescription",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:27,
-        title:"FakeIssueProvider",
-        content:"FakeIssueProvider",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:28,
+        id:1,
         title:"MsBuildIssuesAliases",
         content:"MsBuildIssuesAliases",
         description:'',
@@ -265,55 +49,7 @@ var searchModule = function() {
     });
 
     a({
-        id:29,
-        title:"TfsPullRequestVote",
-        content:"TfsPullRequestVote",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:30,
-        title:"TfsPullRequestSystemAliases",
-        content:"TfsPullRequestSystemAliases",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:31,
-        title:"Aliases",
-        content:"Aliases",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:32,
-        title:"ExceptionAssertExtensions",
-        content:"ExceptionAssertExtensions",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:33,
-        title:"IPullRequestDiscussionComment",
-        content:"IPullRequestDiscussionComment",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:34,
-        title:"IBaseIssueComponent",
-        content:"IBaseIssueComponent",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:35,
+        id:2,
         title:"IPullRequestDiscussionThread",
         content:"IPullRequestDiscussionThread",
         description:'',
@@ -321,103 +57,7 @@ var searchModule = function() {
     });
 
     a({
-        id:36,
-        title:"EsLintIssuesAliases",
-        content:"EsLintIssuesAliases",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:37,
-        title:"LogFileFormat",
-        content:"LogFileFormat",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:38,
-        title:"ReadIssuesSettings",
-        content:"ReadIssuesSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:39,
-        title:"BaseRuleUrlResolver",
-        content:"BaseRuleUrlResolver",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:40,
-        title:"IssuesAliasConstants",
-        content:"IssuesAliasConstants",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:41,
-        title:"Issue",
-        content:"Issue",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:42,
-        title:"IssuesReader",
-        content:"IssuesReader",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:43,
-        title:"StringPathExtensions",
-        content:"StringPathExtensions",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:44,
-        title:"PullRequestDiscussionThread",
-        content:"PullRequestDiscussionThread",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:45,
-        title:"EsLintIssuesSettings",
-        content:"EsLintIssuesSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:46,
-        title:"GenericIssueReportTemplate",
-        content:"GenericIssueReportTemplate",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:47,
-        title:"DocFxIssuesSettings",
-        content:"DocFxIssuesSettings",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:48,
+        id:3,
         title:"InspectCodeIssuesSettings",
         content:"InspectCodeIssuesSettings",
         description:'',
@@ -425,31 +65,111 @@ var searchModule = function() {
     });
 
     a({
-        id:49,
-        title:"ITfsCredentials",
-        content:"ITfsCredentials",
+        id:4,
+        title:"ReadIssuesSettings",
+        content:"ReadIssuesSettings",
         description:'',
         tags:''
     });
 
     a({
-        id:50,
-        title:"MsBuildIssuesSettings",
-        content:"MsBuildIssuesSettings",
+        id:5,
+        title:"ReportIssuesToPullRequestSettings",
+        content:"ReportIssuesToPullRequestSettings",
         description:'',
         tags:''
     });
 
     a({
-        id:51,
-        title:"IIssue",
-        content:"IIssue",
+        id:6,
+        title:"InspectCodeIssuesAliases",
+        content:"InspectCodeIssuesAliases",
         description:'',
         tags:''
     });
 
     a({
-        id:52,
+        id:7,
+        title:"LogFileFormat",
+        content:"LogFileFormat",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:8,
+        title:"IssuesAliasConstants",
+        content:"IssuesAliasConstants",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:9,
+        title:"Aliases",
+        content:"Aliases",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:10,
+        title:"EsLintIssuesAliases",
+        content:"EsLintIssuesAliases",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:11,
+        title:"PullRequestDiscussionThread",
+        content:"PullRequestDiscussionThread",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:12,
+        title:"TfsPullRequestSystemAliases",
+        content:"TfsPullRequestSystemAliases",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:13,
+        title:"CreateIssueReportSettings",
+        content:"CreateIssueReportSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:14,
+        title:"FakeRuleDescription",
+        content:"FakeRuleDescription",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:15,
+        title:"TfsPullRequestVote",
+        content:"TfsPullRequestVote",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:16,
+        title:"EsLintIssuesSettings",
+        content:"EsLintIssuesSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:17,
         title:"RepositorySettings",
         content:"RepositorySettings",
         description:'',
@@ -457,7 +177,143 @@ var searchModule = function() {
     });
 
     a({
-        id:53,
+        id:18,
+        title:"StringPathExtensions",
+        content:"StringPathExtensions",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:19,
+        title:"IIssue",
+        content:"IIssue",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:20,
+        title:"IBaseIssueComponent",
+        content:"IBaseIssueComponent",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:21,
+        title:"PullRequestIssuesException",
+        content:"PullRequestIssuesException",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:22,
+        title:"Aliases",
+        content:"Aliases",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:23,
+        title:"ExceptionAssertExtensions",
+        content:"ExceptionAssertExtensions",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:24,
+        title:"GenericIssueReportTemplate",
+        content:"GenericIssueReportTemplate",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:25,
+        title:"IPullRequestSystem",
+        content:"IPullRequestSystem",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:26,
+        title:"IIssueReportFormat",
+        content:"IIssueReportFormat",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:27,
+        title:"IssuesReader",
+        content:"IssuesReader",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:28,
+        title:"DocFxIssuesSettings",
+        content:"DocFxIssuesSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:29,
+        title:"IssuesArgumentChecks",
+        content:"IssuesArgumentChecks",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:30,
+        title:"ILogFileFormat",
+        content:"ILogFileFormat",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:31,
+        title:"ILogFileFormat",
+        content:"ILogFileFormat",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:32,
+        title:"FakeRuleUrlResolver",
+        content:"FakeRuleUrlResolver",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:33,
+        title:"LogFileFormat",
+        content:"LogFileFormat",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:34,
+        title:"MsBuildIssuesSettings",
+        content:"MsBuildIssuesSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:35,
         title:"PullRequestSystem",
         content:"PullRequestSystem",
         description:'',
@@ -465,9 +321,153 @@ var searchModule = function() {
     });
 
     a({
-        id:54,
+        id:36,
+        title:"ReportingAliasConstants",
+        content:"ReportingAliasConstants",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:37,
+        title:"Aliases",
+        content:"Aliases",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:38,
+        title:"GenericIssueReportFormatSettings",
+        content:"GenericIssueReportFormatSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:39,
+        title:"IssueProvider",
+        content:"IssueProvider",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:40,
+        title:"BaseIssueComponent",
+        content:"BaseIssueComponent",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:41,
+        title:"FakeIssueProvider",
+        content:"FakeIssueProvider",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:42,
+        title:"MsBuildRuleDescription",
+        content:"MsBuildRuleDescription",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:43,
+        title:"TfsPullRequestSettings",
+        content:"TfsPullRequestSettings",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:44,
+        title:"PullRequestDiscussionStatus",
+        content:"PullRequestDiscussionStatus",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:45,
+        title:"MarkdownlintIssuesAliases",
+        content:"MarkdownlintIssuesAliases",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:46,
+        title:"FakeIssueComponent",
+        content:"FakeIssueComponent",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:47,
+        title:"DocFxIssuesAliases",
+        content:"DocFxIssuesAliases",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:48,
+        title:"IssueReportFormat",
+        content:"IssueReportFormat",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:49,
+        title:"Issue",
+        content:"Issue",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:50,
+        title:"BaseRuleUrlResolver",
+        content:"BaseRuleUrlResolver",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:51,
+        title:"IIssueProvider",
+        content:"IIssueProvider",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:52,
         title:"GenericIssueReportFormatAliases",
         content:"GenericIssueReportFormatAliases",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:53,
+        title:"IssueCommentFormat",
+        content:"IssueCommentFormat",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:54,
+        title:"BaseRuleDescription",
+        content:"BaseRuleDescription",
         description:'',
         tags:''
     });
@@ -482,6 +482,22 @@ var searchModule = function() {
 
     a({
         id:56,
+        title:"PullRequestDiscussionComment",
+        content:"PullRequestDiscussionComment",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:57,
+        title:"PullRequestIssueResult",
+        content:"PullRequestIssueResult",
+        description:'',
+        tags:''
+    });
+
+    a({
+        id:58,
         title:"PullRequestsAliasConstants",
         content:"PullRequestsAliasConstants",
         description:'',
@@ -489,202 +505,24 @@ var searchModule = function() {
     });
 
     a({
-        id:57,
-        title:"MarkdownlintIssuesAliases",
-        content:"MarkdownlintIssuesAliases",
-        description:'',
-        tags:''
-    });
-
-    a({
-        id:58,
-        title:"IssueCommentFormat",
-        content:"IssueCommentFormat",
-        description:'',
-        tags:''
-    });
-
-    a({
         id:59,
-        title:"FakeRuleUrlResolver",
-        content:"FakeRuleUrlResolver",
+        title:"IPullRequestDiscussionComment",
+        content:"IPullRequestDiscussionComment",
         description:'',
         tags:''
     });
 
     a({
         id:60,
-        title:"Aliases",
-        content:"Aliases",
+        title:"ITfsCredentials",
+        content:"ITfsCredentials",
         description:'',
         tags:''
     });
 
     y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting/IIssueReportFormat',
-        title:"IIssueReportFormat",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.EsLint/LogFileFormat',
-        title:"LogFileFormat",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionComment',
-        title:"PullRequestDiscussionComment",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks',
-        title:"IssuesArgumentChecks",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting/CreateIssueReportSettings',
-        title:"CreateIssueReportSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting/ReportingAliasConstants',
-        title:"ReportingAliasConstants",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Testing/FakeRuleDescription',
-        title:"FakeRuleDescription",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSettings',
-        title:"TfsPullRequestSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/IIssueProvider',
-        title:"IIssueProvider",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/GenericIssueReportFormatSettings',
-        title:"GenericIssueReportFormatSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem',
-        title:"IPullRequestSystem",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases',
-        title:"Aliases",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.EsLint/ILogFileFormat',
-        title:"ILogFileFormat",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildRuleDescription',
-        title:"MsBuildRuleDescription",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/IssueProvider',
-        title:"IssueProvider",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.InspectCode/InspectCodeIssuesAliases',
-        title:"InspectCodeIssuesAliases",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionStatus',
-        title:"PullRequestDiscussionStatus",
-        description:""
-    });
-
-    y({
         url:'/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings',
         title:"MarkdownlintIssuesSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.MsBuild/ILogFileFormat',
-        title:"ILogFileFormat",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueComponent',
-        title:"FakeIssueComponent",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting/IssueReportFormat',
-        title:"IssueReportFormat",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.DocFx/DocFxIssuesAliases',
-        title:"DocFxIssuesAliases",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssuesException',
-        title:"PullRequestIssuesException",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1',
-        title:"BaseIssueComponent<T>",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssueResult',
-        title:"PullRequestIssueResult",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings',
-        title:"ReportIssuesToPullRequestSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/BaseRuleDescription',
-        title:"BaseRuleDescription",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider',
-        title:"FakeIssueProvider",
         description:""
     });
 
@@ -695,8 +533,62 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestVote',
-        title:"TfsPullRequestVote",
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestDiscussionThread',
+        title:"IPullRequestDiscussionThread",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.InspectCode/InspectCodeIssuesSettings',
+        title:"InspectCodeIssuesSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/ReadIssuesSettings',
+        title:"ReadIssuesSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings',
+        title:"ReportIssuesToPullRequestSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.InspectCode/InspectCodeIssuesAliases',
+        title:"InspectCodeIssuesAliases",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.MsBuild/LogFileFormat',
+        title:"LogFileFormat",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/IssuesAliasConstants',
+        title:"IssuesAliasConstants",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases',
+        title:"Aliases",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesAliases',
+        title:"EsLintIssuesAliases",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionThread',
+        title:"PullRequestDiscussionThread",
         description:""
     });
 
@@ -707,7 +599,61 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/Aliases',
+        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting/CreateIssueReportSettings',
+        title:"CreateIssueReportSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.Testing/FakeRuleDescription',
+        title:"FakeRuleDescription",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestVote',
+        title:"TfsPullRequestVote",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesSettings',
+        title:"EsLintIssuesSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/RepositorySettings',
+        title:"RepositorySettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/StringPathExtensions',
+        title:"StringPathExtensions",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/IIssue',
+        title:"IIssue",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1',
+        title:"IBaseIssueComponent<T>",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssuesException',
+        title:"PullRequestIssuesException",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting/Aliases',
         title:"Aliases",
         description:""
     });
@@ -719,56 +665,20 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestDiscussionComment',
-        title:"IPullRequestDiscussionComment",
+        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/GenericIssueReportTemplate',
+        title:"GenericIssueReportTemplate",
         description:""
     });
 
     y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1',
-        title:"IBaseIssueComponent<T>",
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem',
+        title:"IPullRequestSystem",
         description:""
     });
 
     y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestDiscussionThread',
-        title:"IPullRequestDiscussionThread",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesAliases',
-        title:"EsLintIssuesAliases",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.MsBuild/LogFileFormat',
-        title:"LogFileFormat",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/ReadIssuesSettings',
-        title:"ReadIssuesSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/BaseRuleUrlResolver_1',
-        title:"BaseRuleUrlResolver<T>",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/IssuesAliasConstants',
-        title:"IssuesAliasConstants",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/Issue',
-        title:"Issue",
+        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting/IIssueReportFormat',
+        title:"IIssueReportFormat",
         description:""
     });
 
@@ -779,98 +689,26 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/StringPathExtensions',
-        title:"StringPathExtensions",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionThread',
-        title:"PullRequestDiscussionThread",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesSettings',
-        title:"EsLintIssuesSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/GenericIssueReportTemplate',
-        title:"GenericIssueReportTemplate",
-        description:""
-    });
-
-    y({
         url:'/Cake.Issues.Website/api/Cake.Issues.DocFx/DocFxIssuesSettings',
         title:"DocFxIssuesSettings",
         description:""
     });
 
     y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.InspectCode/InspectCodeIssuesSettings',
-        title:"InspectCodeIssuesSettings",
+        url:'/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks',
+        title:"IssuesArgumentChecks",
         description:""
     });
 
     y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/ITfsCredentials',
-        title:"ITfsCredentials",
+        url:'/Cake.Issues.Website/api/Cake.Issues.EsLint/ILogFileFormat',
+        title:"ILogFileFormat",
         description:""
     });
 
     y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesSettings',
-        title:"MsBuildIssuesSettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/IIssue',
-        title:"IIssue",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/RepositorySettings',
-        title:"RepositorySettings",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem',
-        title:"PullRequestSystem",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/GenericIssueReportFormatAliases',
-        title:"GenericIssueReportFormatAliases",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/Issue_1',
-        title:"Issue<T>",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestsAliasConstants',
-        title:"PullRequestsAliasConstants",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases',
-        title:"MarkdownlintIssuesAliases",
-        description:""
-    });
-
-    y({
-        url:'/Cake.Issues.Website/api/Cake.Issues/IssueCommentFormat',
-        title:"IssueCommentFormat",
+        url:'/Cake.Issues.Website/api/Cake.Issues.MsBuild/ILogFileFormat',
+        title:"ILogFileFormat",
         description:""
     });
 
@@ -881,8 +719,170 @@ var searchModule = function() {
     });
 
     y({
-        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases',
+        url:'/Cake.Issues.Website/api/Cake.Issues.EsLint/LogFileFormat',
+        title:"LogFileFormat",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesSettings',
+        title:"MsBuildIssuesSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem',
+        title:"PullRequestSystem",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting/ReportingAliasConstants',
+        title:"ReportingAliasConstants",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/Aliases',
         title:"Aliases",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/GenericIssueReportFormatSettings',
+        title:"GenericIssueReportFormatSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/IssueProvider',
+        title:"IssueProvider",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1',
+        title:"BaseIssueComponent<T>",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider',
+        title:"FakeIssueProvider",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildRuleDescription',
+        title:"MsBuildRuleDescription",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSettings',
+        title:"TfsPullRequestSettings",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionStatus',
+        title:"PullRequestDiscussionStatus",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases',
+        title:"MarkdownlintIssuesAliases",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueComponent',
+        title:"FakeIssueComponent",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.DocFx/DocFxIssuesAliases',
+        title:"DocFxIssuesAliases",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting/IssueReportFormat',
+        title:"IssueReportFormat",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/Issue_1',
+        title:"Issue<T>",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/BaseRuleUrlResolver_1',
+        title:"BaseRuleUrlResolver<T>",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/IIssueProvider',
+        title:"IIssueProvider",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/GenericIssueReportFormatAliases',
+        title:"GenericIssueReportFormatAliases",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/IssueCommentFormat',
+        title:"IssueCommentFormat",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/BaseRuleDescription',
+        title:"BaseRuleDescription",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues/Issue',
+        title:"Issue",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionComment',
+        title:"PullRequestDiscussionComment",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssueResult',
+        title:"PullRequestIssueResult",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestsAliasConstants',
+        title:"PullRequestsAliasConstants",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestDiscussionComment',
+        title:"IPullRequestDiscussionComment",
+        description:""
+    });
+
+    y({
+        url:'/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/ITfsCredentials',
+        title:"ITfsCredentials",
         description:""
     });
 
