@@ -18,7 +18,7 @@ To add a new page, just add a new file.
 ### Addins
 
 All addins are specified in individual YAML files under `./addins`.
-Adding an addin here will trigger downloading it's NuGet Package during site generation and will include it in the "Addins" section of the Cake Pull Request Code Analysis site.
+Adding an addin here will trigger downloading its NuGet Package during site generation and will include it in the "Addins" section of the Cake Pull Request Code Analysis site.
 
 The format of an addin file generally looks like:
 
