@@ -149,6 +149,7 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseRuleUrlResolver_1">BaseRuleUrlResolver<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></li>
 				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueCommentFormat">IssueCommentFormat</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider">IssueProvider</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesAliasConstants">IssuesAliasConstants</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></li>
@@ -160,8 +161,6 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1">IBaseIssueComponent<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></li>
-			<li class="header">Enum Types</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueCommentFormat">IssueCommentFormat</a></li>
 
 
                     </ul>
@@ -206,7 +205,7 @@
 								<dt>Base Types</dt>
 								<dd>
 									<ul class="list-unstyled">										
-											<li>object</li>								
+											<li>Object</li>								
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></li>								
 									</ul>
 								</dd>				
@@ -219,7 +218,7 @@
 							graph TD
 	Base0["Issue"]--&gt;Type
 	click Base0 "/Cake.Issues.Website/api/Cake.Issues/Issue"
-	Base1["object"]--&gt;Base0
+	Base1["Object"]--&gt;Base0
 	Interface0["IIssue"]-.-&gt;Type
 	click Interface0 "/Cake.Issues.Website/api/Cake.Issues/IIssue"
 	Type["Issue&lt;T&gt;"]
@@ -267,13 +266,25 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/6E05FB69">Issue<wbr>(string, <wbr>int?, <wbr>string, <wbr>int, <wbr>string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/6E05FB69">Issue<wbr>(string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string)<wbr></a></td>
 									<td>
             Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
             </td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/D3C6A288">Issue<wbr>(string, <wbr>int?, <wbr>string, <wbr>int, <wbr>string, <wbr>Uri)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/D3C6A288">Issue<wbr>(string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>Uri)<wbr></a></td>
+									<td>
+            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/697DDF74">Issue<wbr>(string, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string)<wbr></a></td>
+									<td>
+            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/69E1A47C">Issue<wbr>(string, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>Uri)<wbr></a></td>
 									<td>
             Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
             </td>
@@ -310,7 +321,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/A382E571">Line</a></td>
-								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
+								<td>Nullable<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
             Gets the line in the file where the issues has occurred.
@@ -335,6 +346,16 @@ class Type type-node
 								<td>
 									<div>
             Gets the priority of the message. A higher value indicates a higher priority.
+            </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/EA6F6206">Project</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            Gets the name of the project to which the file affected by the issue belongs.
             </div>
 											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
 								</td>

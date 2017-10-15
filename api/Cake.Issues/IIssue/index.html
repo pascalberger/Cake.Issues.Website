@@ -146,6 +146,7 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseRuleUrlResolver_1">BaseRuleUrlResolver<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueCommentFormat">IssueCommentFormat</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider">IssueProvider</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesAliasConstants">IssuesAliasConstants</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></li>
@@ -157,8 +158,6 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1">IBaseIssueComponent<wbr>&lt;T&gt;<wbr></a></li>
 				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></li>
-			<li class="header">Enum Types</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueCommentFormat">IssueCommentFormat</a></li>
 
 
                     </ul>
@@ -256,7 +255,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/F2A42E89">Line</a></td>
-								<td>Nullable<wbr>&lt;T&gt;<wbr></td>
+								<td>Nullable<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
             Gets the line in the file where the issues has occurred.
@@ -279,6 +278,15 @@ class Type type-node
 								<td>
 									<div>
             Gets the priority of the message. A higher value indicates a higher priority.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/89B374A4">Project</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            Gets the name of the project to which the file affected by the issue belongs.
             </div>
 								</td>
 							</tr>
