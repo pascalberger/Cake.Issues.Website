@@ -195,7 +195,7 @@
 	<div>
              <p>Read issues reported as MsBuild warnings and format comments in Markdown:</p>
              <pre><code class="cs"> var settings =
-         new ReadIssuesSettings(new DirectoryPath("c:\repo"))
+         new ReadIssuesSettings(@"c:\repo")
          {
              Format = IssueCommentFormat.Markdown
          };
