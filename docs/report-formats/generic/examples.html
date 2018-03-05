@@ -79,7 +79,8 @@
     <div id="infobar-headings"></div>
 
                 </section>
-                <section class="sidebar">                    
+                <section class="sidebar">    
+                                     
                     
 
                     <ul class="sidebar-menu">
@@ -252,8 +253,18 @@
 
                     </ul>
                 </li>
+                <li class="treeview">
+                    <a href="/Cake.Issues.Website/docs/contributing">Contributing</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/Cake.Issues.Website/docs/contributing/how-to-contribute">How to contribute</a></li>
+                <li><a href="/Cake.Issues.Website/docs/contributing/how-to-build">How to build addins</a></li>
+                <li><a href="/Cake.Issues.Website/docs/contributing/how-to-release">How to release addins</a></li>
 
                     </ul>
+                </li>
+
+                    </ul>
+                            
                 </section>                
             </aside>
             
@@ -267,7 +278,8 @@
 		<h1>Examples</h1>
 	</section>
 	<section class="content">
-		<p>The following example will create a HTML report for issues logged as warnings by MsBuild.</p>
+		<h2 id="use-embedded-default-template">Use embedded default template</h2>
+<p>The following example will create a HTML report for issues logged as warnings by MsBuild.</p>
 <pre><code class="language-csharp">#tool &quot;nuget:?package=MSBuild.Extension.Pack&quot;
 #addin &quot;Cake.Issues&quot;
 #addin &quot;Cake.Issues.MsBuild&quot;
@@ -304,6 +316,95 @@ Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
         &#64;&quot;c:\report.html&quot;);
 });
 </code></pre>
+<h2 id="use-custom-template">Use custom template</h2>
+<p>The following example will create a HTML report for issues logged as warnings by MsBuild using a custom template.</p>
+<pre><code class="language-csharp">#tool &quot;nuget:?package=MSBuild.Extension.Pack&quot;
+#addin &quot;Cake.Issues&quot;
+#addin &quot;Cake.Issues.MsBuild&quot;
+#addin &quot;Cake.Reporting&quot;
+#addin &quot;Cake.Reporting.Generic&quot;
+
+Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
+{
+    var repoRootFolder = new DirectoryPath(&#64;&quot;c:\repo&quot;);
+
+    // Build MySolution.sln solution in the repository root folder and log issues
+    // using XmlFileLogger from MSBuild Extension Pack.
+    FilePath msBuildLogFile = &#64;&quot;c:\build\msbuild.log&quot;;
+    var settings = new MsBuildSettings()
+        .WithLogger(
+            Context.Tools.Resolve(&quot;MSBuild.ExtensionPack.Loggers.dll&quot;).FullPath,
+            &quot;XmlFileLogger&quot;,
+            string.Format(
+                &quot;logfile=\&quot;{0}\&quot;;verbosity=Detailed;encoding=UTF-8&quot;,
+                msBuildLogFile)
+        );
+    MSBuild(repoRootFolder.CombineWithFilePath(&quot;MySolution.sln&quot;), settings);
+
+    // Create HTML report using Diagnostic template.
+    CreateIssueReport(
+        new List&lt;IIssueProvider&gt;
+        {
+            MsBuildIssuesFromFilePath(
+                msBuildLogFile,
+                MsBuildXmlFileLoggerFormat)
+        },
+        GenericIssueReportFormatFromFilePath(&#64;&quot;c:\ReportTemplate.cshtml&quot;),
+        repoRootFolder,
+        &#64;&quot;c:\report.html&quot;);
+});
+</code></pre>
+<p><code>ReportTemplate</code> looks like this:</p>
+<pre><code class="language-csharp">&#64;model IEnumerable&lt;Cake.Issues.IIssue&gt;
+
+&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;en&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;table&gt;
+        &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th scope=&quot;col&quot;&gt;AffectedFileRelativePath&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;Line&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;Message&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;Priority&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;Rule&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;RuleUrl&lt;/th&gt;
+                &lt;th scope=&quot;col&quot;&gt;ProviderType&lt;/th&gt;
+            &lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+            &#64;foreach (var issue in Model)
+            {
+                &lt;tr&gt;
+                    &lt;td&gt;&#64;issue.AffectedFileRelativePath&lt;/td&gt;
+                    &lt;td&gt;&#64;issue.Line&lt;/td&gt;
+                    &lt;td&gt;&#64;issue.Message&lt;/td&gt;
+                    &lt;td&gt;&#64;issue.Priority&lt;/td&gt;
+                    &lt;td&gt;&#64;issue.Rule&lt;/td&gt;
+                    &lt;td&gt;&#64;issue.RuleUrl&lt;/td&gt;
+                    &lt;td&gt;&#64;issue.ProviderType&lt;/td&gt;
+                &lt;/tr&gt;
+            }
+        &lt;/tbody&gt;
+    &lt;/table&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>The template retrieves an <code>IEnumerable&lt;Cake.Issues.IIssue&gt;</code> as model.</p>
+<div class="alert alert-info"><p>In custom templates functionality from the following assemblies are available:</p>
+<ul>
+<li>mscorlib.dll</li>
+<li>system.dll</li>
+<li>system.core.dll</li>
+<li>Cake.Core.dll</li>
+<li>Cake.Issues.dll</li>
+</ul>
+</div>
 
 	</section>
                 

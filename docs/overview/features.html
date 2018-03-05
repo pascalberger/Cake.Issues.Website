@@ -79,7 +79,8 @@
     <div id="infobar-headings"></div>
 
                 </section>
-                <section class="sidebar">                    
+                <section class="sidebar">    
+                                     
                     
 
                     <ul class="sidebar-menu">
@@ -252,8 +253,18 @@
 
                     </ul>
                 </li>
+                <li class="treeview">
+                    <a href="/Cake.Issues.Website/docs/contributing">Contributing</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/Cake.Issues.Website/docs/contributing/how-to-contribute">How to contribute</a></li>
+                <li><a href="/Cake.Issues.Website/docs/contributing/how-to-build">How to build addins</a></li>
+                <li><a href="/Cake.Issues.Website/docs/contributing/how-to-release">How to release addins</a></li>
 
                     </ul>
+                </li>
+
+                    </ul>
+                            
                 </section>                
             </aside>
             
@@ -293,6 +304,7 @@ This can for example be used to fail builds on certain conditions.</li>
 <li><code>ReportIssuesToPullRequest</code> aliases for writing issues as comments to pull requests.</li>
 <li>Support for reporting issues from multiple issue providers.</li>
 <li>Filtering issues to only those related to changes in a pull request.</li>
+<li>Skipping posting of issues if checked source code is outdated</li>
 <li>Automatic resolving of issues fixed in subsequent commits.</li>
 <li>Comparing issues by content to not rely on line numbers.</li>
 <li>Limit number of maximum issues to post.</li>
