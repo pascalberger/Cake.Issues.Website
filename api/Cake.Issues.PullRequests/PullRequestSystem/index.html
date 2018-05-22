@@ -144,7 +144,9 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Class Types</li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases">Aliases</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystemExtension">I<wbr>Pull<wbr>Request<wbr>System<wbr>Extension</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionComment">Pull<wbr>Request<wbr>Discussion<wbr>Comment</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionStatus">Pull<wbr>Request<wbr>Discussion<wbr>Status</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionThread">Pull<wbr>Request<wbr>Discussion<wbr>Thread</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssueResult">Pull<wbr>Request<wbr>Issue<wbr>Result</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssuesException">Pull<wbr>Request<wbr>Issues<wbr>Exception</a></li>
@@ -155,8 +157,6 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestDiscussionComment">I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Comment</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestDiscussionThread">I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem">IPullRequestSystem</a></li>
-			<li class="header">Enum Types</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionStatus">Pull<wbr>Request<wbr>Discussion<wbr>Status</a></li>
 
 
                     </ul>
@@ -322,7 +322,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/1CC01D0F">Fetch<wbr>Active<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
             Returns a list of all active discussion threads.
@@ -330,8 +330,17 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/E1B3DEC1">Get<wbr>Last<wbr>Source<wbr>Commit<wbr>Id<wbr>()<wbr></a></td>
+								<td>string</td>
+								<td>
+									<div>
+            Gets the hash of the latest commit on the source branch.
+            </div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/63AC0228">Get<wbr>Modified<wbr>Files<wbr>In<wbr>Pull<wbr>Request<wbr>()<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
             Returns a list of all files modified in a pull request.
@@ -359,7 +368,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/ADC58E1A">Internal<wbr>Fetch<wbr>Active<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
             Returns a list of all active discussion threads.
@@ -369,7 +378,7 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/3F148C60">Internal<wbr>Get<wbr>Modified<wbr>Files<wbr>In<wbr>Pull<wbr>Request<wbr>()<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
+								<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
             Returns a list of all files modified in a pull request.
@@ -383,7 +392,7 @@ class Type type-node
 								<td>
 									<div>
             Marks a list of discussion threads as resolved.
-            Compared to <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/0A79169A">MarkThreadsAsFixed(IEnumerable&lt;IPullRequestDiscussionThread&gt;)</a></code> it is safe to access Settings from this method.
+            Compared to <code class="cs">Cake.Issues.PullRequests.PullRequestSystem.MarkThreadsAsFixed(System.Collections.Generic.IEnumerable{Cake.Issues.PullRequests.IPullRequestDiscussionThread})</code> it is safe to access Settings from this method.
             </div>
 								</td>
 							</tr>
@@ -393,7 +402,7 @@ class Type type-node
 								<td>
 									<div>
             Posts discussion threads for all issues which need to be posted.
-            Compared to <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/F041B923">PostDiscussionThreads(IEnumerable&lt;IIssue&gt;, string)</a></code> it is safe to access Settings from this method.
+            Compared to <code class="cs">Cake.Issues.PullRequests.PullRequestSystem.PostDiscussionThreads(System.Collections.Generic.IEnumerable{Cake.Issues.IIssue},System.String)</code> it is safe to access Settings from this method.
             </div>
 								</td>
 							</tr>

@@ -312,7 +312,7 @@ class Type type-node
 								<td>
 									<div>
             Gets the line in the file where the issues has occurred.
-            Nothing if the issue affects the whole file or an asssembly.
+            <code class="cs">null</code> if the issue affects the whole file or an asssembly.
             </div>
 								</td>
 							</tr>
@@ -340,6 +340,7 @@ class Type type-node
 								<td>
 									<div>
             Gets the name of the project to which the file affected by the issue belongs.
+            Can be <code class="cs">null</code> or <code class="cs">System.String.Empty</code> if issue is not related to a project.
             </div>
 								</td>
 							</tr>
@@ -358,6 +359,7 @@ class Type type-node
 								<td>
 									<div>
             Gets the rule of the issue.
+            Can be <code class="cs">null</code> or <code class="cs">System.String.Empty</code> if the issue provider provides no rule.
             </div>
 								</td>
 							</tr>

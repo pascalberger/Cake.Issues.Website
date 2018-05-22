@@ -143,7 +143,9 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Class Types</li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases">Aliases</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystemExtension">I<wbr>Pull<wbr>Request<wbr>System<wbr>Extension</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionComment">Pull<wbr>Request<wbr>Discussion<wbr>Comment</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionStatus">Pull<wbr>Request<wbr>Discussion<wbr>Status</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionThread">Pull<wbr>Request<wbr>Discussion<wbr>Thread</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssueResult">Pull<wbr>Request<wbr>Issue<wbr>Result</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssuesException">Pull<wbr>Request<wbr>Issues<wbr>Exception</a></li>
@@ -154,8 +156,6 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestDiscussionComment">I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Comment</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestDiscussionThread">I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem">IPullRequestSystem</a></li>
-			<li class="header">Enum Types</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionStatus">Pull<wbr>Request<wbr>Discussion<wbr>Status</a></li>
 
 
                     </ul>
@@ -271,11 +271,41 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings/CAE58C82">MaxIssuesToPost</a></td>
-								<td>int</td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings/A458D06C">CommitId</a></td>
+								<td>string</td>
 								<td>
 									<div>
-            Gets or sets the number of issues which should be posted at maximum.
+            Gets or sets the hash of the commit for which the issues were reported.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings/CAE58C82">MaxIssuesToPost</a></td>
+								<td>Nullable<wbr>&lt;&gt;<wbr></td>
+								<td>
+									<div>
+            Gets or sets the global number of issues which should be posted at maximum over all
+            <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></code>.
+            Issues are filtered by <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/BFEFFBB1">Priority</a></code> and issues with an <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/BF0CD6F1">AffectedFileRelativePath</a></code>
+            are prioritized.
+            Set to <code class="cs"></code> to not set a global limit.
+            Default is to not set a global limit.
+            Use <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings/CB8D8694">MaxIssuesToPostForEachIssueProvider</a></code> to set the limit for each issue provider.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings/CB8D8694">Max<wbr>Issues<wbr>To<wbr>Post<wbr>For<wbr>Each<wbr>Issue<wbr>Provider</a></td>
+								<td>Nullable<wbr>&lt;&gt;<wbr></td>
+								<td>
+									<div>
+            Gets or sets the global number of issues which should be posted at for each
+            <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></code>.
+            Issues are filtered by <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/BFEFFBB1">Priority</a></code> and issues with an <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/BF0CD6F1">AffectedFileRelativePath</a></code>
+            are prioritized.
+            Set to <code class="cs"></code> to not limit issues per issue provider.
+            Default is to filter to 100 issues for each issue provider.
+            Use <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings/CAE58C82">MaxIssuesToPost</a></code> to set the global limit over all issue providers.
             </div>
 								</td>
 							</tr>

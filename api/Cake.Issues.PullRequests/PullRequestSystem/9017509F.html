@@ -147,6 +147,7 @@
 			<li class="header">Method Members</li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/CCF3A13F">AssertSettings<wbr>()<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/1CC01D0F">Fetch<wbr>Active<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/E1B3DEC1">Get<wbr>Last<wbr>Source<wbr>Commit<wbr>Id<wbr>()<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/63AC0228">Get<wbr>Modified<wbr>Files<wbr>In<wbr>Pull<wbr>Request<wbr>()<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/2A2B7AF0">Get<wbr>Preferred<wbr>Comment<wbr>Format<wbr>()<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/25DD28E4">Initialize<wbr>(T)<wbr></a></li>
@@ -182,7 +183,7 @@
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
             Marks a list of discussion threads as resolved.
-            Compared to <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/0A79169A">MarkThreadsAsFixed(IEnumerable&lt;IPullRequestDiscussionThread&gt;)</a></code> it is safe to access Settings from this method.
+            Compared to <code class="cs">Cake.Issues.PullRequests.PullRequestSystem.MarkThreadsAsFixed(System.Collections.Generic.IEnumerable{Cake.Issues.PullRequests.IPullRequestDiscussionThread})</code> it is safe to access Settings from this method.
             </div>
 
 		<div class="panel panel-default">
@@ -221,7 +222,7 @@
 				</thead>
 					<tbody><tr>
 						<td>threads</td>
-						<td>IEnumerable<wbr>&lt;T&gt;<wbr></td>
+						<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
 						<td>Threads to mark as fixed.</td>
 					</tr>
 			</tbody></table>
