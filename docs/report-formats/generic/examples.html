@@ -93,9 +93,9 @@
                 <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/overview/release-notes">Release Notes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
-                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
                 <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
+                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
 
                     </ul>
                 </li>
@@ -311,12 +311,15 @@ Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
                 msBuildLogFile,
                 MsBuildXmlFileLoggerFormat)
         },
-        GenericIssueReportFormatFromEmbeddedTemplate(HtmlIssueReportTemplate.HtmlDiagnostic),
+        GenericIssueReportFormatFromEmbeddedTemplate(GenericIssueReportTemplate.HtmlDiagnostic),
         repoRootFolder,
         &#64;&quot;c:\report.html&quot;);
 });
 </code></pre>
 <h2 id="use-custom-template">Use custom template</h2>
+<div class="alert alert-info"><p>If you create a universally usable custom template we're happy to package it with the addin.
+To have it included in the addin please <a href="https://github.com/cake-contrib/Cake.Issues.Reporting.Generic/blob/develop/CONTRIBUTING.md">create a pull request</a> with your contribution.</p>
+</div>
 <p>The following example will create a HTML report for issues logged as warnings by MsBuild using a custom template.</p>
 <pre><code class="language-csharp">#tool &quot;nuget:?package=MSBuild.Extension.Pack&quot;
 #addin &quot;Cake.Issues&quot;
@@ -398,9 +401,8 @@ Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
 <p>The template retrieves an <code>IEnumerable&lt;Cake.Issues.IIssue&gt;</code> as model.</p>
 <div class="alert alert-info"><p>In custom templates functionality from the following assemblies are available:</p>
 <ul>
-<li>mscorlib.dll</li>
 <li>system.dll</li>
-<li>system.core.dll</li>
+<li>netstandard.dll</li>
 <li>Cake.Core.dll</li>
 <li>Cake.Issues.dll</li>
 </ul>
