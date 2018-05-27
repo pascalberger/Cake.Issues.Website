@@ -94,8 +94,8 @@
                     <a href="/Cake.Issues.Website/docs/overview/release-notes">Release Notes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
-                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
                 <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
+                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
 
                     </ul>
                 </li>
@@ -198,6 +198,14 @@
                 <li><a href="/Cake.Issues.Website/docs/report-formats/generic/features">Features</a></li>
                 <li class="selected"><a href="/Cake.Issues.Website/docs/report-formats/generic/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/report-formats/generic/release-notes">Release Notes</a></li>
+                <li class="treeview">
+                    <a href="/Cake.Issues.Website/docs/report-formats/generic/templates">Template Gallery</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/Cake.Issues.Website/docs/report-formats/generic/templates/htmldatatable">HTML Data Table</a></li>
+                <li><a href="/Cake.Issues.Website/docs/report-formats/generic/templates/htmldiagnostic">HTML Diagnostic</a></li>
+
+                    </ul>
+                </li>
 
                     </ul>
                 </li>
@@ -401,7 +409,8 @@ Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
 <p>The template retrieves an <code>IEnumerable&lt;Cake.Issues.IIssue&gt;</code> as model.</p>
 <div class="alert alert-info"><p>In custom templates functionality from the following assemblies are available:</p>
 <ul>
-<li>system.dll</li>
+<li>System.dll</li>
+<li>System.Core.dll</li>
 <li>netstandard.dll</li>
 <li>Cake.Core.dll</li>
 <li>Cake.Issues.dll</li>
