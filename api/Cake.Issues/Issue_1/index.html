@@ -268,25 +268,25 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/6E05FB69">Issue<wbr>(string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/D2F49900">Issue<wbr>(T, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>string)<wbr></a></td>
 									<td>
             Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
             </td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/D3C6A288">Issue<wbr>(string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>Uri)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/82DF8C9F">Issue<wbr>(T, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>string, <wbr>Uri)<wbr></a></td>
 									<td>
             Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
             </td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/697DDF74">Issue<wbr>(string, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/B3EF756E">Issue<wbr>(T, <wbr>string, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>string)<wbr></a></td>
 									<td>
             Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
             </td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/69E1A47C">Issue<wbr>(string, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>Uri)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/132CFBC8">Issue<wbr>(T, <wbr>string, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>string, <wbr>Uri)<wbr></a></td>
 									<td>
             Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
             </td>
@@ -353,12 +353,32 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/10A91A64">PriorityName</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            Gets the human friendly name of the priority.
+            </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/EA6F6206">Project</a></td>
 								<td>string</td>
 								<td>
 									<div>
             Gets the name of the project to which the file affected by the issue belongs.
             Can be <code class="cs">null</code> or <code class="cs">System.String.Empty</code> if issue is not related to a project.
+            </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/EF813B96">ProviderName</a></td>
+								<td>string</td>
+								<td>
+									<div>
+            Gets the human friendly name of the issue provider.
             </div>
 											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
 								</td>
@@ -416,7 +436,7 @@ class Type type-node
 								<td>string</td>
 								<td>
 									<div>
-            Gets the name of the issue provider as it will be set to in the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/D5A24C72">ProviderType</a></code> property.
+            Gets the name of the issue provider type as it will be set to in the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/D5A24C72">ProviderType</a></code> property.
             </div>
 											<div><small><em>static</em></small></div>
 								</td>
