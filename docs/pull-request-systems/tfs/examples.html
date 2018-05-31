@@ -1,22 +1,20 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <title>Cake Issues - Examples</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
-        <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/Cake.Issues.Website/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/Cake.Issues.Website/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/Cake.Issues.Website/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/Cake.Issues.Website/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/Cake.Issues.Website/assets/css/override.css" rel="stylesheet" />
+        <link href="/Cake.Issues.Website/assets/css/override.css" rel="stylesheet">
         <script src="/Cake.Issues.Website/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/Cake.Issues.Website/assets/js/bootstrap.min.js"></script>        
         <script src="/Cake.Issues.Website/assets/js/app.min.js"></script>         
@@ -76,7 +74,10 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
         <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/pull-request-systems/tfs/examples.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#using-with-repository-remote-url-and-source-branch-name">Using with repository remote url and source branch name</a></p>
+<p><a href="#voting-for-pull-requests">Voting for pull requests</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -93,8 +94,8 @@
                 <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/overview/release-notes">Release Notes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
-                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
+                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
                 <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
 
                     </ul>
@@ -171,6 +172,7 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/features">Features</a></li>
+                <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -286,32 +288,32 @@
 		<h1>Examples</h1>
 	</section>
 	<section class="content">
-		<h2 id="using-with-repository-remote-url-and-source-branch-name">Using with repository remote url and source branch name</h2>
+		<h1 id="using-with-repository-remote-url-and-source-branch-name">Using with repository remote url and source branch name</h1>
 <p>This example shows how to write issues as comments to a Team Foundation Server (TFS) or
 Visual Studio Team Services (VSTS) pull request while using repository information.</p>
 <p>For determing the remote repository URL and source branch of the pull request you need the <a href="https://www.nuget.org/packages/Cake.Git/">Cake.Git</a> addin:</p>
-<pre><code class="language-csharp">#addin &quot;Cake.Git&quot;
+<pre><code class="language-csharp">#addin "Cake.Git"
 </code></pre>
 <p>To write issues as comments to TFS or VSTS pull requests you need to import the core addin,
 the core pull request addin, the TFS/VSTS support and one or more issue provider, in this example
 for JetBrains InspectCode:</p>
-<pre><code class="language-csharp">#addin &quot;Cake.Issues&quot;
-#addin &quot;Cake.Issues.InspectCode&quot;
-#addin &quot;Cake.Issues.PullRequests&quot;
-#addin &quot;Cake.Issues.PullRequests.Tfs&quot;
+<pre><code class="language-csharp">#addin "Cake.Issues"
+#addin "Cake.Issues.InspectCode"
+#addin "Cake.Issues.PullRequests"
+#addin "Cake.Issues.PullRequests.Tfs"
 </code></pre>
 <p>In the following task we'll first determine the remote repository URL and
 source branch of the pull request and with this information call the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/">TfsPullRequests</a> alias:</p>
-<pre><code class="language-csharp">Task(&quot;ReportIssuesToPullRequest&quot;).Does(() =&gt;
+<pre><code class="language-csharp">Task("ReportIssuesToPullRequest").Does(() =&gt;
 {
-    var repoRootFolder = MakeAbsolute(Directory(&quot;./&quot;));
+    var repoRootFolder = MakeAbsolute(Directory("./"));
     var currentBranch = GitBranchCurrent(repoRootFolder);
-    var repoRemoteUrl = new Uri(currentBranch.Remotes.Single(x =&gt; x.Name == &quot;origin&quot;).Url);
+    var repoRemoteUrl = new Uri(currentBranch.Remotes.Single(x =&gt; x.Name == "origin").Url);
     var sourceBranchName = currentBranch.CanonicalName;
 
     ReportIssuesToPullRequest(
         InspectCodeIssuesFromFilePath(
-            &#64;&quot;C:\build\inspectcode.log&quot;),
+            @"C:\build\inspectcode.log"),
         TfsPullRequests(
             repoRemoteUrl,
             sourceBranchName,
@@ -319,19 +321,19 @@ source branch of the pull request and with this information call the <a href="..
         repoRootFolder);
 });
 </code></pre>
-<h2 id="voting-for-pull-requests">Voting for pull requests</h2>
+<h1 id="voting-for-pull-requests">Voting for pull requests</h1>
 <p>The <a href="https://www.nuget.org/packages/Cake.Issues.PullRequests.Tfs">Cake.Issues.PullRequests.Tfs addin</a> also provides an alias for approving or voting for pull requests.</p>
 <div class="alert alert-info"><p>The approve functionality can be used without using the <a href="https://www.nuget.org/packages/Cake.Issues">Cake.Issues addin</a>.</p>
 </div>
 <p>The following example will approve a pull request on a Team Foundation Server:</p>
-<pre><code class="language-csharp">#addin &quot;Cake.Issues.PullRequests.Tfs&quot;
+<pre><code class="language-csharp">#addin "Cake.Issues.PullRequests.Tfs"
 
-Task(&quot;Vote-PullRequest&quot;).Does(() =&gt;
+Task("Vote-PullRequest").Does(() =&gt;
 {
     var pullRequestSettings =
         new TfsPullRequestSettings(
-            new Uri(&quot;http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository&quot;),
-            &quot;refs/heads/feature/myfeature&quot;,
+            new Uri("http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository"),
+            "refs/heads/feature/myfeature",
             TfsAuthenticationNtlm());
 
     TfsVotePullRequest(
@@ -342,26 +344,26 @@ Task(&quot;Vote-PullRequest&quot;).Does(() =&gt;
 <p>You can also vote based on the issues provided to the <a href="https://www.nuget.org/packages/Cake.Issues">Cake.Issues addin</a>.</p>
 <p>The following example will mark the pull request as waiting for author if any JetBrains InspectCode
 warnings have occurred and approves the pull request otherwise:</p>
-<pre><code class="language-csharp">#tool &quot;nuget:?package=JetBrains.ReSharper.CommandLineTools&quot;
-#addin &quot;Cake.Issues&quot;
-#addin &quot;Cake.Issues.Issues.InspectCode&quot;
-#addin &quot;Cake.Issues.PullRequests.Tfs&quot;
+<pre><code class="language-csharp">#tool "nuget:?package=JetBrains.ReSharper.CommandLineTools"
+#addin "Cake.Issues"
+#addin "Cake.Issues.Issues.InspectCode"
+#addin "Cake.Issues.PullRequests.Tfs"
 
-var logPath = &#64;&quot;c:\build\inspectcode.xml&quot;;
-var repoRootPath = &#64;&quot;c:\repo&quot;;
+var logPath = @"c:\build\inspectcode.xml";
+var repoRootPath = @"c:\repo";
 
-Task(&quot;Analyze-Project&quot;).Does(() =&gt;
+Task("Analyze-Project").Does(() =&gt;
 {
     // Run InspectCode.
     var settings = new InspectCodeSettings() {
         OutputFile = logPath
     };
 
-    InspectCode(repoRootPath.CombineWithFilePath(&quot;MySolution.sln&quot;), settings);
+    InspectCode(repoRootPath.CombineWithFilePath("MySolution.sln"), settings);
 });
 
-Task(&quot;Vote-Pullrequest&quot;)
-.IsDependentOn(&quot;Analyze-Project&quot;)
+Task("Vote-Pullrequest")
+.IsDependentOn("Analyze-Project")
 .Does(() =&gt;
 {
     // Read Issues.
@@ -389,8 +391,8 @@ Task(&quot;Vote-Pullrequest&quot;)
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
                 <p class="text-muted">
-    Copyright &copy; <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/cake-contrib/Cake.Issues/graphs/contributors" target="_blank">contributors</a>.
-    <br/>
+    Copyright © <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/cake-contrib/Cake.Issues/graphs/contributors" target="_blank">contributors</a>.
+    <br>
     Website generated by <a href="http://wyam.io" target="_blank">Wyam</a>
 </p>
 
@@ -398,14 +400,14 @@ Task(&quot;Vote-Pullrequest&quot;)
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
         <div class="github-button">
-    <a href="https://github.com/search?q=topic%3Acake-issues&type=Repositories" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+    <a href="https://github.com/search?q=topic%3Acake-issues&amp;type=Repositories" target="_blank"><i class="fa fa-github"></i> GitHub</a>
 </div>
 <script>
     ((window.gitter = {}).chat = {}).options = {
         room: 'cake-contrib/Lobby'
     };
 </script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/anchor.min.js"></script>
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/clipboard.min.js"></script>
@@ -491,5 +493,5 @@ Task(&quot;Vote-Pullrequest&quot;)
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

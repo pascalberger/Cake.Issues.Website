@@ -1,22 +1,20 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <title>Cake Issues - Implementing rule URL resolving</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
-        <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/Cake.Issues.Website/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/Cake.Issues.Website/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/Cake.Issues.Website/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/Cake.Issues.Website/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/Cake.Issues.Website/assets/css/override.css" rel="stylesheet" />
+        <link href="/Cake.Issues.Website/assets/css/override.css" rel="stylesheet">
         <script src="/Cake.Issues.Website/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/Cake.Issues.Website/assets/js/bootstrap.min.js"></script>        
         <script src="/Cake.Issues.Website/assets/js/app.min.js"></script>         
@@ -76,7 +74,10 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
         <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/extending/issue-provider/rule-url-resolving.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#implementing-ruleurlresolver">Implementing RuleUrlResolver</a></p>
+<p><a href="#support-custom-url-resolvers">Support custom URL resolvers</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -93,8 +94,8 @@
                 <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/overview/release-notes">Release Notes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
-                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
+                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
                 <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
 
                     </ul>
@@ -171,6 +172,7 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/features">Features</a></li>
+                <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -286,10 +288,10 @@
 		<h1>Implementing rule URL resolving</h1>
 	</section>
 	<section class="content">
-		<html><head></head><body><p>For cases where additional logic is required to determine the URL for a rule, the <code>Cake.Issue</code>
+		<p>For cases where additional logic is required to determine the URL for a rule, the <code>Cake.Issue</code>
 addin provides the <a href="../../../api/Cake.Issues/BaseRuleDescription/">BaseRuleDescription</a> and <a href="../../../api/Cake.Issues/BaseRuleUrlResolver_1/">BaseRuleUrlResolver</a> classes for
 simplifying implementation of providing URLs linking to site providing information about issues.</p>
-<h2 id="implementing-ruleurlresolver">Implementing RuleUrlResolver</h2>
+<h1 id="implementing-ruleurlresolver">Implementing RuleUrlResolver</h1>
 <p>In the issue provider a concrete class inheriting from <a href="../../../api/Cake.Issues/BaseRuleDescription/">BaseRuleDescription</a> should be implemented
 containing all properties required to determine the URL to a rule.
 The following class adds two properties <code>Category</code> and <code>RuleId</code> to the description:</p>
@@ -353,7 +355,7 @@ internal class MyRuleUrlResolver : BaseUrlResolver&lt;MyRuleDescription&gt;
         }
     }
 </code></pre>
-<h2 id="support-custom-url-resolvers">Support custom URL resolvers</h2>
+<h1 id="support-custom-url-resolvers">Support custom URL resolvers</h1>
 <p>The <a href="../../../api/Cake.Issues/BaseRuleUrlResolver_1/AAA4FB20">AddUrlResolver</a> method can also be called from an Cake alias to allow users of the addin to
 register custom resolvers.
 For this the URL resolver class needs to be implemented as a singleton:</p>
@@ -392,7 +394,7 @@ public static class MyIssueProviderAliases
         MyRuleUrlResolver.Instance.AddUrlResolver(resolver);
     }
 </code></pre>
-</body></html>
+
 	</section>
                 
             </div>           
@@ -405,8 +407,8 @@ public static class MyIssueProviderAliases
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
                 <p class="text-muted">
-    Copyright &copy; <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/cake-contrib/Cake.Issues/graphs/contributors" target="_blank">contributors</a>.
-    <br/>
+    Copyright © <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/cake-contrib/Cake.Issues/graphs/contributors" target="_blank">contributors</a>.
+    <br>
     Website generated by <a href="http://wyam.io" target="_blank">Wyam</a>
 </p>
 
@@ -414,14 +416,14 @@ public static class MyIssueProviderAliases
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
         <div class="github-button">
-    <a href="https://github.com/search?q=topic%3Acake-issues&type=Repositories" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+    <a href="https://github.com/search?q=topic%3Acake-issues&amp;type=Repositories" target="_blank"><i class="fa fa-github"></i> GitHub</a>
 </div>
 <script>
     ((window.gitter = {}).chat = {}).options = {
         room: 'cake-contrib/Lobby'
     };
 </script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/anchor.min.js"></script>
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/clipboard.min.js"></script>
@@ -507,5 +509,5 @@ public static class MyIssueProviderAliases
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

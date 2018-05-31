@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - Features</title>
+        <title>Cake Issues - Examples</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -75,7 +75,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/issue-providers/docfx/features.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/issue-providers/markdownlint/examples.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"></div>
 
                 </section>
@@ -137,11 +137,11 @@
                 <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/issue-providers">Issue Providers</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li class="treeview active">
+                                        <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/issue-providers/docfx">DocFx</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/docfx/requirements">Requirements</a></li>
-                <li class="selected"><a href="/Cake.Issues.Website/docs/issue-providers/docfx/features">Features</a></li>
+                <li><a href="/Cake.Issues.Website/docs/issue-providers/docfx/features">Features</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/docfx/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/docfx/release-notes">Release Notes</a></li>
 
@@ -166,12 +166,12 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/issue-providers/markdownlint">markdownlint</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/features">Features</a></li>
-                <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/examples">Examples</a></li>
+                <li class="selected"><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -284,28 +284,46 @@
 
 
 	<section class="content-header">
-		<h1>Features</h1>
+		<h1>Examples</h1>
 	</section>
 	<section class="content">
-		<html><head></head><body><p>The <a href="https://www.nuget.org/packages/Cake.Issues.DocFx">Cake.Issues.DocFx addin</a> provides the following features:</p>
-<ul>
-<li>Reads warnings from <a href="https://dotnet.github.io/docfx/">DocFx</a> log files.</li>
-<li>Supported comment formats:
-<ul>
-<li>Plain text</li>
-</ul>
-</li>
-<li>Supported <code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a></code> properties:
-<ul>
-<li><a href="../../api/Cake.Issues/IIssue/D5A24C72">ProviderType</a></li>
-<li><a href="../../api/Cake.Issues/IIssue/BF0CD6F1">AffectedFileRelativePath</a></li>
-<li><a href="../../api/Cake.Issues/IIssue/F2A42E89">Line</a></li>
-<li><a href="../../api/Cake.Issues/IIssue/18537A3D">Message</a></li>
-<li><a href="../../api/Cake.Issues/IIssue/C8BCE21E">Rule</a></li>
-</ul>
-</li>
-</ul>
-</body></html>
+		<p>The following example will call <a href="https://github.com/igorshubovych/markdownlint-cli">markdownlint-cli</a> to lint some markdown files and outputs the number of warnings.</p>
+<p>To call <a href="https://github.com/igorshubovych/markdownlint-cli">markdownlint-cli</a> from a Cake script you can use the <a href="https://www.nuget.org/packages/Cake.Markdownlint/">Cake.Markdownlint</a> addin.</p>
+<pre><code class="language-csharp">#addin &quot;Cake.Markdownlint&quot;
+</code></pre>
+<p>To read issues from markdownlint-cli log files you need to import the core addin and the markdownlint support:</p>
+<pre><code class="language-csharp">#addin &quot;Cake.Issues&quot;
+#addin &quot;Cake.Issues.Markdownlint&quot;
+</code></pre>
+<p>We need some global variables:</p>
+<pre><code class="language-csharp">var logPath = &#64;&quot;c:\build\markdownlint.log&quot;;
+var repoRootFolder = MakeAbsolute(Directory(&quot;./&quot;));
+</code></pre>
+<p>The following task will run <a href="https://github.com/igorshubovych/markdownlint-cli">markdownlint-cli</a> and write a log file:</p>
+<pre><code class="language-csharp">Task(&quot;Lint-Documentation&quot;).Does(() =&gt;
+{
+    // Run markdownlint-cli.
+    var settings =
+        MarkdownlintNodeJsRunnerSettings.ForDirectory(repoRootPath.Combine(&quot;docs&quot;));
+    settings.OutputFile = logPath;
+    settings.ThrowOnIssue = false;
+    RunMarkdownlintNodeJs(settings);
+});
+</code></pre>
+<p>Finally you can define a task where you call the core addin with the desired issue provider.</p>
+<pre><code class="language-csharp">Task(&quot;Analyze-Log&quot;)
+.IsDependentOn(&quot;Lint-Documentation&quot;)
+.Does(() =&gt;
+{
+    // Read Issues.
+    var issues = ReadIssues(
+        MarkdownlintCliIssuesFromFilePath(logPath),
+        repoRootPath);
+
+    Information(&quot;{0} issues are found.&quot;, issues.Count());
+});
+</code></pre>
+
 	</section>
                 
             </div>           

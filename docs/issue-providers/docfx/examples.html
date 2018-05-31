@@ -93,8 +93,8 @@
                 <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/overview/release-notes">Release Notes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
-                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
+                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
                 <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
 
                     </ul>
@@ -171,6 +171,7 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/features">Features</a></li>
+                <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/examples">Examples</a></li>
                 <li><a href="/Cake.Issues.Website/docs/issue-providers/markdownlint/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -286,8 +287,8 @@
 		<h1>Examples</h1>
 	</section>
 	<section class="content">
-		<p>The following example will call [DocFx] to generate the documentation and outputs the number of warnings.</p>
-<p>To call [DocFx] from a Cake script you can use the <a href="https://www.nuget.org/packages/Cake.DocFx/">Cake.DocFx</a> addin.</p>
+		<p>The following example will call <a href="http://dotnet.github.io/docfx/">DocFx</a> to generate the documentation and outputs the number of warnings.</p>
+<p>To call <a href="http://dotnet.github.io/docfx/">DocFx</a> from a Cake script you can use the <a href="https://www.nuget.org/packages/Cake.DocFx/">Cake.DocFx</a> addin.</p>
 <pre><code class="language-csharp">#addin &quot;Cake.DocFx&quot;
 </code></pre>
 <p>To read issues from DocFx log files you need to import the core addin and the DocFx support:</p>
@@ -299,7 +300,7 @@
 var repoRootPath = &#64;&quot;c:\repo&quot;;
 var docRootPath = &#64;&quot;docs&quot;;
 </code></pre>
-<p>The following task will build the [DocFx] project and write a log file:</p>
+<p>The following task will build the <a href="http://dotnet.github.io/docfx/">DocFx</a> project and write a log file:</p>
 <pre><code class="language-csharp">Task(&quot;Build-Documentation&quot;).Does(() =&gt;
 {
     // Run DocFx.
