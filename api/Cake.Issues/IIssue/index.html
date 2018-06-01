@@ -146,8 +146,9 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseRuleDescription">BaseRuleDescription</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseRuleUrlResolver_1">BaseRuleUrlResolver<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueCommentFormat">IssueCommentFormat</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuePriority">IssuePriority</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider">IssueProvider</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesAliasConstants">IssuesAliasConstants</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></li>
@@ -201,7 +202,6 @@
 								<dd>
 									<ul class="list-unstyled">
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></li>								
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue<wbr>&lt;T&gt;<wbr></a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -213,8 +213,6 @@
 class Type type-node
 	Type-.-&gt;Implementing0["Issue"]
 	click Implementing0 "/Cake.Issues.Website/api/Cake.Issues/Issue"
-	Type-.-&gt;Implementing1["Issue&lt;T&gt;"]
-	click Implementing1 "/Cake.Issues.Website/api/Cake.Issues/Issue_1"
 
 						</div>
 					</div>
@@ -276,10 +274,11 @@ class Type type-node
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/BFEFFBB1">Priority</a></td>
-								<td>int</td>
+								<td>Nullable<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
             Gets the priority of the message. A higher value indicates a higher priority.
+            <code class="cs">null</code> if no priority was assigned.
             </div>
 								</td>
 							</tr>
@@ -289,6 +288,7 @@ class Type type-node
 								<td>
 									<div>
             Gets the human friendly name of the priority.
+            <code class="cs">null</code> or <code class="cs">System.String.Empty</code> if no priority was assigned.
             </div>
 								</td>
 							</tr>

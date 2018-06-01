@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - API - Issue&lt;T&gt; Class</title>
+        <title>Cake Issues - API - IssueBuilder Class</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -75,9 +75,6 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
-<p><a href="#TypeParameters">Type Parameters</a></p>
-<p><a href="#Constructors">Constructors</a></p>
-<p><a href="#Properties">Properties</a></p>
 <p><a href="#Methods">Methods</a></p>
 <p><a href="#ExtensionMethods">Extension Methods</a></p>
 <hr class="infobar-hidden">
@@ -149,8 +146,9 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseRuleDescription">BaseRuleDescription</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseRuleUrlResolver_1">BaseRuleUrlResolver<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></li>
-				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue<wbr>&lt;T&gt;<wbr></a></li>
+				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueCommentFormat">IssueCommentFormat</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuePriority">IssuePriority</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider">IssueProvider</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesAliasConstants">IssuesAliasConstants</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></li>
@@ -176,14 +174,14 @@
 
 
 <section class="content-header">
-	<h1>Issue<wbr>&lt;T&gt;<wbr> <small>Class</small></h1>
+	<h1>IssueBuilder <small>Class</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-            Base class for an issue.
+            Class to create instances of <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></code> with a fluent API.
             </div>
 
 		<div class="panel panel-default">
@@ -197,18 +195,11 @@
 								<dt>Namespace</dt>
 								<dd><a href="/Cake.Issues.Website/api/Cake.Issues">Cake<wbr>.Issues</a></dd>
 											
-								<dt>Interfaces</dt>
-								<dd>
-									<ul class="list-unstyled">
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a></li>								
-									</ul>
-								</dd>
 							
 								<dt>Base Types</dt>
 								<dd>
 									<ul class="list-unstyled">										
 											<li>Object</li>								
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></li>								
 									</ul>
 								</dd>				
 							
@@ -218,12 +209,8 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["Issue"]--&gt;Type
-	click Base0 "/Cake.Issues.Website/api/Cake.Issues/Issue"
-	Base1["Object"]--&gt;Base0
-	Interface0["IIssue"]-.-&gt;Type
-	click Interface0 "/Cake.Issues.Website/api/Cake.Issues/IIssue"
-	Type["Issue&lt;T&gt;"]
+	Base0["Object"]--&gt;Type
+	Type["IssueBuilder"]
 class Type type-node
 
 						</div>
@@ -233,192 +220,16 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public class Issue&lt;T&gt; : Issue, IIssue where T : IIssueProvider</code></pre>
+	<pre><code>public class IssueBuilder</code></pre>
 
 
 
 
-	<h1 id="TypeParameters">Type Parameters</h1>
-	<div class="box">
-		<div class="box-body no-padding table-responsive">
-			<table class="table table-striped table-hover two-cols">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-					<tbody><tr id="typeparam-T">
-						<td>T</td>
-						<td>Type of the issue provider which has raised the issue.</td>
-					</tr>
-			</tbody></table>
-		</div>
-	</div>	
-
-
-			<h1 id="Constructors">Constructors</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover two-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-									<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/D2F49900">Issue<wbr>(T, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>string)<wbr></a></td>
-									<td>
-            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
-            </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/82DF8C9F">Issue<wbr>(T, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>string, <wbr>Uri)<wbr></a></td>
-									<td>
-            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
-            </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/B3EF756E">Issue<wbr>(T, <wbr>string, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>string)<wbr></a></td>
-									<td>
-            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
-            </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/132CFBC8">Issue<wbr>(T, <wbr>string, <wbr>string, <wbr>Nullable<wbr>&lt;int&gt;<wbr>, <wbr>string, <wbr>int, <wbr>string, <wbr>string, <wbr>Uri)<wbr></a></td>
-									<td>
-            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue&lt;T&gt;</a></code> class.
-            </td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
 
 
 
-			<h1 id="Properties">Properties</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover three-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Value</th>
-								<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/47EECE2B">Affected<wbr>File<wbr>Relative<wbr>Path</a></td>
-								<td>FilePath</td>
-								<td>
-									<div>
-            Gets the path to the file affacted by the issue.
-            The path is relative to the repository root.
-            Can be <code class="cs">null</code> if issue is not related to a change in a file.
-            </div>
-											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/A382E571">Line</a></td>
-								<td>Nullable<wbr>&lt;&gt;<wbr></td>
-								<td>
-									<div>
-            Gets the line in the file where the issues has occurred.
-            <code class="cs">null</code> if the issue affects the whole file or an asssembly.
-            </div>
-											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/7B8F6C9F">Message</a></td>
-								<td>string</td>
-								<td>
-									<div>
-            Gets the message of the issue.
-            </div>
-											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/81C9E265">Priority</a></td>
-								<td>int</td>
-								<td>
-									<div>
-            Gets the priority of the message. A higher value indicates a higher priority.
-            </div>
-											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/10A91A64">PriorityName</a></td>
-								<td>string</td>
-								<td>
-									<div>
-            Gets the human friendly name of the priority.
-            </div>
-											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/EA6F6206">Project</a></td>
-								<td>string</td>
-								<td>
-									<div>
-            Gets the name of the project to which the file affected by the issue belongs.
-            Can be <code class="cs">null</code> or <code class="cs">System.String.Empty</code> if issue is not related to a project.
-            </div>
-											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/EF813B96">ProviderName</a></td>
-								<td>string</td>
-								<td>
-									<div>
-            Gets the human friendly name of the issue provider.
-            </div>
-											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/C0A8C644">ProviderType</a></td>
-								<td>string</td>
-								<td>
-									<div>
-            Gets the type of the issue provider.
-            </div>
-											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/999A29E6">Rule</a></td>
-								<td>string</td>
-								<td>
-									<div>
-            Gets the rule of the issue.
-            Can be <code class="cs">null</code> or <code class="cs">System.String.Empty</code> if the issue provider provides no rule.
-            </div>
-											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue/2B7AE5F7">RuleUrl</a></td>
-								<td>Uri</td>
-								<td>
-									<div>
-            Gets the URL containing information about the failing rule.
-            Can be <code class="cs">null</code> if the issue provider provides no URL.
-            </div>
-											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></em></small></div>
-								</td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
+
+
 
 			<h1 id="Methods">Methods</h1>
 			<div class="box">
@@ -432,13 +243,95 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1/4928D399">GetProviderTypeName<wbr>()<wbr></a></td>
-								<td>string</td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder/35511F2C">Create<wbr>()<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a></td>
 								<td>
 									<div>
-            Gets the name of the issue provider type as it will be set to in the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/D5A24C72">ProviderType</a></code> property.
+            Creates a new <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></code>.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder/4F303CAA">InFile<wbr>(string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></td>
+								<td>
+									<div>
+            Sets the path to the file affected by the issue.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder/ABE9B7AD">InFile<wbr>(string, <wbr>int)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></td>
+								<td>
+									<div>
+            Sets the path to the file affected by the issue and the line in the file where the issues has occurred.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder/BB914356">InProject<wbr>(string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></td>
+								<td>
+									<div>
+            Sets the name of the project to which the file affected by the issue belongs.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder/01946D50">NewIssue<wbr>(string, <wbr>string, <wbr>string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></td>
+								<td>
+									<div>
+            Creates a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></code> class.
             </div>
 											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder/52BB5554">NewIssue<wbr>&lt;T&gt;<wbr><wbr>(string, <wbr>T)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></td>
+								<td>
+									<div>
+            Creates a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></code> class.
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder/C1F0AA09">OfRule<wbr>(string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></td>
+								<td>
+									<div>
+            Sets the rule of the issue.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder/0E3A80A9">OfRule<wbr>(string, <wbr>Uri)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></td>
+								<td>
+									<div>
+            Sets the rule of the issue.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder/F87C5A03">WithPriority<wbr>(int, <wbr>string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></td>
+								<td>
+									<div>
+            Sets the priority of the message.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder/5C9EC948">WithPriority<wbr>(IssuePriority)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></td>
+								<td>
+									<div>
+            Sets the priority of the message.
+            </div>
 								</td>
 							</tr>
 					</tbody></table>
@@ -459,7 +352,7 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;Issue<wbr>&lt;T&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;IssueBuilder&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>

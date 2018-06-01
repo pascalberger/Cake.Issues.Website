@@ -149,8 +149,9 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseRuleDescription">BaseRuleDescription</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseRuleUrlResolver_1">BaseRuleUrlResolver<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue">Issue</a></li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues/Issue_1">Issue<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueCommentFormat">IssueCommentFormat</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuePriority">IssuePriority</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider">IssueProvider</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesAliasConstants">IssuesAliasConstants</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></li>
@@ -214,10 +215,10 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueComponent">FakeIssueComponent</a></li>								
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem">PullRequestSystem</a></li>								
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/IssueReportFormat">IssueReportFormat</a></li>								
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider">IssueProvider</a></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/IssueReportFormat">IssueReportFormat</a></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueComponent">FakeIssueComponent</a></li>								
 									</ul>
 								</dd>			
 							
@@ -231,14 +232,14 @@
 	click Interface0 "/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1"
 	Type["BaseIssueComponent&lt;T&gt;"]
 class Type type-node
-	Type--&gt;Derived0["FakeIssueComponent"]
-	click Derived0 "/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueComponent"
-	Type--&gt;Derived1["PullRequestSystem"]
-	click Derived1 "/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem"
+	Type--&gt;Derived0["PullRequestSystem"]
+	click Derived0 "/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem"
+	Type--&gt;Derived1["IssueProvider"]
+	click Derived1 "/Cake.Issues.Website/api/Cake.Issues/IssueProvider"
 	Type--&gt;Derived2["IssueReportFormat"]
 	click Derived2 "/Cake.Issues.Website/api/Cake.Issues.Reporting/IssueReportFormat"
-	Type--&gt;Derived3["IssueProvider"]
-	click Derived3 "/Cake.Issues.Website/api/Cake.Issues/IssueProvider"
+	Type--&gt;Derived3["FakeIssueComponent"]
+	click Derived3 "/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueComponent"
 
 						</div>
 					</div>
