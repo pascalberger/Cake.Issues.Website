@@ -2,6 +2,7 @@
 
 #addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.Yaml&version=2.0.0"
 #addin "nuget:https://api.nuget.org/v3/index.json?package=YamlDotNet&version=4.2.1"
+#addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.FileHelpers&version=3.0.0"
 
 //////////////////////////////////////////////////////////////////////
 // PARAMETERS
@@ -113,6 +114,21 @@ Task("GetReleaseNotes")
         {
             Information("Retrieving release notes for " + addinSpec.Name);
             GitReleaseManagerExport("pat", BuildParameters.Wyam.AccessToken, addinSpec.RepositoryOwner, addinSpec.RepositoryName, addinSpec.ReleaseNotesFilePath);
+
+            Information("Adding metadata for " + addinSpec.Name);
+            string fileContent = FileReadText(addinSpec.ReleaseNotesFilePath);
+            DeleteFile(addinSpec.ReleaseNotesFilePath);
+            var title = addinSpec.Categories.Contains("Core") ? addinSpec.Name : "Release Notes";
+            var frontMatter =
+                new List<string>
+                {
+                    "---",
+                    "Title: " + title,
+                    "Description: Release notes for " + addinSpec.Name,
+                    "---"
+                };
+            fileContent = string.Join("\r\n", frontMatter) + "\r\n" + fileContent;
+            FileWriteText(addinSpec.ReleaseNotesFilePath, fileContent);
         }
     }));
 
