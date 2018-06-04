@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - API - ILogFileFormat.ReadIssues(RepositorySettings, EsLintIssuesSettings) Method</title>
+        <title>Cake Issues - API - MsBuildIssuesProvider.MsBuildIssuesProvider(ICakeLog, MsBuildIssuesSettings) Constructor</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -136,14 +136,23 @@
                     <ul class="sidebar-menu">
                         
 			<li class="header">Assembly</li>
-		<li><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint.dll">Cake<wbr>.Issues<wbr>.EsLint<wbr>.dll</a></li>
+		<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild.dll">Cake<wbr>.Issues<wbr>.MsBuild<wbr>.dll</a></li>
 		<li class="header">Namespace</li>
-		<li><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint">Cake<wbr>.Issues<wbr>.EsLint</a></li>
+		<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild">Cake<wbr>.Issues<wbr>.MsBuild</a></li>
 		<li class="header">Type</li>
-		<li><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/ILogFileFormat">ILogFileFormat</a></li>
+		<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider">Ms<wbr>Build<wbr>Issues<wbr>Provider</a></li>
 		<li role="separator" class="divider"></li>
+			<li class="header">Constructors</li>
+				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider/DCD36079">Ms<wbr>Build<wbr>Issues<wbr>Provider<wbr>(ICakeLog, <wbr>Ms<wbr>Build<wbr>Issues<wbr>Settings)<wbr></a></li>
 			<li class="header">Method Members</li>
-				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/ILogFileFormat/CB4FC74E">ReadIssues<wbr>(<wbr>Repository<wbr>Settings, <wbr>Es<wbr>Lint<wbr>Issues<wbr>Settings)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/CCF3A13F">AssertSettings<wbr>()<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/25DD28E4">Initialize<wbr>(T)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider/4F0E9824">InternalReadIssues<wbr>(IssueCommentFormat)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider/15A3CC87">ReadIssues<wbr>(IssueCommentFormat)<wbr></a></li>
+			<li class="header">Property Members</li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/144FE95A">Log</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider/0D049468">ProviderName</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueComponent_1/73197E19">Settings</a></li>
 
 
                     </ul>
@@ -158,35 +167,35 @@
 
 
 <section class="content-header">
-			<h3><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/ILogFileFormat">ILogFileFormat</a>.</h3>
-	<h1>ReadIssues<wbr>(<wbr>Repository<wbr>Settings, <wbr>Es<wbr>Lint<wbr>Issues<wbr>Settings)<wbr> <small>Method</small></h1>
+			<h3><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider">Ms<wbr>Build<wbr>Issues<wbr>Provider</a>.</h3>
+	<h1>Ms<wbr>Build<wbr>Issues<wbr>Provider<wbr>(ICakeLog, <wbr>Ms<wbr>Build<wbr>Issues<wbr>Settings)<wbr> <small>Constructor</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-            Gets all issues.
+            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider">MsBuildIssuesProvider</a></code> class.
             </div>
 
 		<div class="panel panel-default">
   			<div class="panel-body">	
 				<dl class="dl-horizontal">	
 						<dt>Assembly</dt>
-						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint.dll">Cake<wbr>.Issues<wbr>.EsLint<wbr>.dll</a></dd>
+						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild.dll">Cake<wbr>.Issues<wbr>.MsBuild<wbr>.dll</a></dd>
 						
 						<dt>Namespace</dt>
-						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint">Cake<wbr>.Issues<wbr>.EsLint</a></dd>
+						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild">Cake<wbr>.Issues<wbr>.MsBuild</a></dd>
 					
 						<dt>Containing Type</dt>
-						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/ILogFileFormat">ILogFileFormat</a></dd>		
+						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider">Ms<wbr>Build<wbr>Issues<wbr>Provider</a></dd>		
 					
 				</dl>
   			</div>
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>IEnumerable&lt;IIssue&gt; ReadIssues(RepositorySettings repositorySettings, EsLintIssuesSettings esLintSettings)</code></pre>
+	<pre><code>public MsBuildIssuesProvider(ICakeLog log, MsBuildIssuesSettings settings)</code></pre>
 
 
 
@@ -204,14 +213,14 @@
 					</tr>
 				</thead>
 					<tbody><tr>
-						<td>repositorySettings</td>
-						<td><a href="/Cake.Issues.Website/api/Cake.Issues/RepositorySettings">RepositorySettings</a></td>
-						<td>General settings to use.</td>
+						<td>log</td>
+						<td>ICakeLog</td>
+						<td>The Cake log context.</td>
 					</tr>
 					<tr>
-						<td>esLintSettings</td>
-						<td><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesSettings">EsLintIssuesSettings</a></td>
-						<td>Settings for issue provider to use.</td>
+						<td>settings</td>
+						<td><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesSettings">Ms<wbr>Build<wbr>Issues<wbr>Settings</a></td>
+						<td>Settings for reading the log file.</td>
 					</tr>
 			</tbody></table>
 		</div>
@@ -228,8 +237,8 @@
 					</tr>
 				</thead>
 				<tbody><tr>
-					<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
-					<td>List of issues</td>
+					<td>void</td>
+					<td></td>
 				</tr>
 			</tbody></table>
 		</div>

@@ -93,9 +93,9 @@
                 <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/overview/release-notes">Release Notes</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
-                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.PullRequests">Cake</a></li>
                 <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues">Cake</a></li>
+                <li><a href="/Cake.Issues.Website/docs/overview/release-notes/Cake.Issues.Reporting">Cake</a></li>
 
                     </ul>
                 </li>
@@ -290,6 +290,7 @@
 		<html><head></head><body><p>The <a href="https://www.nuget.org/packages/Cake.Issues.Markdownlint">Cake.Issues.Markdownlint addin</a> provides the following features:</p>
 <ul>
 <li>Reads warnings from <a href="https://github.com/DavidAnson/markdownlint">Markdownlint</a> output generated with <code>options.resultVersion</code> set to 1.</li>
+<li>Reads warnings from <a href="https://github.com/igorshubovych/markdownlint-cli">markdownlint-cli</a> log files. <a href="https://github.com/igorshubovych/markdownlint-cli">markdownlint-cli</a> can be run with <a href="https://www.nuget.org/packages/Cake.Markdownlint/">Cake.Markdownlint</a> addin.</li>
 <li>Supported comment formats:
 <ul>
 <li>Plain text</li>
@@ -298,12 +299,15 @@
 <li>Provides URLs for all issues.</li>
 <li>Supported <code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a></code> properties:
 <ul>
-<li><a href="../../api/Cake.Issues/IIssue/D5A24C72">ProviderType</a></li>
-<li><a href="../../api/Cake.Issues/IIssue/BF0CD6F1">AffectedFileRelativePath</a></li>
-<li><a href="../../api/Cake.Issues/IIssue/F2A42E89">Line</a></li>
-<li><a href="../../api/Cake.Issues/IIssue/18537A3D">Message</a></li>
-<li><a href="../../api/Cake.Issues/IIssue/C8BCE21E">Rule</a></li>
-<li><a href="../../api/Cake.Issues/IIssue/48A6F355">RuleUrl</a></li>
+<li><a href="../../../api/Cake.Issues/IIssue/D5A24C72">ProviderType</a></li>
+<li><a href="../../../api/Cake.Issues/IIssue/FA8BB1A0">ProviderName</a></li>
+<li><a href="../../../api/Cake.Issues/IIssue/BF0CD6F1">AffectedFileRelativePath</a></li>
+<li><a href="../../../api/Cake.Issues/IIssue/F2A42E89">Line</a></li>
+<li><a href="../../../api/Cake.Issues/IIssue/18537A3D">Message</a></li>
+<li><a href="../../../api/Cake.Issues/IIssue/BFEFFBB1">Priority</a> (Always <a href="../../../api/Cake.Issues/IssuePriority/7A0CE07F">IssuePriority.Warning</a>)</li>
+<li><a href="../../../api/Cake.Issues/IIssue/05A39052">PriorityName</a> (Always <a href="../../../api/Cake.Issues/IssuePriority/7A0CE07F">IssuePriority.Warning</a>)</li>
+<li><a href="../../../api/Cake.Issues/IIssue/C8BCE21E">Rule</a></li>
+<li><a href="../../../api/Cake.Issues/IIssue/48A6F355">RuleUrl</a></li>
 </ul>
 </li>
 </ul>

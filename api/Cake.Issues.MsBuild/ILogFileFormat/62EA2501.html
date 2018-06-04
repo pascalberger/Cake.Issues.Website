@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - API - ILogFileFormat.ReadIssues(RepositorySettings, MsBuildIssuesSettings) Method</title>
+        <title>Cake Issues - API - ILogFileFormat.ReadIssues(MsBuildIssuesProvider, RepositorySettings, MsBuildIssuesSettings) Method</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -143,7 +143,7 @@
 		<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/ILogFileFormat">ILogFileFormat</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Method Members</li>
-				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/ILogFileFormat/3DAD17CA">ReadIssues<wbr>(<wbr>Repository<wbr>Settings, <wbr>Ms<wbr>Build<wbr>Issues<wbr>Settings)<wbr></a></li>
+				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/ILogFileFormat/62EA2501">ReadIssues<wbr>(<wbr>Ms<wbr>Build<wbr>Issues<wbr>Provider, <wbr>RepositorySettings, <wbr>Ms<wbr>Build<wbr>Issues<wbr>Settings)<wbr></a></li>
 
 
                     </ul>
@@ -159,7 +159,7 @@
 
 <section class="content-header">
 			<h3><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/ILogFileFormat">ILogFileFormat</a>.</h3>
-	<h1>ReadIssues<wbr>(<wbr>Repository<wbr>Settings, <wbr>Ms<wbr>Build<wbr>Issues<wbr>Settings)<wbr> <small>Method</small></h1>
+	<h1>ReadIssues<wbr>(<wbr>Ms<wbr>Build<wbr>Issues<wbr>Provider, <wbr>RepositorySettings, <wbr>Ms<wbr>Build<wbr>Issues<wbr>Settings)<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
@@ -186,7 +186,7 @@
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>IEnumerable&lt;IIssue&gt; ReadIssues(RepositorySettings repositorySettings, MsBuildIssuesSettings msBuildIssuesSettings)</code></pre>
+	<pre><code>IEnumerable&lt;IIssue&gt; ReadIssues(MsBuildIssuesProvider issueProvider, RepositorySettings repositorySettings, MsBuildIssuesSettings msBuildIssuesSettings)</code></pre>
 
 
 
@@ -204,6 +204,11 @@
 					</tr>
 				</thead>
 					<tbody><tr>
+						<td>issueProvider</td>
+						<td><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider">Ms<wbr>Build<wbr>Issues<wbr>Provider</a></td>
+						<td>Issue provider instance.</td>
+					</tr>
+					<tr>
 						<td>repositorySettings</td>
 						<td><a href="/Cake.Issues.Website/api/Cake.Issues/RepositorySettings">RepositorySettings</a></td>
 						<td>Repository settings to use.</td>
