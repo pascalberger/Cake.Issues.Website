@@ -288,7 +288,8 @@
 	</section>
 	<section class="content">
 		<p>The Cake Issues addins are built in a modular architecture, allowing to easily
-enhance it for supporting additional analyzers, linters, report formats and code review systems.</p>
+enhance it for supporting additional analyzers, linters, report formats and pull request systems.</p>
+<p><img src="overview.png" class="img-fluid" alt="Architecture Overview" title="Architecture Overview" /></p>
 <p>The core consists of the following addins:</p>
 <table class="table">
 <thead>
@@ -347,7 +348,7 @@ enhance it for supporting additional analyzers, linters, report formats and code
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/clipboard.min.js"></script>
 <script type="text/javascript">
     anchors.options.placement = 'left';
-    anchors.add('#content > h1,h2,h3,h4');
+    anchors.add('#content h1:not(.no-anchor), #content h2:not(.no-anchor), #content h3:not(.no-anchor), #content h4:not(.no-anchor)');
 
     var snippets = document.querySelectorAll("pre > code");
     [].forEach.call(snippets, function(snippet) {

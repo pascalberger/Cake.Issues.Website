@@ -209,9 +209,9 @@
 								<dd>
 									<ul class="list-unstyled">
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider">Ms<wbr>Build<wbr>Issues<wbr>Provider</a></li>								
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider">FakeIssueProvider</a></li>								
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesProvider">EsLintIssuesProvider</a></li>								
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider">IssueProvider</a></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider">FakeIssueProvider</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -225,12 +225,12 @@
 class Type type-node
 	Type-.-&gt;Implementing0["MsBuildIssuesProvider"]
 	click Implementing0 "/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider"
-	Type-.-&gt;Implementing1["FakeIssueProvider"]
-	click Implementing1 "/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider"
-	Type-.-&gt;Implementing2["EsLintIssuesProvider"]
-	click Implementing2 "/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesProvider"
-	Type-.-&gt;Implementing3["IssueProvider"]
-	click Implementing3 "/Cake.Issues.Website/api/Cake.Issues/IssueProvider"
+	Type-.-&gt;Implementing1["EsLintIssuesProvider"]
+	click Implementing1 "/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesProvider"
+	Type-.-&gt;Implementing2["IssueProvider"]
+	click Implementing2 "/Cake.Issues.Website/api/Cake.Issues/IssueProvider"
+	Type-.-&gt;Implementing3["FakeIssueProvider"]
+	click Implementing3 "/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider"
 
 						</div>
 					</div>
@@ -361,7 +361,7 @@ class Type type-node
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/clipboard.min.js"></script>
 <script type="text/javascript">
     anchors.options.placement = 'left';
-    anchors.add('#content > h1,h2,h3,h4');
+    anchors.add('#content h1:not(.no-anchor), #content h2:not(.no-anchor), #content h3:not(.no-anchor), #content h4:not(.no-anchor)');
 
     var snippets = document.querySelectorAll("pre > code");
     [].forEach.call(snippets, function(snippet) {

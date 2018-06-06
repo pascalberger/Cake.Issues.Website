@@ -290,18 +290,18 @@
 		<p>The <a href="https://www.nuget.org/packages/Cake.Issues.PullRequests.Tfs">Cake.Issues.PullRequests.Tfs addin</a> provides the following features:</p>
 <ul>
 <li>Writes issues as comments to Team Foundation Server (TFS) or Visual Studio Team Services (VSTS) pull requests.</li>
-<li>Full support for all <a href="../overview/features#supported-core-functionality">Core features</a>.</li>
+<li>Full support for all <a href="../../overview/features#supported-core-functionality">Core features</a>.</li>
 <li>Supported authentication methods:
 <ul>
-<li>NTLM using the <a href="../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/7DFCE6F3">TfsAuthenticationNtlm</a> alias.
+<li>NTLM using the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/4E73CD70">TfsAuthenticationNtlm</a> alias.
 Can only be used for on-premise Team Foundation Server.</li>
-<li>Basic authentication using the <a href="../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/3A473143">TfsAuthenticationBasic</a> alias.
+<li>Basic authentication using the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/3FA02408">TfsAuthenticationBasic</a> alias.
 Can only be used for on-premise Team Foundation Server <a href="https://www.visualstudio.com/en-us/docs/integrate/get-started/auth/tfs-basic-auth">configured for basic authentication</a>.</li>
-<li>Personal Access Token using the <a href="../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/B24D89BD">TfsAuthenticationPersonalAccessToken</a> alias.
+<li>Personal Access Token using the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/B7AA9CF6">TfsAuthenticationPersonalAccessToken</a> alias.
 Can be used for Team Foundation Server or Visual Studio Team Services.</li>
-<li>OAuth using the <a href="../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/BEDAF9BF">TfsAuthenticationOAuth</a> alias.
+<li>OAuth using the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/44032AF4">TfsAuthenticationOAuth</a> alias.
 Can only be used with Visual Studio Team Services.</li>
-<li>Azure Active Directory using the <a href="../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/DF54F8F0">TfsAuthenticationAzureActiveDirectory</a> alias.</li>
+<li>Azure Active Directory using the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/6826C541">TfsAuthenticationAzureActiveDirectory</a> alias.</li>
 </ul>
 </li>
 <li>Identification of pull requests through source branch or pull request ID.</li>
@@ -310,6 +310,7 @@ Can only be used with Visual Studio Team Services.</li>
 <li>Support for issues messages formatted in Markdown format.</li>
 <li>Alias for approving or voting pull requests.</li>
 </ul>
+<p><img src="cake.issues.pullrequests.tfs.png" class="img-fluid" alt="Cake.Issues.PullRequests.Tfs" title="Cake.Issues.PullRequests.Tfs" /></p>
 
 	</section>
                 
@@ -345,7 +346,7 @@ Can only be used with Visual Studio Team Services.</li>
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/clipboard.min.js"></script>
 <script type="text/javascript">
     anchors.options.placement = 'left';
-    anchors.add('#content > h1,h2,h3,h4');
+    anchors.add('#content h1:not(.no-anchor), #content h2:not(.no-anchor), #content h3:not(.no-anchor), #content h4:not(.no-anchor)');
 
     var snippets = document.querySelectorAll("pre > code");
     [].forEach.call(snippets, function(snippet) {

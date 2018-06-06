@@ -216,8 +216,8 @@
 								<dd>
 									<ul class="list-unstyled">
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueComponent">FakeIssueComponent</a></li>								
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/IssueReportFormat">IssueReportFormat</a></li>								
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider">IssueProvider</a></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting/IssueReportFormat">IssueReportFormat</a></li>								
 											<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem">PullRequestSystem</a></li>								
 									</ul>
 								</dd>			
@@ -234,10 +234,10 @@
 class Type type-node
 	Type--&gt;Derived0["FakeIssueComponent"]
 	click Derived0 "/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueComponent"
-	Type--&gt;Derived1["IssueReportFormat"]
-	click Derived1 "/Cake.Issues.Website/api/Cake.Issues.Reporting/IssueReportFormat"
-	Type--&gt;Derived2["IssueProvider"]
-	click Derived2 "/Cake.Issues.Website/api/Cake.Issues/IssueProvider"
+	Type--&gt;Derived1["IssueProvider"]
+	click Derived1 "/Cake.Issues.Website/api/Cake.Issues/IssueProvider"
+	Type--&gt;Derived2["IssueReportFormat"]
+	click Derived2 "/Cake.Issues.Website/api/Cake.Issues.Reporting/IssueReportFormat"
 	Type--&gt;Derived3["PullRequestSystem"]
 	click Derived3 "/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem"
 
@@ -426,7 +426,7 @@ class Type type-node
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/clipboard.min.js"></script>
 <script type="text/javascript">
     anchors.options.placement = 'left';
-    anchors.add('#content > h1,h2,h3,h4');
+    anchors.add('#content h1:not(.no-anchor), #content h2:not(.no-anchor), #content h3:not(.no-anchor), #content h4:not(.no-anchor)');
 
     var snippets = document.querySelectorAll("pre > code");
     [].forEach.call(snippets, function(snippet) {
