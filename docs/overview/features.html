@@ -120,6 +120,13 @@
                     <a href="/Cake.Issues.Website/docs/usage">Usage</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li class="treeview">
+                    <a href="/Cake.Issues.Website/docs/usage/creating-issues">Creating Issues</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/Cake.Issues.Website/docs/usage/creating-issues/basic-usage">Basic usage</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/usage/reading-issues">Reading Issues</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/usage/reading-issues/basic-usage">Basic usage</a></li>
@@ -297,10 +304,10 @@ create reports or write issues to comments in pull requests.</p>
 <ul>
 <li>Modular architecture, allowing to easily enhance it for supporting additional analyzers, linters,
 report formats and code review systems.</li>
-<li><code>Cake.Issues</code> addin for reading issues
+<li><code>Cake.Issues</code> addin for creating and reading issues
 <ul>
-<li><code>ReadIssues</code> aliases for reading issues.
-This can for example be used to fail builds on certain conditions.</li>
+<li><code>NewIssue</code> alias for creating issues in the build script.</li>
+<li><code>ReadIssues</code> aliases for reading issues from an issue provider.</li>
 <li>Support for reading issues from multiple issue providers.</li>
 <li>Support for reading issues in specific format (Plain text, Markdown, HTML) if supported by issue provider.</li>
 </ul>
