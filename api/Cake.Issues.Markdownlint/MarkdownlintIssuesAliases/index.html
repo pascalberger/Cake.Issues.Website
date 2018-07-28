@@ -140,8 +140,14 @@
 		<li class="header">Namespace</li>
 		<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint">Cake<wbr>.Issues<wbr>.Markdownlint</a></li>
 		<li role="separator" class="divider"></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/ILogFileFormat">ILogFileFormat</a></li>
 			<li class="header">Class Types</li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/LogFileFormat">LogFileFormat</a></li>
 				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases">Markdownlint<wbr>Issues<wbr>Aliases</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesProvider">Markdownlint<wbr>Issues<wbr>Provider</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings">Markdownlint<wbr>Issues<wbr>Settings</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintRuleDescription">Markdownlint<wbr>Rule<wbr>Description</a></li>
 
 
                     </ul>
@@ -242,51 +248,37 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/1B693566">Markdownlint<wbr>Cli<wbr>Issues<wbr>(ICakeContext, <wbr>Markdownlint<wbr>Cli<wbr>Issues<wbr>Settings)<wbr></a></td>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/FB458094">Markdownlint<wbr>Add<wbr>Rule<wbr>Url<wbr>Resolver<wbr>(ICakeContext, <wbr>Func<wbr>&lt;<wbr>Markdownlint<wbr>Rule<wbr>Description, <wbr>Uri&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
 								<td>
 									<div>
-             Gets an instance of a provider for issues reported by markdownlint-cli or Cake.Markdownlint
-             using specified settings.
-             </div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/445BDAF7">Markdownlint<wbr>Cli<wbr>Issues<wbr>From<wbr>Content<wbr>(ICakeContext, <wbr>string)<wbr></a></td>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
-								<td>
-									<div>
-            Gets an instance of a provider for issues reported by markdownlint-cli or Cake.Markdownlint
-            using log file content.
+            Registers a new URL resolver with default priority of 0.
             </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/56F1673C">Markdownlint<wbr>Cli<wbr>Issues<wbr>From<wbr>File<wbr>Path<wbr>(ICakeContext, <wbr>FilePath)<wbr></a></td>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/2EE35F55">Markdownlint<wbr>Add<wbr>Rule<wbr>Url<wbr>Resolver<wbr>(ICakeContext, <wbr>Func<wbr>&lt;<wbr>Markdownlint<wbr>Rule<wbr>Description, <wbr>Uri&gt;<wbr>, <wbr>int)<wbr></a></td>
+								<td>void</td>
 								<td>
 									<div>
-            Gets an instance of a provider for issues reported by markdownlint-cli or Cake.Markdownlint
-            using a log file from disk.
+            Registers a new URL resolver with a specific priority.
             </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/B28C5DA2">Markdownlint<wbr>Cli<wbr>Issues<wbr>Provider<wbr>Type<wbr>Name<wbr>(ICakeContext)<wbr></a></td>
-								<td>string</td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/B518F49E">Markdownlint<wbr>Cli<wbr>Log<wbr>File<wbr>Format<wbr>(ICakeContext)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/ILogFileFormat">ILogFileFormat</a></td>
 								<td>
 									<div>
-            Gets the name of the markdownlint-cli issue provider.
-            This name can be used to identify issues based on the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/D5A24C72">ProviderType</a></code> property.
+            Gets an instance for the log format as written by markdownlint-cli or Cake.Markdownlint.
             </div>
 											<div><small><em>static</em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/49E6601E">MarkdownlintIssues<wbr>(ICakeContext, <wbr>Markdownlint<wbr>Issues<wbr>Settings)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/B2623512">MarkdownlintIssues<wbr>(ICakeContext, <wbr>Markdownlint<wbr>Issues<wbr>Settings)<wbr></a></td>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
 								<td>
 									<div>
@@ -296,7 +288,7 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/6A93524A">Markdownlint<wbr>Issues<wbr>From<wbr>Content<wbr>(ICakeContext, <wbr>string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/69C38B59">Markdownlint<wbr>Issues<wbr>From<wbr>Content<wbr>(ICakeContext, <wbr>string, <wbr>ILogFileFormat)<wbr></a></td>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
 								<td>
 									<div>
@@ -306,7 +298,7 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/DB50BAC2">Markdownlint<wbr>Issues<wbr>From<wbr>File<wbr>Path<wbr>(ICakeContext, <wbr>FilePath)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/0A9AA5CB">Markdownlint<wbr>Issues<wbr>From<wbr>File<wbr>Path<wbr>(ICakeContext, <wbr>FilePath, <wbr>ILogFileFormat)<wbr></a></td>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
 								<td>
 									<div>
@@ -322,6 +314,16 @@ class Type type-node
 									<div>
             Gets the name of the Markdownlint issue provider.
             This name can be used to identify issues based on the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/D5A24C72">ProviderType</a></code> property.
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases/EBFF674A">Markdownlint<wbr>Log<wbr>File<wbr>Format<wbr>(ICakeContext)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/ILogFileFormat">ILogFileFormat</a></td>
+								<td>
+									<div>
+            Gets an instance for the log format as written by Markdownlint.
             </div>
 											<div><small><em>static</em></small></div>
 								</td>

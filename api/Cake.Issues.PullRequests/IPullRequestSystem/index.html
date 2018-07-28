@@ -144,6 +144,7 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases">Aliases</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystemExtension">I<wbr>Pull<wbr>Request<wbr>System<wbr>Extension</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionComment">Pull<wbr>Request<wbr>Discussion<wbr>Comment</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionResolution">Pull<wbr>Request<wbr>Discussion<wbr>Resolution</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionStatus">Pull<wbr>Request<wbr>Discussion<wbr>Status</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionThread">Pull<wbr>Request<wbr>Discussion<wbr>Thread</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssueResult">Pull<wbr>Request<wbr>Issue<wbr>Result</a></li>
@@ -247,11 +248,11 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/46BB87FB">Fetch<wbr>Active<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/7FE38ABB">Fetch<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></td>
 								<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
-            Returns a list of all active discussion threads.
+            Returns a list of all discussion threads.
             </div>
 								</td>
 							</tr>
@@ -283,20 +284,29 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/CBD037DA">MarkThreadsAsFixed<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Marks a list of discussion threads as resolved.
-            </div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/40F0FB1E">Post<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>string)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
             Posts discussion threads for all issues which need to be posted.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/1AAB62B3">Reopen<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Marks a list of discussion threads as active.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/00450B43">Resolve<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Marks a list of discussion threads as resolved.
             </div>
 								</td>
 							</tr>

@@ -1,22 +1,20 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <title>Cake Issues - Features</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
-        <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/Cake.Issues.Website/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/Cake.Issues.Website/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/Cake.Issues.Website/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/Cake.Issues.Website/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/Cake.Issues.Website/assets/css/override.css" rel="stylesheet" />
+        <link href="/Cake.Issues.Website/assets/css/override.css" rel="stylesheet">
         <script src="/Cake.Issues.Website/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/Cake.Issues.Website/assets/js/bootstrap.min.js"></script>        
         <script src="/Cake.Issues.Website/assets/js/app.min.js"></script>         
@@ -76,7 +74,12 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
         <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/issue-providers/msbuild/features.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#basic-features">Basic features</a></p>
+<p><a href="#supported-log-file-formats">Supported log file formats</a></p>
+<p><a href="#supported-comment-formats">Supported comment formats</a></p>
+<p><a href="#supported-iissue-properties">Supported IIssue properties</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -309,37 +312,112 @@
 		<h1>Features</h1>
 	</section>
 	<section class="content">
-		<html><head></head><body><p>The <a href="https://www.nuget.org/packages/Cake.Issues.MsBuild">Cake.Issues.MsBuild addin</a> provides the following features:</p>
+		<p>The <a href="https://www.nuget.org/packages/Cake.Issues.MsBuild">Cake.Issues.MsBuild addin</a> provides the following features.</p>
+<h1 id="basic-features">Basic features</h1>
 <ul>
 <li>Reads warnings from MSBuild log files.</li>
-<li>Supported log file formats:
-<ul>
-<li><a href="http://www.msbuildextensionpack.com/help/4.0.5.0/html/242ab4fd-c2e2-f6aa-325b-7588725aed24.htm">MSBuild Extension Pack XmlFileLogger</a></li>
-</ul>
-</li>
-<li>Supported comment formats:
-<ul>
-<li>Plain text</li>
-</ul>
-</li>
 <li>Provides URLs for all code analysis (<code>CA*</code>) and StyleCop (<code>SA*</code>) warnings.</li>
 <li>Support for custom URL resolving using the <a href="../../../api/Cake.Issues.MsBuild/MsBuildIssuesAliases/93C21487">MsBuildAddRuleUrlResolver</a> alias.</li>
-<li>Supported <code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a></code> properties:
+</ul>
+<h1 id="supported-log-file-formats">Supported log file formats</h1>
 <ul>
-<li><a href="../../../api/Cake.Issues/IIssue/D5A24C72">ProviderType</a></li>
-<li><a href="../../../api/Cake.Issues/IIssue/FA8BB1A0">ProviderName</a></li>
-<li><a href="../../../api/Cake.Issues/IIssue/89B374A4">Project</a></li>
-<li><a href="../../../api/Cake.Issues/IIssue/BF0CD6F1">AffectedFileRelativePath</a></li>
-<li><a href="../../../api/Cake.Issues/IIssue/F2A42E89">Line</a></li>
-<li><a href="../../../api/Cake.Issues/IIssue/18537A3D">Message</a></li>
-<li><a href="../../../api/Cake.Issues/IIssue/BFEFFBB1">Priority</a> (Always <a href="../../../api/Cake.Issues/IssuePriority/7A0CE07F">IssuePriority.Warning</a>)</li>
-<li><a href="../../../api/Cake.Issues/IIssue/05A39052">PriorityName</a> (Always <a href="../../../api/Cake.Issues/IssuePriority/7A0CE07F">IssuePriority.Warning</a>)</li>
-<li><a href="../../../api/Cake.Issues/IIssue/C8BCE21E">Rule</a></li>
-<li><a href="../../../api/Cake.Issues/IIssue/48A6F355">RuleUrl</a></li>
+<li><a href="../../../api/Cake.Issues.MsBuild/MsBuildIssuesAliases/051D7B6E">MsBuildXmlFileLoggerFormat</a> alias for reading issues from log files created by <a href="http://www.msbuildextensionpack.com/help/4.0.5.0/html/242ab4fd-c2e2-f6aa-325b-7588725aed24.htm">MSBuild Extension Pack XmlFileLogger</a>.</li>
 </ul>
-</li>
-</ul>
-</body></html>
+<h1 id="supported-comment-formats">Supported comment formats</h1>
+<table class="table">
+<thead>
+<tr>
+<th></th>
+<th>Comment format</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code>IssueCommentFormat.PlainText</code></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-remove" style="color:red"></span></td>
+<td><code>IssueCommentFormat.Markdown</code></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-remove" style="color:red"></span></td>
+<td><code>IssueCommentFormat.Html</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="supported-iissue-properties">Supported IIssue properties</h1>
+<table class="table">
+<thead>
+<tr>
+<th></th>
+<th>Property</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/D5A24C72">IIssue.ProviderType</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/FA8BB1A0">IIssue.ProviderName</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/C3B3B033">IIssue.ProjectName</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/FDE5E663">IIssue.ProjectFileRelativePath</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/BF0CD6F1">IIssue.AffectedFileRelativePath</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/F2A42E89">IIssue.Line</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/18537A3D">IIssue.Message</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/BFEFFBB1">IIssue.Priority</a></code></td>
+<td>Always <a href="../../../api/Cake.Issues/IssuePriority/7A0CE07F">IssuePriority.Warning</a></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/05A39052">IIssue.PriorityName</a></code></td>
+<td>Always <a href="../../../api/Cake.Issues/IssuePriority/7A0CE07F">IssuePriority.Warning</a></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/C8BCE21E">IIssue.Rule</a></code></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><code><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/48A6F355">IIssue.RuleUrl</a></code></td>
+<td>For code analysis (<code>CA*</code>) and StyleCop (<code>SA*</code>) warnings. Support for additional rules can be added through a custom <a href="../../../api/Cake.Issues.MsBuild/MsBuildIssuesAliases/93C21487">MsBuildAddRuleUrlResolver</a></td>
+</tr>
+</tbody>
+</table>
+
 	</section>
                 
             </div>           
@@ -352,8 +430,8 @@
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
                 <p class="text-muted">
-    Copyright &copy; <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/cake-contrib/Cake.Issues/graphs/contributors" target="_blank">contributors</a>.
-    <br/>
+    Copyright © <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/cake-contrib/Cake.Issues/graphs/contributors" target="_blank">contributors</a>.
+    <br>
     Website generated by <a href="http://wyam.io" target="_blank">Wyam</a>
 </p>
 
@@ -361,14 +439,14 @@
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
         <div class="github-button">
-    <a href="https://github.com/search?q=topic%3Acake-issues&type=Repositories" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+    <a href="https://github.com/search?q=topic%3Acake-issues&amp;type=Repositories" target="_blank"><i class="fa fa-github"></i> GitHub</a>
 </div>
 <script>
     ((window.gitter = {}).chat = {}).options = {
         room: 'cake-contrib/Lobby'
     };
 </script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/anchor.min.js"></script>
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/clipboard.min.js"></script>
@@ -454,5 +532,5 @@
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

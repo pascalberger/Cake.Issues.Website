@@ -146,6 +146,7 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases">Aliases</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystemExtension">I<wbr>Pull<wbr>Request<wbr>System<wbr>Extension</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionComment">Pull<wbr>Request<wbr>Discussion<wbr>Comment</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionResolution">Pull<wbr>Request<wbr>Discussion<wbr>Resolution</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionStatus">Pull<wbr>Request<wbr>Discussion<wbr>Status</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionThread">Pull<wbr>Request<wbr>Discussion<wbr>Thread</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssueResult">Pull<wbr>Request<wbr>Issue<wbr>Result</a></li>
@@ -321,11 +322,11 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/1CC01D0F">Fetch<wbr>Active<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/2B3322E3">Fetch<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></td>
 								<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
-            Returns a list of all active discussion threads.
+            Returns a list of all discussion threads.
             </div>
 								</td>
 							</tr>
@@ -367,12 +368,12 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/ADC58E1A">Internal<wbr>Fetch<wbr>Active<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/45B208BE">Internal<wbr>Fetch<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></td>
 								<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>
-            Returns a list of all active discussion threads.
-            Compared to <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/1CC01D0F">FetchActiveDiscussionThreads(string)</a></code> it is safe to access Settings from this method.
+            Returns a list of all discussion threads.
+            Compared to <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/2B3322E3">FetchDiscussionThreads(string)</a></code> it is safe to access Settings from this method.
             </div>
 								</td>
 							</tr>
@@ -387,16 +388,6 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/9017509F">Internal<wbr>Mark<wbr>Threads<wbr>As<wbr>Fixed<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Marks a list of discussion threads as resolved.
-            Compared to <code class="cs">Cake.Issues.PullRequests.PullRequestSystem.MarkThreadsAsFixed(System.Collections.Generic.IEnumerable{Cake.Issues.PullRequests.IPullRequestDiscussionThread})</code> it is safe to access Settings from this method.
-            </div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/B159747C">Internal<wbr>Post<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>string)<wbr></a></td>
 								<td>void</td>
 								<td>
@@ -407,11 +398,22 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/0A79169A">MarkThreadsAsFixed<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/9AE5ADD7">Internal<wbr>Reopen<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Marks a list of discussion threads as active.
+            Compared to <code class="cs">Cake.Issues.PullRequests.PullRequestSystem.ReopenDiscussionThreads(System.Collections.Generic.IEnumerable{Cake.Issues.PullRequests.IPullRequestDiscussionThread})</code> it is safe to access Settings from this method.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/6E09D7AE">Internal<wbr>Resolve<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
             Marks a list of discussion threads as resolved.
+            Compared to <code class="cs">Cake.Issues.PullRequests.PullRequestSystem.ResolveDiscussionThreads(System.Collections.Generic.IEnumerable{Cake.Issues.PullRequests.IPullRequestDiscussionThread})</code> it is safe to access Settings from this method.
             </div>
 								</td>
 							</tr>
@@ -421,6 +423,24 @@ class Type type-node
 								<td>
 									<div>
             Posts discussion threads for all issues which need to be posted.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/2C5F829E">Reopen<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Marks a list of discussion threads as active.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem/6D309C8C">Resolve<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+            Marks a list of discussion threads as resolved.
             </div>
 								</td>
 							</tr>
