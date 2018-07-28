@@ -1,6 +1,6 @@
 Name: Cake.Issues.Reporting
 NuGet: Cake.Issues.Reporting
-Prerelease: true
+Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.Reporting
 Documentation: /docs/usage/creating-reports/

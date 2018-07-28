@@ -1,5 +1,6 @@
 Name: Cake.Issues.Testing
 NuGet: Cake.Issues.Testing
+Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues
 Documentation: /docs/extending/testing

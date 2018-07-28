@@ -1,5 +1,6 @@
 Name: MsBuild Log Support
 NuGet: Cake.Issues.MsBuild
+Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.MsBuild
 Documentation: /docs/issue-providers/msbuild

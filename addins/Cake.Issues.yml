@@ -1,6 +1,6 @@
 Name: Cake.Issues
 NuGet: Cake.Issues
-Prerelease: true
+Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues
 Documentation: /docs/usage/reading-issues/
