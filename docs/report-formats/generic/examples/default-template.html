@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - Report Format</title>
+        <title>Cake Issues - Embedded default template</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -75,7 +75,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/fundamentals/report-format.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/report-formats/generic/examples/default-template.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"></div>
 
                 </section>
@@ -102,13 +102,13 @@
 
                     </ul>
                 </li>
-                <li class="treeview active">
+                <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/fundamentals">Fundamentals</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/fundamentals/architecture">Architecture</a></li>
                 <li><a href="/Cake.Issues.Website/docs/fundamentals/versioning">Versioning</a></li>
                 <li><a href="/Cake.Issues.Website/docs/fundamentals/issue-provider">Issue Provider</a></li>
-                <li class="selected"><a href="/Cake.Issues.Website/docs/fundamentals/report-format">Report Format</a></li>
+                <li><a href="/Cake.Issues.Website/docs/fundamentals/report-format">Report Format</a></li>
                 <li><a href="/Cake.Issues.Website/docs/fundamentals/pull-request-system">Pull Request System</a></li>
 
                     </ul>
@@ -203,18 +203,18 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/report-formats">Report Formats</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li class="treeview">
+                                        <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/report-formats/generic">Generic</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/report-formats/generic/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/report-formats/generic/features">Features</a></li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/report-formats/generic/examples">Examples</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/report-formats/generic/examples/default-template">Embedded default template</a></li>
+                                        <li class="selected"><a href="/Cake.Issues.Website/docs/report-formats/generic/examples/default-template">Embedded default template</a></li>
                 <li><a href="/Cake.Issues.Website/docs/report-formats/generic/examples/custom-template">Custom template</a></li>
 
                     </ul>
@@ -320,14 +320,46 @@
 
 
 	<section class="content-header">
-		<h1>Report Format</h1>
+		<h1>Embedded default template</h1>
 	</section>
 	<section class="content">
-		<p>Report format addins implement specific report formats and allow the
-Cake Issues addin to create reports in the specific format.</p>
-<p>See <a href="../../addins/report-format/">Report Formats</a> for a list of currently supported report formats.</p>
-<p>See <a href="../extending/report-format/">How to implement report format</a> for instruction on how to implement support for
-additional report formats.</p>
+		<p>The following example will create a HTML report for issues logged as warnings by MsBuild.</p>
+<pre><code class="language-csharp">#tool &quot;nuget:?package=MSBuild.Extension.Pack&quot;
+#addin &quot;Cake.Issues&quot;
+#addin &quot;Cake.Issues.MsBuild&quot;
+#addin &quot;Cake.Reporting&quot;
+#addin &quot;Cake.Reporting.Generic&quot;
+
+Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
+{
+    var repoRootFolder = new DirectoryPath(&#64;&quot;c:\repo&quot;);
+
+    // Build MySolution.sln solution in the repository root folder and log issues
+    // using XmlFileLogger from MSBuild Extension Pack.
+    FilePath msBuildLogFile = &#64;&quot;c:\build\msbuild.log&quot;;
+    var settings = new MsBuildSettings()
+        .WithLogger(
+            Context.Tools.Resolve(&quot;MSBuild.ExtensionPack.Loggers.dll&quot;).FullPath,
+            &quot;XmlFileLogger&quot;,
+            string.Format(
+                &quot;logfile=\&quot;{0}\&quot;;verbosity=Detailed;encoding=UTF-8&quot;,
+                msBuildLogFile)
+        );
+    MSBuild(repoRootFolder.CombineWithFilePath(&quot;MySolution.sln&quot;), settings);
+
+    // Create HTML report using Diagnostic template.
+    CreateIssueReport(
+        new List&lt;IIssueProvider&gt;
+        {
+            MsBuildIssuesFromFilePath(
+                msBuildLogFile,
+                MsBuildXmlFileLoggerFormat)
+        },
+        GenericIssueReportFormatFromEmbeddedTemplate(GenericIssueReportTemplate.HtmlDiagnostic),
+        repoRootFolder,
+        &#64;&quot;c:\report.html&quot;);
+});
+</code></pre>
 
 	</section>
                 

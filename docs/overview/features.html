@@ -214,7 +214,14 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/report-formats/generic/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/report-formats/generic/features">Features</a></li>
-                <li><a href="/Cake.Issues.Website/docs/report-formats/generic/examples">Examples</a></li>
+                <li class="treeview">
+                    <a href="/Cake.Issues.Website/docs/report-formats/generic/examples">Examples</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/Cake.Issues.Website/docs/report-formats/generic/examples/default-template">Embedded default template</a></li>
+                <li><a href="/Cake.Issues.Website/docs/report-formats/generic/examples/custom-template">Custom template</a></li>
+
+                    </ul>
+                </li>
                 <li><a href="/Cake.Issues.Website/docs/report-formats/generic/release-notes">Release Notes</a></li>
                 <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/report-formats/generic/templates">Template Gallery</a> <a href="#" class="expand"></a>
@@ -239,7 +246,14 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/features">Features</a></li>
-                <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples">Examples</a></li>
+                <li class="treeview">
+                    <a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples">Examples</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/repository-information">Using with repository remote url and source branch name</a></li>
+                <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/voting">Voting for pull requests</a></li>
+
+                    </ul>
+                </li>
                 <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/release-notes">Release Notes</a></li>
 
                     </ul>
@@ -315,37 +329,36 @@
 		<p>The Cake Issues addins for Cake allows you to read issues from any analyzer or linter,
 create reports or write issues to comments in pull requests.</p>
 <h1 id="supported-core-functionality">Supported Core Functionality</h1>
-<p>The core addins provide the following functionality:</p>
+<p>The core addins provide a modular architecture, allowing to easily enhance it for supporting additional analyzers, linters,
+report formats and code review systems.</p>
+<h2 id="cake.issues">Cake.Issues</h2>
+<p>Addin for creating and reading issues providing the following functionality:</p>
 <ul>
-<li>Modular architecture, allowing to easily enhance it for supporting additional analyzers, linters,
-report formats and code review systems.</li>
-<li><code>Cake.Issues</code> addin for creating and reading issues
-<ul>
-<li><code>NewIssue</code> alias for creating issues in the build script.</li>
-<li><code>ReadIssues</code> aliases for reading issues from an issue provider.</li>
+<li><a href="../../api/Cake.Issues/Aliases/DC3A3FD7">NewIssue</a> alias for creating issues in the build script.</li>
+<li><a href="../../api/Cake.Issues/Aliases/713F15FD">ReadIssues</a> aliases for reading issues from an issue provider.</li>
 <li>Support for reading issues from multiple issue providers.</li>
 <li>Support for reading issues in specific format (Plain text, Markdown, HTML) if supported by issue provider.</li>
 </ul>
-</li>
-<li><code>Cake.Issues.Reporting</code> addin for creating reports
+<h2 id="cake.issues.reporting">Cake.Issues.Reporting</h2>
+<p>Addin for creating reports providing the following functionality:</p>
 <ul>
-<li><code>CreateIssueReport</code> aliases for creating reports about issues.</li>
+<li><a href="../../api/Cake.Issues.Reporting/Aliases/C778C70A">CreateIssueReport</a> aliases for creating reports about issues.</li>
 <li>Support for creating reports with issues from multiple issue providers.</li>
 </ul>
-</li>
-<li><code>Cake.Issues.PullRequests</code> addin for writing issues as comments to pull requests
+<h2 id="cake.issues.pullrequests">Cake.Issues.PullRequests</h2>
+<p>Addin for writing issues as comments to pull requests providing the following functionality:</p>
 <ul>
-<li><code>ReportIssuesToPullRequest</code> aliases for writing issues as comments to pull requests.</li>
+<li><a href="../../api/Cake.Issues.PullRequests/Aliases/5350C413">ReportIssuesToPullRequest</a> aliases for writing issues as comments to pull requests.</li>
 <li>Support for reporting issues from multiple issue providers.</li>
-<li>Filtering issues to only those related to changes in a pull request.</li>
-<li>Support for custom issue filter routines.</li>
-<li>Skipping posting of issues if checked source code is outdated</li>
+<li>Filtering issues to only those related to changed files in a pull request.</li>
+<li>Support for passing custom issue filter routines in <code><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings/44C3B105">ReportIssuesToPullRequestSettings.IssueFilters</a></code>.</li>
+<li>Skipping posting of issues if checked source code is outdated by setting <code><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings/A458D06C">ReportIssuesToPullRequestSettings.CommitId</a></code>.</li>
 <li>Automatic resolving of issues fixed in subsequent commits.</li>
+<li>Automatic reopening of still existing issues which are already closed on pull request.</li>
 <li>Comparing issues by content to not rely on line numbers.</li>
-<li>Limit number of maximum issues to post globally or per issue provider.</li>
+<li>Limit number of maximum issues to post globally or per issue provider by setting
+<code><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings/CB8D8694">ReportIssuesToPullRequestSettings.MaxIssuesToPostForEachIssueProvider</a></code> or <code><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings/CAE58C82">ReportIssuesToPullRequestSettings.MaxIssuesToPost</a></code>.</li>
 <li>Returns all issues as provided by the issue providers and the issues reported to the pull request.</li>
-</ul>
-</li>
 </ul>
 <h1 id="supported-issue-providers">Supported Issue Providers</h1>
 <p>See <a href="../../addins/issue-provider/">Issue Provider Addins</a> for a list of currently supported analyzers and linters.</p>

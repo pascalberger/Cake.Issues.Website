@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - Report Format</title>
+        <title>Cake Issues - Voting for pull requests</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -75,7 +75,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/fundamentals/report-format.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/pull-request-systems/tfs/examples/voting.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"></div>
 
                 </section>
@@ -102,13 +102,13 @@
 
                     </ul>
                 </li>
-                <li class="treeview active">
+                <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/fundamentals">Fundamentals</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/fundamentals/architecture">Architecture</a></li>
                 <li><a href="/Cake.Issues.Website/docs/fundamentals/versioning">Versioning</a></li>
                 <li><a href="/Cake.Issues.Website/docs/fundamentals/issue-provider">Issue Provider</a></li>
-                <li class="selected"><a href="/Cake.Issues.Website/docs/fundamentals/report-format">Report Format</a></li>
+                <li><a href="/Cake.Issues.Website/docs/fundamentals/report-format">Report Format</a></li>
                 <li><a href="/Cake.Issues.Website/docs/fundamentals/pull-request-system">Pull Request System</a></li>
 
                     </ul>
@@ -235,19 +235,19 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/pull-request-systems">Pull Request Systems</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li class="treeview">
+                                        <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/pull-request-systems/tfs">TFS &amp; VSTS</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/features">Features</a></li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples">Examples</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/repository-information">Using with repository remote url and source branch name</a></li>
-                <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/voting">Voting for pull requests</a></li>
+                <li class="selected"><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/voting">Voting for pull requests</a></li>
 
                     </ul>
                 </li>
@@ -320,14 +320,65 @@
 
 
 	<section class="content-header">
-		<h1>Report Format</h1>
+		<h1>Voting for pull requests</h1>
 	</section>
 	<section class="content">
-		<p>Report format addins implement specific report formats and allow the
-Cake Issues addin to create reports in the specific format.</p>
-<p>See <a href="../../addins/report-format/">Report Formats</a> for a list of currently supported report formats.</p>
-<p>See <a href="../extending/report-format/">How to implement report format</a> for instruction on how to implement support for
-additional report formats.</p>
+		<p>The <a href="https://www.nuget.org/packages/Cake.Issues.PullRequests.Tfs">Cake.Issues.PullRequests.Tfs addin</a> also provides an alias for approving or voting for pull requests.</p>
+<div class="alert alert-info"><p>The approve functionality can be used without using the <a href="https://www.nuget.org/packages/Cake.Issues">Cake.Issues addin</a>.</p>
+</div>
+<p>The following example will approve a pull request on a Team Foundation Server:</p>
+<pre><code class="language-csharp">#addin &quot;Cake.Issues.PullRequests.Tfs&quot;
+
+Task(&quot;Vote-PullRequest&quot;).Does(() =&gt;
+{
+    var pullRequestSettings =
+        new TfsPullRequestSettings(
+            new Uri(&quot;http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository&quot;),
+            &quot;refs/heads/feature/myfeature&quot;,
+            TfsAuthenticationNtlm());
+
+    TfsVotePullRequest(
+        pullRequestSettings,
+        TfsPullRequestVote.Approved);
+});
+</code></pre>
+<p>You can also vote based on the issues provided to the <a href="https://www.nuget.org/packages/Cake.Issues">Cake.Issues addin</a>.</p>
+<p>The following example will mark the pull request as waiting for author if any JetBrains InspectCode
+warnings have occurred and approves the pull request otherwise:</p>
+<pre><code class="language-csharp">#tool &quot;nuget:?package=JetBrains.ReSharper.CommandLineTools&quot;
+#addin &quot;Cake.Issues&quot;
+#addin &quot;Cake.Issues.Issues.InspectCode&quot;
+#addin &quot;Cake.Issues.PullRequests.Tfs&quot;
+
+var logPath = &#64;&quot;c:\build\inspectcode.xml&quot;;
+var repoRootPath = &#64;&quot;c:\repo&quot;;
+
+Task(&quot;Analyze-Project&quot;).Does(() =&gt;
+{
+    // Run InspectCode.
+    var settings = new InspectCodeSettings() {
+        OutputFile = logPath
+    };
+
+    InspectCode(repoRootPath.CombineWithFilePath(&quot;MySolution.sln&quot;), settings);
+});
+
+Task(&quot;Vote-Pullrequest&quot;)
+.IsDependentOn(&quot;Analyze-Project&quot;)
+.Does(() =&gt;
+{
+    // Read Issues.
+    var issues = ReadIssues(
+        InspectCodeIssuesFromFilePath(logPath),
+        repoRootPath);
+
+    // Vote for pull request.
+    var vote = issues.Any() ? TfsPullRequestVote.WaitingForAuthor : TfsPullRequestVote.Approved;
+    TfsVotePullRequest(
+        pullRequestSettings,
+        vote);
+});
+</code></pre>
 
 	</section>
                 

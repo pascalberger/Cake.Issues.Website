@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - Report Format</title>
+        <title>Cake Issues - Using with repository remote url and source branch name</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
@@ -75,7 +75,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/fundamentals/report-format.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/pull-request-systems/tfs/examples/repository-information.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"></div>
 
                 </section>
@@ -102,13 +102,13 @@
 
                     </ul>
                 </li>
-                <li class="treeview active">
+                <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/fundamentals">Fundamentals</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/fundamentals/architecture">Architecture</a></li>
                 <li><a href="/Cake.Issues.Website/docs/fundamentals/versioning">Versioning</a></li>
                 <li><a href="/Cake.Issues.Website/docs/fundamentals/issue-provider">Issue Provider</a></li>
-                <li class="selected"><a href="/Cake.Issues.Website/docs/fundamentals/report-format">Report Format</a></li>
+                <li><a href="/Cake.Issues.Website/docs/fundamentals/report-format">Report Format</a></li>
                 <li><a href="/Cake.Issues.Website/docs/fundamentals/pull-request-system">Pull Request System</a></li>
 
                     </ul>
@@ -235,18 +235,18 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/pull-request-systems">Pull Request Systems</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li class="treeview">
+                                        <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/pull-request-systems/tfs">TFS &amp; VSTS</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/requirements">Requirements</a></li>
                 <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/features">Features</a></li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples">Examples</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/repository-information">Using with repository remote url and source branch name</a></li>
+                                        <li class="selected"><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/repository-information">Using with repository remote url and source branch name</a></li>
                 <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/voting">Voting for pull requests</a></li>
 
                     </ul>
@@ -320,14 +320,41 @@
 
 
 	<section class="content-header">
-		<h1>Report Format</h1>
+		<h1>Using with repository remote url and source branch name</h1>
 	</section>
 	<section class="content">
-		<p>Report format addins implement specific report formats and allow the
-Cake Issues addin to create reports in the specific format.</p>
-<p>See <a href="../../addins/report-format/">Report Formats</a> for a list of currently supported report formats.</p>
-<p>See <a href="../extending/report-format/">How to implement report format</a> for instruction on how to implement support for
-additional report formats.</p>
+		<p>This example shows how to write issues as comments to a Team Foundation Server (TFS) or
+Visual Studio Team Services (VSTS) pull request while using repository information.</p>
+<p>To determine the remote repository URL and source branch of the pull request you need the <a href="https://www.nuget.org/packages/Cake.Git/">Cake.Git</a> addin:</p>
+<pre><code class="language-csharp">#addin &quot;Cake.Git&quot;
+</code></pre>
+<p>To write issues as comments to TFS or VSTS pull requests you need to import the core addin,
+the core pull request addin, the TFS/VSTS support and one or more issue provider, in this example
+for JetBrains InspectCode:</p>
+<pre><code class="language-csharp">#addin &quot;Cake.Issues&quot;
+#addin &quot;Cake.Issues.InspectCode&quot;
+#addin &quot;Cake.Issues.PullRequests&quot;
+#addin &quot;Cake.Issues.PullRequests.Tfs&quot;
+</code></pre>
+<p>In the following task we'll first determine the remote repository URL and
+source branch of the pull request and with this information call the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/">TfsPullRequests</a> alias:</p>
+<pre><code class="language-csharp">Task(&quot;ReportIssuesToPullRequest&quot;).Does(() =&gt;
+{
+    var repoRootFolder = MakeAbsolute(Directory(&quot;./&quot;));
+    var currentBranch = GitBranchCurrent(repoRootFolder);
+    var repoRemoteUrl = new Uri(currentBranch.Remotes.Single(x =&gt; x.Name == &quot;origin&quot;).Url);
+    var sourceBranchName = currentBranch.CanonicalName;
+
+    ReportIssuesToPullRequest(
+        InspectCodeIssuesFromFilePath(
+            &#64;&quot;C:\build\inspectcode.log&quot;),
+        TfsPullRequests(
+            repoRemoteUrl,
+            sourceBranchName,
+            TfsAuthenticationNtlm()),
+        repoRootFolder);
+});
+</code></pre>
 
 	</section>
                 
