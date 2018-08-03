@@ -204,17 +204,17 @@
              Format = IssueCommentFormat.Markdown
          };
 
-     var issues = ReadIssues(
-         new List&lt;IIssueProvider&gt;
-         {
-             MsBuildIssuesFromFilePath(
-                 @"C:\build\msbuild.log",
-                 MsBuildXmlFileLoggerFormat),
-             InspectCodeIssuesFromFilePath(
-                 @"C:\build\inspectcode.log",
-                 MsBuildXmlFileLoggerFormat)
-         },
-         settings));</code></pre>
+     var issues =
+         ReadIssues(
+             new List&lt;IIssueProvider&gt;
+             {
+                 MsBuildIssuesFromFilePath(
+                     @"C:\build\msbuild.log",
+                     MsBuildXmlFileLoggerFormat),
+                 InspectCodeIssuesFromFilePath(
+                     @"C:\build\inspectcode.log")
+             },
+             settings));</code></pre>
              </div>
 
 

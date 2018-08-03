@@ -196,18 +196,18 @@
 
 	<h1 id="Examples">Examples</h1>
 	<div>
-             <p>Read issues reported as MsBuild warnings and format comments in Markdown:</p>
+             <p>Read issues reported by JetBrains inspect code and format comments in Markdown:</p>
              <pre><code class="cs"> var settings =
          new ReadIssuesSettings(@"c:\repo")
          {
              Format = IssueCommentFormat.Markdown
          };
 
-     var issues = ReadIssues(
-         MsBuildIssuesFromFilePath(
-             @"C:\build\msbuild.log",
-             MsBuildXmlFileLoggerFormat),
-         settings));</code></pre>
+     var issues =
+         ReadIssues(
+             InspectCodeIssuesFromFilePath(
+                 @"C:\build\inspectcode.log"),
+             settings));</code></pre>
              </div>
 
 

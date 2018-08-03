@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - API - IIssueProvider Interface</title>
+        <title>Cake Issues - API - MultiFormatIssueProviderSettings&lt;TIssueProvider, TSettings&gt; Class</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -75,8 +75,9 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
+<p><a href="#TypeParameters">Type Parameters</a></p>
+<p><a href="#Constructors">Constructors</a></p>
 <p><a href="#Properties">Properties</a></p>
-<p><a href="#Methods">Methods</a></p>
 <p><a href="#ExtensionMethods">Extension Methods</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -156,14 +157,14 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesReader">IssuesReader</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/LogFileFormat_2">LogFileFormat<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues/MultiFormatIssueProviderSettings_2">Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Settings<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></li>
+				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues/MultiFormatIssueProviderSettings_2">Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Settings<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/ReadIssuesSettings">ReadIssuesSettings</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/RepositorySettings">RepositorySettings</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/StringPathExtensions">StringPathExtensions</a></li>
 			<li class="header">Interface Types</li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1">IBaseIssueComponent<wbr>&lt;T&gt;<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a></li>
-				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues/ILogFileFormat_2">ILogFileFormat<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></li>
 
 
@@ -179,14 +180,14 @@
 
 
 <section class="content-header">
-	<h1>IIssueProvider <small>Interface</small></h1>
+	<h1>Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Settings<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr> <small>Class</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-            Interface describing a provider for issues.
+            Base settings for <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></code>.
             </div>
 
 		<div class="panel panel-default">
@@ -200,44 +201,31 @@
 								<dt>Namespace</dt>
 								<dd><a href="/Cake.Issues.Website/api/Cake.Issues">Cake<wbr>.Issues</a></dd>
 											
-								<dt>Interfaces</dt>
+							
+								<dt>Base Types</dt>
 								<dd>
-									<ul class="list-unstyled">
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1">IBaseIssueComponent<wbr>&lt;T&gt;<wbr></a></li>								
-									</ul>
-								</dd>
-							
-							
-							
-								<dt>Implementing Types</dt>
-								<dd>
-									<ul class="list-unstyled">
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesProvider">EsLintIssuesProvider</a></li>								
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider">IssueProvider</a></li>								
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider">FakeIssueProvider</a></li>								
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesProvider">Markdownlint<wbr>Issues<wbr>Provider</a></li>								
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider">Ms<wbr>Build<wbr>Issues<wbr>Provider</a></li>								
+									<ul class="list-unstyled">										
+											<li>Object</li>								
 									</ul>
 								</dd>				
+							
+								<dt>Derived Types</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProviderSettings">Fake<wbr>Issue<wbr>Provider<wbr>Settings</a></li>								
+									</ul>
+								</dd>			
+							
 						</dl>
 					</div>		
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Interface0["IBaseIssueComponent&lt;T&gt;"]-.-&gt;Type
-	click Interface0 "/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1"
-	Type["IIssueProvider"]
+	Base0["Object"]--&gt;Type
+	Type["MultiFormatIssueProviderSettings&lt;TIssueProvider, TSettings&gt;"]
 class Type type-node
-	Type-.-&gt;Implementing0["EsLintIssuesProvider"]
-	click Implementing0 "/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesProvider"
-	Type-.-&gt;Implementing1["IssueProvider"]
-	click Implementing1 "/Cake.Issues.Website/api/Cake.Issues/IssueProvider"
-	Type-.-&gt;Implementing2["FakeIssueProvider"]
-	click Implementing2 "/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider"
-	Type-.-&gt;Implementing3["MarkdownlintIssuesProvider"]
-	click Implementing3 "/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesProvider"
-	Type-.-&gt;Implementing4["MsBuildIssuesProvider"]
-	click Implementing4 "/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider"
+	Type--&gt;Derived0["FakeIssueProviderSettings"]
+	click Derived0 "/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProviderSettings"
 
 						</div>
 					</div>
@@ -246,13 +234,63 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public interface IIssueProvider : IBaseIssueComponent&lt;RepositorySettings&gt;</code></pre>
+	<pre><code>public class MultiFormatIssueProviderSettings&lt;TIssueProvider, TSettings&gt; 
+    where TIssueProvider : IIssueProvider where TSettings : MultiFormatIssueProviderSettings&lt;TIssueProvider, TSettings&gt;</code></pre>
 
 
 
 
+	<h1 id="TypeParameters">Type Parameters</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr id="typeparam-TIssueProvider">
+						<td>TIssueProvider</td>
+						<td>Type of the issue provider.</td>
+					</tr>
+					<tr id="typeparam-TSettings">
+						<td>TSettings</td>
+						<td>Type of the settings.</td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
 
 
+			<h1 id="Constructors">Constructors</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover two-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+									<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/MultiFormatIssueProviderSettings_2/CF3CD83E">Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Settings<wbr>(byte[], <wbr>ILogFileFormat<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr>)<wbr></a></td>
+									<td>
+            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/MultiFormatIssueProviderSettings_2">MultiFormatIssueProviderSettings&lt;TIssueProvider, TSettings&gt;</a></code> class
+            for a log file content in memoy.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/MultiFormatIssueProviderSettings_2/9FFB59F8">Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Settings<wbr>(FilePath, <wbr>ILogFileFormat<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr>)<wbr></a></td>
+									<td>
+            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/MultiFormatIssueProviderSettings_2">MultiFormatIssueProviderSettings&lt;TIssueProvider, TSettings&gt;</a></code> class
+            for reading a log file on disk.
+            </td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
 
 
 
@@ -268,11 +306,20 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider/0D605BFF">ProviderName</a></td>
-								<td>string</td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/MultiFormatIssueProviderSettings_2/E0311B5D">Format</a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/ILogFileFormat_2">ILogFileFormat<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></td>
 								<td>
 									<div>
-            Gets the human friendly name of the issue provider.
+            Gets the format of the log file.
+            </div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/MultiFormatIssueProviderSettings_2/213D9592">LogFileContent</a></td>
+								<td>byte[]</td>
+								<td>
+									<div>
+            Gets the content of the log file.
             </div>
 								</td>
 							</tr>
@@ -281,30 +328,6 @@ class Type type-node
 			</div>
 		
 
-			<h1 id="Methods">Methods</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover three-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Value</th>
-								<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider/7064FE62">ReadIssues<wbr>(IssueCommentFormat)<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
-								<td>
-									<div>
-            Gets all issues.
-            </div>
-								</td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
 
 
 			<h1 id="ExtensionMethods">Extension Methods</h1>
@@ -319,7 +342,7 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr><wbr>(string)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Settings<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr>&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>

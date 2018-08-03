@@ -196,12 +196,12 @@
 
 	<h1 id="Examples">Examples</h1>
 	<div>
-            <p>Read issues reported as MsBuild warnings:</p>
-            <pre><code class="cs">var issues = ReadIssues(
-        MsBuildIssuesFromFilePath(
-            @"C:\build\msbuild.log",
-            MsBuildXmlFileLoggerFormat),
-        @"c:\repo"));</code></pre>
+            <p>Read issues reported by JetBrains inspect code:</p>
+            <pre><code class="cs">var issues =
+        ReadIssues(
+            InspectCodeIssuesFromFilePath(
+                @"C:\build\inspectcode.log"),
+            @"c:\repo"));</code></pre>
             </div>
 
 
