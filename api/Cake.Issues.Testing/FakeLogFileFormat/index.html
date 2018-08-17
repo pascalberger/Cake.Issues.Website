@@ -143,13 +143,19 @@
 		<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing">Cake<wbr>.Issues<wbr>.Testing</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Class Types</li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/BaseConfigurableIssueProviderFixture_2">Base<wbr>Configurable<wbr>Issue<wbr>Provider<wbr>Fixture<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/BaseIssueProviderFixture_1">Base<wbr>Issue<wbr>Provider<wbr>Fixture<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/BaseMultiFormatIssueProviderFixture_3">Base<wbr>Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Fixture<wbr>&lt;TIssueProvider, <wbr>TSettings, <wbr>TLogFileFormat&gt;<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/ExceptionAssertExtensions">Exception<wbr>Assert<wbr>Extensions</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeConfigurableIssueProvider">Fake<wbr>Configurable<wbr>Issue<wbr>Provider</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueComponent">FakeIssueComponent</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider">FakeIssueProvider</a></li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProviderSettings">Fake<wbr>Issue<wbr>Provider<wbr>Settings</a></li>
 				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeLogFileFormat">FakeLogFileFormat</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeMultiFormatIssueProvider">Fake<wbr>Multi<wbr>Format<wbr>Issue<wbr>Provider</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeMultiFormatIssueProviderSettings">Fake<wbr>Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Settings</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeRuleDescription">FakeRuleDescription</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeRuleUrlResolver">FakeRuleUrlResolver</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/ResourceTempFile">ResourceTempFile</a></li>
 
 
                     </ul>
@@ -171,7 +177,7 @@
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-            Implementation of <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/LogFileFormat_2">LogFileFormat&lt;TIssueProvider, TSettings&gt;</a></code> for use in test cases.
+            Implementation of <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseLogFileFormat_2">BaseLogFileFormat&lt;TIssueProvider, TSettings&gt;</a></code> for use in test cases.
             </div>
 
 		<div class="panel panel-default">
@@ -196,7 +202,7 @@
 								<dd>
 									<ul class="list-unstyled">										
 											<li>Object</li>								
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues/LogFileFormat_2">LogFileFormat<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseLogFileFormat_2">BaseLogFileFormat<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></li>								
 									</ul>
 								</dd>				
 							
@@ -206,8 +212,8 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["LogFileFormat&lt;TIssueProvider, TSettings&gt;"]--&gt;Type
-	click Base0 "/Cake.Issues.Website/api/Cake.Issues/LogFileFormat_2"
+	Base0["BaseLogFileFormat&lt;TIssueProvider, TSettings&gt;"]--&gt;Type
+	click Base0 "/Cake.Issues.Website/api/Cake.Issues/BaseLogFileFormat_2"
 	Base1["Object"]--&gt;Base0
 	Interface0["ILogFileFormat&lt;TIssueProvider, TSettings&gt;"]-.-&gt;Type
 	click Interface0 "/Cake.Issues.Website/api/Cake.Issues/ILogFileFormat_2"
@@ -221,8 +227,9 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public class FakeLogFileFormat : LogFileFormat&lt;FakeIssueProvider, FakeIssueProviderSettings&gt;, 
-    ILogFileFormat&lt;FakeIssueProvider, FakeIssueProviderSettings&gt;</code></pre>
+	<pre><code>public class FakeLogFileFormat : 
+    BaseLogFileFormat&lt;FakeMultiFormatIssueProvider, FakeMultiFormatIssueProviderSettings&gt;, 
+    ILogFileFormat&lt;FakeMultiFormatIssueProvider, FakeMultiFormatIssueProviderSettings&gt;</code></pre>
 
 
 
@@ -241,6 +248,12 @@ class Type type-node
 						</thead>
 							<tbody><tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeLogFileFormat/F7B30ED7">FakeLogFileFormat<wbr>(ICakeLog)<wbr></a></td>
+									<td>
+            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeLogFileFormat">FakeLogFileFormat</a></code> class.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeLogFileFormat/D5C45FD3">FakeLogFileFormat<wbr>(ICakeLog, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>)<wbr></a></td>
 									<td>
             Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeLogFileFormat">FakeLogFileFormat</a></code> class.
             </td>
@@ -273,13 +286,13 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/LogFileFormat_2/EABB90C6">Log</a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseLogFileFormat_2/B654A266">Log</a></td>
 								<td>ICakeLog</td>
 								<td>
 									<div>
             Gets the Cake log instance.
             </div>
-											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/LogFileFormat_2">LogFileFormat<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></em></small></div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/BaseLogFileFormat_2">BaseLogFileFormat<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></em></small></div>
 								</td>
 							</tr>
 					</tbody></table>
@@ -299,7 +312,7 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeLogFileFormat/B8F2D951">ReadIssues<wbr>(FakeIssueProvider, <wbr>RepositorySettings, <wbr>Fake<wbr>Issue<wbr>Provider<wbr>Settings)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeLogFileFormat/67A2F095">ReadIssues<wbr>(<wbr>Fake<wbr>Multi<wbr>Format<wbr>Issue<wbr>Provider, <wbr>RepositorySettings, <wbr>Fake<wbr>Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Settings)<wbr></a></td>
 								<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
 								<td>
 									<div>

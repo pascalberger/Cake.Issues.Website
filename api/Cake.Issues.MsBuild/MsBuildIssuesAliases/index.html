@@ -140,10 +140,8 @@
 		<li class="header">Namespace</li>
 		<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild">Cake<wbr>.Issues<wbr>.MsBuild</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Interface Types</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/ILogFileFormat">ILogFileFormat</a></li>
 			<li class="header">Class Types</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/LogFileFormat">LogFileFormat</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/BaseMsBuildLogFileFormat">Base<wbr>Ms<wbr>Build<wbr>Log<wbr>File<wbr>Format</a></li>
 				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesAliases">MsBuildIssuesAliases</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesProvider">Ms<wbr>Build<wbr>Issues<wbr>Provider</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesSettings">Ms<wbr>Build<wbr>Issues<wbr>Settings</a></li>
@@ -278,7 +276,7 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesAliases/7B460097">Ms<wbr>Build<wbr>Issues<wbr>From<wbr>Content<wbr>(ICakeContext, <wbr>string, <wbr>ILogFileFormat)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesAliases/7E085383">Ms<wbr>Build<wbr>Issues<wbr>From<wbr>Content<wbr>(ICakeContext, <wbr>string, <wbr>Base<wbr>Ms<wbr>Build<wbr>Log<wbr>File<wbr>Format)<wbr></a></td>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
 								<td>
 									<div>
@@ -288,7 +286,7 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesAliases/4612F849">Ms<wbr>Build<wbr>Issues<wbr>From<wbr>File<wbr>Path<wbr>(ICakeContext, <wbr>FilePath, <wbr>ILogFileFormat)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesAliases/6B6692E6">Ms<wbr>Build<wbr>Issues<wbr>From<wbr>File<wbr>Path<wbr>(ICakeContext, <wbr>FilePath, <wbr>Base<wbr>Ms<wbr>Build<wbr>Log<wbr>File<wbr>Format)<wbr></a></td>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a></td>
 								<td>
 									<div>
@@ -304,35 +302,6 @@ class Type type-node
 									<div>
             Gets the name of the MsBuild issue provider.
             This name can be used to identify issues based on the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue/D5A24C72">ProviderType</a></code> property.
-            </div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/MsBuildIssuesAliases/051D7B6E">Ms<wbr>Build<wbr>Xml<wbr>File<wbr>Logger<wbr>Format<wbr>(ICakeContext)<wbr></a></td>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild/ILogFileFormat">ILogFileFormat</a></td>
-								<td>
-									<div>
-            <p>
-            Gets an instance for the MsBuild log format as written by the <code class="cs">XmlFileLogger</code> class
-            from MSBuild Extension Pack.
-            </p>
-            <p>
-            You can add the logger to the MSBuildSettings like this:
-            </p><pre><code class="cs">var settings = new MSBuildSettings()
-    .WithLogger(
-        Context.Tools.Resolve("MSBuild.ExtensionPack.Loggers.dll").FullPath,
-        "XmlFileLogger",
-        string.Format(
-            "logfile=\"{0}\";verbosity=Detailed;encoding=UTF-8",
-            @"c:\build\msbuild.log")
-    );</code></pre>
-            <p></p>
-            <p>
-            In order to use the above logger, include the following in your build.cake file to download and
-            install from NuGet.org:
-            </p><pre><code class="cs">#tool "nuget:?package=MSBuild.Extension.Pack"</code></pre>
-            <p></p>
             </div>
 											<div><small><em>static</em></small></div>
 								</td>

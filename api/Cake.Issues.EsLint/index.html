@@ -74,7 +74,6 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#ClassTypes">Class Types</a></p>
-<p><a href="#InterfaceTypes">Interface Types</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -146,8 +145,12 @@
 			<li class=" selected"><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint">Cake<wbr>.Issues<wbr>.EsLint</a></li>
 			<li><a href="/Cake.Issues.Website/api/Cake.Issues.InspectCode">Cake<wbr>.Issues<wbr>.InspectCode</a></li>
 			<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint">Cake<wbr>.Issues<wbr>.Markdownlint</a></li>
-			<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild">Cake<wbr>.Issues<wbr>.MsBuild</a></li>
 
+				<li class="treeview">
+				<a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild">Cake<wbr>.Issues<wbr>.MsBuild</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild.LogFileFormat">Cake<wbr>.Issues<wbr>.MsBuild<wbr>.LogFileFormat</a></li>
+</ul></li>
 				<li class="treeview">
 				<a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests">Cake<wbr>.Issues<wbr>.PullRequests</a> <a href="#" class="expand"></a>
 				<ul class="treeview-menu">
@@ -190,6 +193,12 @@
 							</tr>
 						</thead>
 							<tbody><tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/BaseEsLintLogFileFormat">Base<wbr>Es<wbr>Lint<wbr>Log<wbr>File<wbr>Format</a></td>
+									<td>
+            Base class for all ESLint log file format implementations.
+            </td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesAliases">EsLintIssuesAliases</a></td>
 									<td>
             Contains functionality for reading issues reported by ESLint.
@@ -205,32 +214,6 @@
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesSettings">EsLintIssuesSettings</a></td>
 									<td>
             Settings for <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/EsLintIssuesAliases">EsLintIssuesAliases</a></code>.
-            </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/LogFileFormat">LogFileFormat</a></td>
-									<td>
-            Base class for all ESLint log file format implementations.
-            </td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
-			<h1 id="InterfaceTypes">Interface Types</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover two-cols">
-						<thead>
-							<tr>
-								<th>Interface</th>
-									<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint/ILogFileFormat">ILogFileFormat</a></td>
-									<td>
-            Definition of a ESLint log file format.
             </td>
 							</tr>
 					</tbody></table>

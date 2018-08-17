@@ -77,7 +77,6 @@
 <p><a href="#Syntax">Syntax</a></p>
 <p><a href="#Constructors">Constructors</a></p>
 <p><a href="#Properties">Properties</a></p>
-<p><a href="#Methods">Methods</a></p>
 <p><a href="#ExtensionMethods">Extension Methods</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -142,10 +141,8 @@
 		<li class="header">Namespace</li>
 		<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint">Cake<wbr>.Issues<wbr>.Markdownlint</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Interface Types</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/ILogFileFormat">ILogFileFormat</a></li>
 			<li class="header">Class Types</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/LogFileFormat">LogFileFormat</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/BaseMarkdownlintLogFileFormat">Base<wbr>Markdownlint<wbr>Log<wbr>File<wbr>Format</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesAliases">Markdownlint<wbr>Issues<wbr>Aliases</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesProvider">Markdownlint<wbr>Issues<wbr>Provider</a></li>
 				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings">Markdownlint<wbr>Issues<wbr>Settings</a></li>
@@ -189,7 +186,9 @@
 								<dt>Base Types</dt>
 								<dd>
 									<ul class="list-unstyled">										
-											<li>object</li>								
+											<li>Object</li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProviderSettings">Issue<wbr>Provider<wbr>Settings</a></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues/BaseMultiFormatIssueProviderSettings_2">Base<wbr>Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Settings<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></li>								
 									</ul>
 								</dd>				
 							
@@ -199,7 +198,11 @@
 					<div class="col-md-6">
 						<div class="mermaid">
 							graph TD
-	Base0["object"]--&gt;Type
+	Base0["BaseMultiFormatIssueProviderSettings&lt;TIssueProvider, TSettings&gt;"]--&gt;Type
+	click Base0 "/Cake.Issues.Website/api/Cake.Issues/BaseMultiFormatIssueProviderSettings_2"
+	Base1["IssueProviderSettings"]--&gt;Base0
+	click Base1 "/Cake.Issues.Website/api/Cake.Issues/IssueProviderSettings"
+	Base2["Object"]--&gt;Base1
 	Type["MarkdownlintIssuesSettings"]
 class Type type-node
 
@@ -210,7 +213,8 @@ class Type type-node
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public class MarkdownlintIssuesSettings</code></pre>
+	<pre><code>public class MarkdownlintIssuesSettings : 
+    BaseMultiFormatIssueProviderSettings&lt;MarkdownlintIssuesProvider, MarkdownlintIssuesSettings&gt;</code></pre>
 
 
 
@@ -228,15 +232,17 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings/43A01DA2">Markdownlint<wbr>Issues<wbr>Settings<wbr>(FilePath, <wbr>ILogFileFormat)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings/75D039F5">Markdownlint<wbr>Issues<wbr>Settings<wbr>(byte[], <wbr>Base<wbr>Markdownlint<wbr>Log<wbr>File<wbr>Format)<wbr></a></td>
 									<td>
-            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings">MarkdownlintIssuesSettings</a></code> class.
+            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings">MarkdownlintIssuesSettings</a></code> class
+            for a log file content in memory.
             </td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings/AB632731">Markdownlint<wbr>Issues<wbr>Settings<wbr>(string, <wbr>ILogFileFormat)<wbr></a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings/01D931DF">Markdownlint<wbr>Issues<wbr>Settings<wbr>(FilePath, <wbr>Base<wbr>Markdownlint<wbr>Log<wbr>File<wbr>Format)<wbr></a></td>
 									<td>
-            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings">MarkdownlintIssuesSettings</a></code> class.
+            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings">MarkdownlintIssuesSettings</a></code> class
+            for reading a log file on disk.
             </td>
 							</tr>
 					</tbody></table>
@@ -258,21 +264,23 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings/F80D5E79">Format</a></td>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/ILogFileFormat">ILogFileFormat</a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/BaseMultiFormatIssueProviderSettings_2/24B4AE4A">Format</a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/ILogFileFormat_2">ILogFileFormat<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></td>
 								<td>
 									<div>
-            Gets the format of the Markdownlint log file.
+            Gets the format of the log file.
             </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/BaseMultiFormatIssueProviderSettings_2">Base<wbr>Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Settings<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></em></small></div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings/82CADC39">LogFileContent</a></td>
-								<td>string</td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProviderSettings/7F8C606C">LogFileContent</a></td>
+								<td>byte[]</td>
 								<td>
 									<div>
             Gets the content of the log file.
             </div>
+											<div><small><em>Inherited from <a href="/Cake.Issues.Website/api/Cake.Issues/IssueProviderSettings">Issue<wbr>Provider<wbr>Settings</a></em></small></div>
 								</td>
 							</tr>
 					</tbody></table>
@@ -280,42 +288,6 @@ class Type type-node
 			</div>
 		
 
-			<h1 id="Methods">Methods</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover three-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Value</th>
-								<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings/01502331">FromContent<wbr>(string, <wbr>ILogFileFormat)<wbr></a></td>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings">Markdownlint<wbr>Issues<wbr>Settings</a></td>
-								<td>
-									<div>
-            Returns a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings">MarkdownlintIssuesSettings</a></code> class from the content
-            of a Markdownlint log file.
-            </div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings/316191CF">FromFilePath<wbr>(FilePath, <wbr>ILogFileFormat)<wbr></a></td>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings">Markdownlint<wbr>Issues<wbr>Settings</a></td>
-								<td>
-									<div>
-            Returns a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint/MarkdownlintIssuesSettings">MarkdownlintIssuesSettings</a></code> class from a log file on disk.
-            </div>
-											<div><small><em>static</em></small></div>
-								</td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
 
 
 			<h1 id="ExtensionMethods">Extension Methods</h1>

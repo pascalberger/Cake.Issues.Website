@@ -145,8 +145,12 @@
 			<li><a href="/Cake.Issues.Website/api/Cake.Issues.EsLint">Cake<wbr>.Issues<wbr>.EsLint</a></li>
 			<li><a href="/Cake.Issues.Website/api/Cake.Issues.InspectCode">Cake<wbr>.Issues<wbr>.InspectCode</a></li>
 			<li><a href="/Cake.Issues.Website/api/Cake.Issues.Markdownlint">Cake<wbr>.Issues<wbr>.Markdownlint</a></li>
-			<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild">Cake<wbr>.Issues<wbr>.MsBuild</a></li>
 
+				<li class="treeview">
+				<a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild">Cake<wbr>.Issues<wbr>.MsBuild</a> <a href="#" class="expand"></a>
+				<ul class="treeview-menu">
+						<li><a href="/Cake.Issues.Website/api/Cake.Issues.MsBuild.LogFileFormat">Cake<wbr>.Issues<wbr>.MsBuild<wbr>.LogFileFormat</a></li>
+</ul></li>
 				<li class="treeview">
 				<a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests">Cake<wbr>.Issues<wbr>.PullRequests</a> <a href="#" class="expand"></a>
 				<ul class="treeview-menu">
@@ -189,9 +193,33 @@
 							</tr>
 						</thead>
 							<tbody><tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/BaseConfigurableIssueProviderFixture_2">Base<wbr>Configurable<wbr>Issue<wbr>Provider<wbr>Fixture<wbr>&lt;TIssueProvider, <wbr>TSettings&gt;<wbr></a></td>
+									<td>
+            Base class for test fixtures for testing issue providers inherited from <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseConfigurableIssueProvider_1">BaseConfigurableIssueProvider&lt;T&gt;</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/BaseIssueProviderFixture_1">Base<wbr>Issue<wbr>Provider<wbr>Fixture<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            Base class for test fixtures for testing issue providers inherited from <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueProvider">BaseIssueProvider</a></code>.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/BaseMultiFormatIssueProviderFixture_3">Base<wbr>Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Fixture<wbr>&lt;TIssueProvider, <wbr>TSettings, <wbr>TLogFileFormat&gt;<wbr></a></td>
+									<td>
+            Base class for test fixtures for testing issue providers inherited from <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseMultiFormatIssueProvider_2">BaseMultiFormatIssueProvider&lt;TSettings, TIssueProvider&gt;</a></code>.
+            </td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/ExceptionAssertExtensions">Exception<wbr>Assert<wbr>Extensions</a></td>
 									<td>
             Extensions for asserting exceptions.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeConfigurableIssueProvider">Fake<wbr>Configurable<wbr>Issue<wbr>Provider</a></td>
+									<td>
+            Implementation of a <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseConfigurableIssueProvider_1">BaseConfigurableIssueProvider&lt;T&gt;</a></code> for use in test cases.
             </td>
 							</tr>
 							<tr>
@@ -203,19 +231,25 @@
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProvider">FakeIssueProvider</a></td>
 									<td>
-            Implementation of a <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IssueProvider">IssueProvider</a></code> for use in test cases.
-            </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProviderSettings">Fake<wbr>Issue<wbr>Provider<wbr>Settings</a></td>
-									<td>
-            Implementation of <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeIssueProviderSettings">FakeIssueProviderSettings</a></code> for use in test cases.
+            Implementation of a <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueProvider">BaseIssueProvider</a></code> for use in test cases.
             </td>
 							</tr>
 							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeLogFileFormat">FakeLogFileFormat</a></td>
 									<td>
-            Implementation of <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/LogFileFormat_2">LogFileFormat&lt;TIssueProvider, TSettings&gt;</a></code> for use in test cases.
+            Implementation of <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseLogFileFormat_2">BaseLogFileFormat&lt;TIssueProvider, TSettings&gt;</a></code> for use in test cases.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeMultiFormatIssueProvider">Fake<wbr>Multi<wbr>Format<wbr>Issue<wbr>Provider</a></td>
+									<td>
+            Implementation of a <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseMultiFormatIssueProvider_2">BaseMultiFormatIssueProvider&lt;TSettings, TIssueProvider&gt;</a></code> for use in test cases.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeMultiFormatIssueProviderSettings">Fake<wbr>Multi<wbr>Format<wbr>Issue<wbr>Provider<wbr>Settings</a></td>
+									<td>
+            Implementation of <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseMultiFormatIssueProviderSettings_2">BaseMultiFormatIssueProviderSettings&lt;TIssueProvider, TSettings&gt;</a></code> for use in test cases.
             </td>
 							</tr>
 							<tr>
@@ -228,6 +262,12 @@
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/FakeRuleUrlResolver">FakeRuleUrlResolver</a></td>
 									<td>
             Implementation of a <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/BaseRuleUrlResolver_1">BaseRuleUrlResolver&lt;T&gt;</a></code> for use in test cases.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Testing/ResourceTempFile">ResourceTempFile</a></td>
+									<td>
+            Creates a temporary file from an embedded resource.
             </td>
 							</tr>
 					</tbody></table>
