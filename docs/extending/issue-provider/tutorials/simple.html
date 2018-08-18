@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - Implementing rule URL resolving</title>
+        <title>Cake Issues - Simple issue provider</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -73,9 +73,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/extending/issue-provider/rule-url-resolving.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#implementing-ruleurlresolver">Implementing RuleUrlResolver</a></p>
-<p><a href="#support-custom-url-resolvers">Support custom URL resolvers</a></p>
+        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/extending/issue-provider/tutorials/simple.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#implementing-issue-provider">Implementing issue provider</a></p>
+<p><a href="#aliases">Aliases</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -267,8 +267,16 @@
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/overview">Overview</a></li>
                 <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/categories">Alias categories</a></li>
-                <li class="selected"><a href="/Cake.Issues.Website/docs/extending/issue-provider/rule-url-resolving">Implementing rule URL resolving</a></li>
-                <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/logfile-format">Support multiple log file formats</a></li>
+                <li class="treeview active">
+                    <a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials">Tutorials</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li class="selected"><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/simple">Simple issue provider</a></li>
+                <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/settings">Provider settings</a></li>
+                <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/logfile-format">Multiple log file formats</a></li>
+                <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/rule-url-resolving">Rule URL resolving</a></li>
+
+                    </ul>
+                </li>
                 <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/helper">Helper</a></li>
 
                     </ul>
@@ -322,114 +330,90 @@
 
 
 	<section class="content-header">
-		<h1>Implementing rule URL resolving</h1>
+		<h1>Simple issue provider</h1>
 	</section>
 	<section class="content">
-		<p>For cases where additional logic is required to determine the URL for a rule, the <code>Cake.Issue</code>
-addin provides the <a href="../../../api/Cake.Issues/BaseRuleDescription/">BaseRuleDescription</a> and <a href="../../../api/Cake.Issues/BaseRuleUrlResolver_1/">BaseRuleUrlResolver</a> classes for
-simplifying implementation of providing URLs linking to site providing information about issues.</p>
-<h1 id="implementing-ruleurlresolver">Implementing RuleUrlResolver</h1>
-<p>In the issue provider a concrete class inheriting from <a href="../../../api/Cake.Issues/BaseRuleDescription/">BaseRuleDescription</a> should be implemented
-containing all properties required to determine the URL to a rule.
-The following class adds two properties <code>Category</code> and <code>RuleId</code> to the description:</p>
+		<p>This tutorial explains how to implement a simple issue provider using the <a href="../../../../api/Cake.Issues/BaseIssueProvider/">BaseIssueProvider</a> class
+from the <code>Cake.Issue</code> addin.</p>
+<h1 id="implementing-issue-provider">Implementing issue provider</h1>
+<p>A concrete class inheriting from <a href="../../../../api/Cake.Issues/BaseIssueProvider/">BaseIssueProvider</a> needs to be implemented:</p>
 <pre><code class="language-csharp">/// &lt;summary&gt;
-/// Class describing rules for my issue provider.
+/// My issue provider.
 /// &lt;/summary&gt;
-public class MyRuleDescription : <a href="/Cake.Issues.Website/api/Cake.Issues/BaseRuleDescription">BaseRuleDescription</a>
+public class MyIssuesProvider : <a href="/Cake.Issues.Website/api/Cake.Issues/BaseIssueProvider">BaseIssueProvider</a>
 {
     /// &lt;summary&gt;
-    /// Gets or sets the category of the rule.
+    /// Initializes a new instance of the &lt;see cref="MyIssuesProvider"/&gt; class.
     /// &lt;/summary&gt;
-    public string Category { get; set; }
-
-    /// &lt;summary&gt;
-    /// Gets or sets the identifier of the rule.
-    /// &lt;/summary&gt;
-    public int RuleId { get; set; }
-}
-</code></pre>
-<p>Also a class inheriting from <a href="../../../api/Cake.Issues/BaseRuleUrlResolver_1/">BaseRuleUrlResolver</a> needs to be implemented containing an implementation
-of <a href="../../../api/Cake.Issues/BaseRuleUrlResolver_1/D9DB5D44">TryGetRuleDescription</a> for parsing rule urls to the concrete <a href="../../../api/Cake.Issues/BaseRuleDescription/">BaseRuleDescription</a> class.</p>
-<pre><code class="language-csharp">/// &lt;summary&gt;
-/// Class for retrieving an URL linking to a site describing a rule.
-/// &lt;/summary&gt;
-internal class MyRuleUrlResolver : BaseUrlResolver&lt;MyRuleDescription&gt;
-{
-        /// &lt;inheritdoc/&gt;
-        protected override bool TryGetRuleDescription(string rule, MyRuleDescription ruleDescription)
-        {
-            ruleDescription.RuleId = rule.Substring(3, rule.Length - 3);
-            ruleDescription.Category = rule.Substring(0, 3);
-
-            return true;
-        }
-    }
-</code></pre>
-<p>To use the URL resolver the <a href="../../../api/Cake.Issues/BaseRuleUrlResolver_1/6B23EC74">ResolveRuleUrl</a> method needs to be called:</p>
-<pre><code class="language-csharp">var resolver = new MyRuleUrlResolver();
-var url = resolver.ResolveRuleUrl(rule)
-</code></pre>
-<p>Afterwards different resolvers can be registered which return the actual URL based on the rule description:</p>
-<pre><code class="language-csharp">/// &lt;summary&gt;
-/// Class for retrieving an URL linking to a site describing a rule.
-/// &lt;/summary&gt;
-internal class MyRuleUrlResolver : BaseUrlResolver&lt;MyRuleDescription&gt;
-{
-        /// &lt;summary&gt;
-        /// Initializes a new instance of the &lt;see cref="MyRuleUrlResolver"/&gt; class.
-        /// &lt;/summary&gt;
-        private MyRuleUrlResolver()
-        {
-            // Add resolver for different issue categories.
-            this.AddUrlResolver(x =&gt;
-                x.Category.ToUpperInvariant() == "FOO" ?
-                    new Uri("https://www.google.com/search?q=%22" + x.Rule) :
-                    null);
-            this.AddUrlResolver(x =&gt;
-                x.Category.ToUpperInvariant() == "BAR" ?
-                    new Uri("https://www.bing.com/search?q=%22" + x.Rule) :
-                    null);
-        }
-    }
-</code></pre>
-<h1 id="support-custom-url-resolvers">Support custom URL resolvers</h1>
-<p>The <a href="../../../api/Cake.Issues/BaseRuleUrlResolver_1/AAA4FB20">AddUrlResolver</a> method can also be called from an Cake alias to allow users of the addin to
-register custom resolvers.
-For this the URL resolver class needs to be implemented as a singleton:</p>
-<pre><code class="language-csharp">/// &lt;summary&gt;
-/// Class for retrieving an URL linking to a site describing a rule.
-/// &lt;/summary&gt;
-internal class MyRuleUrlResolver : BaseUrlResolver&lt;MyRuleDescription&gt;
-{
-    private static readonly Lazy&lt;MyRuleUrlResolver&gt; InstanceValue =
-        new Lazy&lt;MyRuleUrlResolver&gt;(() =&gt; new MyRuleUrlResolver());
-
-    /// &lt;summary&gt;
-    /// Gets the instance of the rule resolver.
-    /// &lt;/summary&gt;
-    public static MyRuleUrlResolver Instance =&gt; InstanceValue.Value;
-}
-
-[CakeAliasCategory(IssuesAliasConstants.MainCakeAliasCategory)]
-public static class MyIssueProviderAliases
-{
-    /// &lt;summary&gt;
-    /// Registers a new URL resolver with default priority of 0.
-    /// &lt;/summary&gt;
-    /// &lt;param name="context"&gt;The context.&lt;/param&gt;
-    /// &lt;param name="resolver"&gt;Resolver which returns an &lt;see cref="Uri"/&gt; linking to a site
-    /// containing help for a specific &lt;see cref="MyRuleDescription"/&gt;.&lt;/param&gt;
-    [CakeMethodAlias]
-    [CakeAliasCategory(IssuesAliasConstants.IssueProviderCakeAliasCategory)]
-    public static void MyIssueProviderAddRuleUrlResolver(
-        this ICakeContext context,
-        Func&lt;MyRuleDescription, Uri&gt; resolver)
+    /// &lt;param name="log"&gt;The Cake log context.&lt;/param&gt;
+    public MyIssuesProvider(ICakeLog log)
+        : base(log, settings)
     {
-        context.NotNull(nameof(context));
-        resolver.NotNull(nameof(resolver));
-
-        MyRuleUrlResolver.Instance.AddUrlResolver(resolver);
     }
+
+    /// &lt;inheritdoc /&gt;
+    public override string ProviderName =&gt; "MyIssuesProvider";
+
+    /// &lt;inheritdoc /&gt;
+    protected override IEnumerable&lt;IIssue&gt; InternalReadIssues(IssueCommentFormat format)
+    {
+        var result = new List&lt;IIssue&gt;();
+
+        // Implement issue provider logic here.
+        result.Add(
+            <a href="/Cake.Issues.Website/api/Cake.Issues/IssueBuilder">IssueBuilder</a>
+                .NewIssue("Some message", issueProvider)
+                .WithPriority(IssuePriority.Warning)
+                .OfRule("My rule")
+                .Create());
+
+        return result;
+    }
+}
+</code></pre>
+<h1 id="aliases">Aliases</h1>
+<p>An alias for reading issues with the provider should be provided:</p>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Gets an instance of my issues provider using specified settings.
+/// &lt;/summary&gt;
+/// &lt;param name="context"&gt;The context.&lt;/param&gt;
+/// &lt;returns&gt;Instance of my issues provider.&lt;/returns&gt;
+/// &lt;example&gt;
+/// &lt;para&gt;Read issues using my issues provider:&lt;/para&gt;
+/// &lt;code&gt;
+/// &lt;![CDATA[
+///     var issues =
+///         ReadIssues(
+///             MyIssues());
+/// ]]&gt;
+/// &lt;/code&gt;
+/// &lt;/example&gt;
+[CakeMethodAlias]
+[CakeAliasCategory(IssuesAliasConstants.IssueProviderCakeAliasCategory)]
+public static <a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a> MyIssues(
+    this ICakeContext context)
+{
+    context.NotNull(nameof(context));
+
+    return new MyIssuesProvider(context.Log);
+}
+</code></pre>
+<p>Additionally a property alias for returning the provider type name should be defined:</p>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Gets the name of my issue provider.
+/// This name can be used to identify issues based on the &lt;see cref="IIssue.ProviderType"/&gt; property.
+/// &lt;/summary&gt;
+/// &lt;param name="context"&gt;The context.&lt;/param&gt;
+/// &lt;returns&gt;Name of my issue provider.&lt;/returns&gt;
+[CakePropertyAlias]
+[CakeAliasCategory(IssuesAliasConstants.IssueProviderCakeAliasCategory)]
+public static string MyIssuesProviderTypeName(
+    this ICakeContext context)
+{
+    context.NotNull(nameof(context));
+
+    return typeof(MyIssuesProvider).FullName;
+}
 </code></pre>
 
 	</section>

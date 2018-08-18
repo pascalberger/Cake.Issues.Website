@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - HTML DevExtreme Data Grid</title>
+        <title>Cake Issues - Rule URL resolving</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -73,13 +73,9 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/report-formats/generic/templates/htmldxdatagrid.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#features">Features</a></p>
-<p><a href="#requirements">Requirements</a></p>
-<p><a href="#usage">Usage</a></p>
-<p><a href="#options">Options</a></p>
-<p><a href="#demos">Demos</a></p>
-<p><a href="#source-code">Source Code</a></p>
+        <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/extending/issue-provider/tutorials/rule-url-resolving.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#implementing-ruleurlresolver">Implementing RuleUrlResolver</a></p>
+<p><a href="#support-custom-url-resolvers">Support custom URL resolvers</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -208,10 +204,10 @@
 
                     </ul>
                 </li>
-                <li class="treeview active">
+                <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/report-formats">Report Formats</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li class="treeview active">
+                                        <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/report-formats/generic">Generic</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/report-formats/generic/requirements">Requirements</a></li>
@@ -225,10 +221,10 @@
                     </ul>
                 </li>
                 <li><a href="/Cake.Issues.Website/docs/report-formats/generic/release-notes">Release Notes</a></li>
-                <li class="treeview active">
+                <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/report-formats/generic/templates">Template Gallery</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li class="selected"><a href="/Cake.Issues.Website/docs/report-formats/generic/templates/htmldxdatagrid">HTML DevExtreme Data Grid</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/report-formats/generic/templates/htmldxdatagrid">HTML DevExtreme Data Grid</a></li>
                 <li><a href="/Cake.Issues.Website/docs/report-formats/generic/templates/htmldatatable">HTML Data Table</a></li>
                 <li><a href="/Cake.Issues.Website/docs/report-formats/generic/templates/htmldiagnostic">HTML Diagnostic</a></li>
 
@@ -263,21 +259,21 @@
 
                     </ul>
                 </li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/extending">Extending</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li class="treeview">
+                                        <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/extending/issue-provider">Issue Provider</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/overview">Overview</a></li>
                 <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/categories">Alias categories</a></li>
-                <li class="treeview">
+                <li class="treeview active">
                     <a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials">Tutorials</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
                                         <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/simple">Simple issue provider</a></li>
                 <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/settings">Provider settings</a></li>
                 <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/logfile-format">Multiple log file formats</a></li>
-                <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/rule-url-resolving">Rule URL resolving</a></li>
+                <li class="selected"><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/rule-url-resolving">Rule URL resolving</a></li>
 
                     </ul>
                 </li>
@@ -334,154 +330,115 @@
 
 
 	<section class="content-header">
-		<h1>HTML DevExtreme Data Grid</h1>
+		<h1>Rule URL resolving</h1>
 	</section>
 	<section class="content">
-		<p>Template for a HTML report containing a rich data grid with sorting, filtering, grouping and search capabilities powered by <a href="https://js.devexpress.com">DevExtreme</a>.</p>
-<p><img src="htmldxdatagrid01.png" class="img-fluid" alt="HTML DevExtreme Data Grid" title="HTML DevExtreme Data Grid"></p>
-<h1 id="features">Features</h1>
-<ul>
-<li>Table with <code>Provider</code>, <code>Severity</code>, <code>Project</code>, <code>Path</code>, <code>File</code>, <code>Line</code>, <code>Rule</code>, <code>Message</code> by default.</li>
-<li>Support for grouping by multiple columns by user.</li>
-<li>Total number of issues by each group level.</li>
-<li>Each column sortable by user.</li>
-<li>Data can be filtered by any column by user.</li>
-<li>Paged view.</li>
-<li>Client-side full text search.</li>
-<li>Fully customizable through <a href="#options">options</a>.</li>
-</ul>
-<h1 id="requirements">Requirements</h1>
-<ul>
-<li>Cake.Issues.Reporting.Generic 0.3.1 or higher</li>
-<li>Internet access</li>
-</ul>
-<h1 id="usage">Usage</h1>
-<p>To create a report using the HTML DevExtreme Data Grid template you can use the <a href="../../../../../Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/GenericIssueReportTemplate/0E9E9D94">GenericIssueReportTemplate.HtmlDxDataGrid</a> enum value:</p>
-<pre><code class="language-csharp">CreateIssueReport(
-    issues,
-    GenericIssueReportFormatFromEmbeddedTemplate(GenericIssueReportTemplate.HtmlDxDataGrid),
-    @"c:\repo",
-    @"c:\report.html");
+		<p>For cases where additional logic is required to determine the URL for a rule, the <code>Cake.Issue</code>
+addin provides the <a href="../../../../api/Cake.Issues/BaseRuleDescription/">BaseRuleDescription</a> and <a href="../../../../api/Cake.Issues/BaseRuleUrlResolver_1/">BaseRuleUrlResolver</a> classes for
+simplifying implementation of providing URLs linking to site providing information about issues.</p>
+<h1 id="implementing-ruleurlresolver">Implementing RuleUrlResolver</h1>
+<p>In the issue provider a concrete class inheriting from <a href="../../../../api/Cake.Issues/BaseRuleDescription/">BaseRuleDescription</a> should be implemented
+containing all properties required to determine the URL to a rule.
+The following class adds two properties <code>Category</code> and <code>RuleId</code> to the description:</p>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Class describing rules for my issue provider.
+/// &lt;/summary&gt;
+public class MyRuleDescription : <a href="/Cake.Issues.Website/api/Cake.Issues/BaseRuleDescription">BaseRuleDescription</a>
+{
+    /// &lt;summary&gt;
+    /// Gets or sets the category of the rule.
+    /// &lt;/summary&gt;
+    public string Category { get; set; }
+
+    /// &lt;summary&gt;
+    /// Gets or sets the identifier of the rule.
+    /// &lt;/summary&gt;
+    public int RuleId { get; set; }
+}
 </code></pre>
-<h1 id="options">Options</h1>
-<p>See <a href="../../../../../Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/HtmlDxDataGridOption/">HtmlDxDataGridOption</a> for a list of possible options.</p>
-<h1 id="demos">Demos</h1>
-<p>The following demo shows the template with its default options:</p>
-<ul>
-<li><a href="htmldxdatagrid-demo-default.html" target="_blank">Default</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-default.cake" target="_blank">Source Code</a>)</li>
-</ul>
-<h2 id="themes">Themes</h2>
-<p>The template supports the teams defined in the <a href="../../../../../Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/DevExtremeTheme/">DevExtremeTheme</a> enumeration which can be set using the <a href="../../../../../Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/HtmlDxDataGridOption/EA83DCAB">HtmlDxDataGridOption.Theme</a>:</p>
-<pre><code class="language-csharp">CreateIssueReport(
-    issues,
-    GenericIssueReportFormatFromEmbeddedTemplate(
-        GenericIssueReportTemplate.HtmlDxDataGrid,
-        settings =&gt; settings.WithOption(HtmlDxDataGridOption.Theme, DevExtremeTheme.MaterialBlueLight)),
-    @"c:\repo",
-    @"c:\report.html");
+<p>Also a class inheriting from <a href="../../../../api/Cake.Issues/BaseRuleUrlResolver_1/">BaseRuleUrlResolver</a> needs to be implemented containing an implementation
+of <a href="../../../../api/Cake.Issues/BaseRuleUrlResolver_1/D9DB5D44">TryGetRuleDescription</a> for parsing rule urls to the concrete <a href="../../../../api/Cake.Issues/BaseRuleDescription/">BaseRuleDescription</a> class.</p>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Class for retrieving an URL linking to a site describing a rule.
+/// &lt;/summary&gt;
+internal class MyRuleUrlResolver : BaseUrlResolver&lt;MyRuleDescription&gt;
+{
+        /// &lt;inheritdoc/&gt;
+        protected override bool TryGetRuleDescription(string rule, MyRuleDescription ruleDescription)
+        {
+            ruleDescription.RuleId = rule.Substring(3, rule.Length - 3);
+            ruleDescription.Category = rule.Substring(0, 3);
+
+            return true;
+        }
+    }
 </code></pre>
-<ul>
-<li><a href="htmldxdatagrid-demo-theme-light.html" target="_blank">Light Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-light.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-dark.html" target="_blank">Dark Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-dark.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-contrast.html" target="_blank">Contrast Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-contrast.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-carmine.html" target="_blank">Carmine Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-carmine.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-darkmoon.html" target="_blank">Dark Moon Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-darkmoon.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-softblue.html" target="_blank">Soft Blue Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-softblue.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-darkviolet.html" target="_blank">Dark Violet Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-darkviolet.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-greenmist.html" target="_blank">Green Mist Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-greenmist.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-lightcompact.html" target="_blank">Light Compact Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-lightcompact.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-darkcompact.html" target="_blank">Dark Compact Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-darkcompact.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-contrastcompact.html" target="_blank">Contrast Compact Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-contrastcompact.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-materialbluelight.html" target="_blank">Material Blue Light Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-materialbluelight.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-materiallimelight.html" target="_blank">Material Lime Light Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-materiallimelight.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-materialorangelight.html" target="_blank">Material Orange Light Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-materialorangelight.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-materialpurplelight.html" target="_blank">Material Purple Light Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-materialpurplelight.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-theme-materialteallight.html" target="_blank">Material Teal Light Theme</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-theme-materialteallight.cake" target="_blank">Source Code</a>)</li>
-</ul>
-<h2 id="column-visibility">Column visibility</h2>
-<p>Visible columns can be defined using the <code>ColumnNameVisible</code> option:</p>
-<pre><code class="language-csharp">CreateIssueReport(
-    issues,
-    GenericIssueReportFormatFromEmbeddedTemplate(
-        GenericIssueReportTemplate.HtmlDxDataGrid,
-        settings =&gt; settings.WithOption(HtmlDxDataGridOption.LineVisible, false)),
-    @"c:\repo",
-    @"c:\report.html");
+<p>To use the URL resolver the <a href="../../../../api/Cake.Issues/BaseRuleUrlResolver_1/6B23EC74">ResolveRuleUrl</a> method needs to be called:</p>
+<pre><code class="language-csharp">var resolver = new MyRuleUrlResolver();
+var url = resolver.ResolveRuleUrl(rule)
 </code></pre>
-<p>Additional columns can be added using the <a href="../../../../../Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/HtmlDxDataGridOption/F9860912">HtmlDxDataGridOption.AdditionalColumns</a> option.</p>
-<ul>
-<li><a href="htmldxdatagrid-demo-columnhiding.html" target="_blank">Show and hide columns</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-hide-columns.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-additionalcolumns.html" target="_blank">Add additional columns</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-additional-columns.cake" target="_blank">Source Code</a>)</li>
-</ul>
-<h2 id="sorting">Sorting</h2>
-<p>Sorted columns can be defined using the <a href="../../../../../Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/HtmlDxDataGridOption/D578E453">HtmlDxDataGridOption.SortedColumns</a> and the
-<code>ColumnNameSortOder</code> options:</p>
-<pre><code class="language-csharp">CreateIssueReport(
-    issues,
-    GenericIssueReportFormatFromEmbeddedTemplate(
-        GenericIssueReportTemplate.HtmlDxDataGrid,
-        settings =&gt; settings
-            .WithOption(HtmlDxDataGridOption.SortedColumns, new List&lt;ReportColumn&gt; { ReportColumn.Rule })
-            .WithOption(HtmlDxDataGridOption.RuleSortOder, ColumnSortOderDescending )),
-    @"c:\repo",
-    @"c:\report.html");
+<p>Afterwards different resolvers can be registered which return the actual URL based on the rule description:</p>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Class for retrieving an URL linking to a site describing a rule.
+/// &lt;/summary&gt;
+internal class MyRuleUrlResolver : BaseUrlResolver&lt;MyRuleDescription&gt;
+{
+        /// &lt;summary&gt;
+        /// Initializes a new instance of the &lt;see cref="MyRuleUrlResolver"/&gt; class.
+        /// &lt;/summary&gt;
+        private MyRuleUrlResolver()
+        {
+            // Add resolver for different issue categories.
+            this.AddUrlResolver(x =&gt;
+                x.Category.ToUpperInvariant() == "FOO" ?
+                    new Uri("https://www.google.com/search?q=%22" + x.Rule) :
+                    null);
+            this.AddUrlResolver(x =&gt;
+                x.Category.ToUpperInvariant() == "BAR" ?
+                    new Uri("https://www.bing.com/search?q=%22" + x.Rule) :
+                    null);
+        }
+    }
 </code></pre>
-<ul>
-<li><a href="htmldxdatagrid-demo-sorting.html" target="_blank">Change sorting</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-sorting.cake" target="_blank">Source Code</a>)</li>
-</ul>
-<h2 id="grouping">Grouping</h2>
-<p>Grouping can be defined using the <a href="../../../../../Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/HtmlDxDataGridOption/0907599C">HtmlDxDataGridOption.GroupedColumns</a> option:</p>
-<pre><code class="language-csharp">CreateIssueReport(
-    issues,
-    GenericIssueReportFormatFromEmbeddedTemplate(
-        GenericIssueReportTemplate.HtmlDxDataGrid,
-        settings =&gt; settings.WithOption(HtmlDxDataGridOption.GroupedColumns, new List&lt;ReportColumn&gt; { ReportColumn.Rule })),
-    @"c:\repo",
-    @"c:\report.html");
+<h1 id="support-custom-url-resolvers">Support custom URL resolvers</h1>
+<p>The <a href="../../../../api/Cake.Issues/BaseRuleUrlResolver_1/AAA4FB20">AddUrlResolver</a> method can also be called from an Cake alias to allow users of the addin to
+register custom resolvers.
+For this the URL resolver class needs to be implemented as a singleton:</p>
+<pre><code class="language-csharp">/// &lt;summary&gt;
+/// Class for retrieving an URL linking to a site describing a rule.
+/// &lt;/summary&gt;
+internal class MyRuleUrlResolver : BaseUrlResolver&lt;MyRuleDescription&gt;
+{
+    private static readonly Lazy&lt;MyRuleUrlResolver&gt; InstanceValue =
+        new Lazy&lt;MyRuleUrlResolver&gt;(() =&gt; new MyRuleUrlResolver());
+
+    /// &lt;summary&gt;
+    /// Gets the instance of the rule resolver.
+    /// &lt;/summary&gt;
+    public static MyRuleUrlResolver Instance =&gt; InstanceValue.Value;
+}
+
+[CakeAliasCategory(IssuesAliasConstants.MainCakeAliasCategory)]
+public static class MyIssueProviderAliases
+{
+    /// &lt;summary&gt;
+    /// Registers a new URL resolver with default priority of 0.
+    /// &lt;/summary&gt;
+    /// &lt;param name="context"&gt;The context.&lt;/param&gt;
+    /// &lt;param name="resolver"&gt;Resolver which returns an &lt;see cref="Uri"/&gt; linking to a site
+    /// containing help for a specific &lt;see cref="MyRuleDescription"/&gt;.&lt;/param&gt;
+    [CakeMethodAlias]
+    [CakeAliasCategory(IssuesAliasConstants.IssueProviderCakeAliasCategory)]
+    public static void MyIssueProviderAddRuleUrlResolver(
+        this ICakeContext context,
+        Func&lt;MyRuleDescription, Uri&gt; resolver)
+    {
+        context.NotNull(nameof(context));
+        resolver.NotNull(nameof(resolver));
+
+        MyRuleUrlResolver.Instance.AddUrlResolver(resolver);
+    }
 </code></pre>
-<ul>
-<li><a href="htmldxdatagrid-demo-grouping.html" target="_blank">Change grouping</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-grouping.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-disablegrouping.html" target="_blank">Disable grouping</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-disable-grouping.cake" target="_blank">Source Code</a>)</li>
-</ul>
-<h2 id="other-features">Other features</h2>
-<ul>
-<li><a href="htmldxdatagrid-demo-changetitle.html" target="_blank">Change title</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-change-title.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-disableheader.html" target="_blank">Disable header</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-disable-header.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-filelinking.html" target="_blank">File linking</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-file-linking.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-disablefiltering.html" target="_blank">Disable filtering</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-disable-filtering.cake" target="_blank">Source Code</a>)</li>
-<li><a href="htmldxdatagrid-demo-disablesearching.html" target="_blank">Disable searching</a>
-(<a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/demos/build/create-reports/create-reports-htmldxdatagrid-disable-searching.cake" target="_blank">Source Code</a>)</li>
-</ul>
-<h1 id="source-code">Source Code</h1>
-<div class="alert alert-info"><p>You can use the source code as a template for your <a href="../examples#use-custom-template">custom template</a>.</p>
-</div>
-<p>Source code is available on <a href="https://github.com/cake-contrib/Cake.Issues.Reporting.Generic/blob/develop/src/Cake.Issues.Reporting.Generic/Templates/DxDataGrid.cshtml">GitHub</a>.</p>
 
 	</section>
                 

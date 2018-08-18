@@ -1,22 +1,20 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <title>Cake Issues - Overview</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
-        <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/Cake.Issues.Website/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/Cake.Issues.Website/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/Cake.Issues.Website/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/Cake.Issues.Website/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/Cake.Issues.Website/assets/css/override.css" rel="stylesheet" />
+        <link href="/Cake.Issues.Website/assets/css/override.css" rel="stylesheet">
         <script src="/Cake.Issues.Website/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/Cake.Issues.Website/assets/js/bootstrap.min.js"></script>        
         <script src="/Cake.Issues.Website/assets/js/app.min.js"></script>         
@@ -76,7 +74,9 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
         <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/extending/issue-provider/overview.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#base-classes">Base classes</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -266,8 +266,16 @@
                     <ul class="treeview-menu">
                                         <li class="selected"><a href="/Cake.Issues.Website/docs/extending/issue-provider/overview">Overview</a></li>
                 <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/categories">Alias categories</a></li>
-                <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/rule-url-resolving">Implementing rule URL resolving</a></li>
-                <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/logfile-format">Support multiple log file formats</a></li>
+                <li class="treeview">
+                    <a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials">Tutorials</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                                        <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/simple">Simple issue provider</a></li>
+                <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/settings">Provider settings</a></li>
+                <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/logfile-format">Multiple log file formats</a></li>
+                <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/tutorials/rule-url-resolving">Rule URL resolving</a></li>
+
+                    </ul>
+                </li>
                 <li><a href="/Cake.Issues.Website/docs/extending/issue-provider/helper">Helper</a></li>
 
                     </ul>
@@ -324,8 +332,35 @@
 		<h1>Overview</h1>
 	</section>
 	<section class="content">
-		<p>Issue providers need to implement the <a href="../../../api/Cake.Issues/IIssueProvider/">IIssueProvider</a> interface.
-For simplifying implementation there exists an abstract <a href="../../../api/Cake.Issues/IssueProvider">IssueProvider</a> base class from which concrete implementation can be inherited.</p>
+		<p>Issue providers need to implement the <a href="../../../api/Cake.Issues/IIssueProvider/">IIssueProvider</a> interface.</p>
+<h1 id="base-classes">Base classes</h1>
+<p>For simplifying implementation there exists base classes from which concrete implementation can be inherited.</p>
+<table class="table">
+<thead>
+<tr>
+<th>Base Class</th>
+<th>Use case</th>
+<th>Tutorial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../../api/Cake.Issues/BaseIssueProvider">BaseIssueProvider</a></td>
+<td>Base class for a simple issue provider implementation.</td>
+<td><a href="tutorials/simple">Simple provider</a></td>
+</tr>
+<tr>
+<td><a href="../../../api/Cake.Issues/BaseConfigurableIssueProvider_1">BaseConfigurableIssueProvider</a></td>
+<td>Base class for a issue provider with issue provider specific settings.</td>
+<td><a href="tutorials/settings">Provider settings</a></td>
+</tr>
+<tr>
+<td><a href="../../../api/Cake.Issues/BaseMultiFormatIssueProvider_2">BaseMultiFormatIssueProvider</a></td>
+<td>Base class for issue providers supporting multiple log formats.</td>
+<td><a href="tutorials/logfile-format">Multiple log file formats support</a></td>
+</tr>
+</tbody>
+</table>
 
 	</section>
                 
@@ -339,8 +374,8 @@ For simplifying implementation there exists an abstract <a href="../../../api/Ca
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
                 <p class="text-muted">
-    Copyright &copy; <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/cake-contrib/Cake.Issues/graphs/contributors" target="_blank">contributors</a>.
-    <br/>
+    Copyright © <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/cake-contrib/Cake.Issues/graphs/contributors" target="_blank">contributors</a>.
+    <br>
     Website generated by <a href="http://wyam.io" target="_blank">Wyam</a>
 </p>
 
@@ -348,14 +383,14 @@ For simplifying implementation there exists an abstract <a href="../../../api/Ca
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
         <div class="github-button">
-    <a href="https://github.com/search?q=topic%3Acake-issues&type=Repositories" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+    <a href="https://github.com/search?q=topic%3Acake-issues&amp;type=Repositories" target="_blank"><i class="fa fa-github"></i> GitHub</a>
 </div>
 <script>
     ((window.gitter = {}).chat = {}).options = {
         room: 'cake-contrib/Lobby'
     };
 </script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/anchor.min.js"></script>
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/clipboard.min.js"></script>
@@ -441,5 +476,5 @@ For simplifying implementation there exists an abstract <a href="../../../api/Ca
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>
