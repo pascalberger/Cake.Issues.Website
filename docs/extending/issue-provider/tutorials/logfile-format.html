@@ -429,7 +429,7 @@ internal class MyConcreteLogFileFormat : MyLogFileFormat
     }
 
     /// &lt;inheritdoc/&gt;
-    public override IEnumerable&lt;IIssue&gt; ReadIssues(
+    public override IEnumerable&lt;<a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a>&gt; ReadIssues(
         MyIssuesProvider issueProvider,
         <a href="/Cake.Issues.Website/api/Cake.Issues/RepositorySettings">RepositorySettings</a> repositorySettings,
         MyIssuesSettings issueProviderSettings)
@@ -438,7 +438,7 @@ internal class MyConcreteLogFileFormat : MyLogFileFormat
         repositorySettings.NotNull(nameof(repositorySettings));
         issueProviderSettings.NotNull(nameof(issueProviderSettings));
 
-        var result = new List&lt;IIssue&gt;();
+        var result = new List&lt;<a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a>&gt;();
 
         // Implement log file format logic here.
         result.Add(

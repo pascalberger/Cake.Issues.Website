@@ -332,44 +332,44 @@
 		<h1>Custom template</h1>
 	</section>
 	<section class="content">
-		<div class="alert alert-info"><p>If you create a universally usable custom template we're happy to package it with the addin.
+		<html><head></head><body><div class="alert alert-info"><p>If you create a universally usable custom template we're happy to package it with the addin.
 To have it included in the addin please <a href="https://github.com/cake-contrib/Cake.Issues.Reporting.Generic/blob/develop/CONTRIBUTING.md">create a pull request</a> with your contribution.</p>
 </div>
 <p>The following example will create a HTML report for issues logged as warnings by MsBuild using a custom template.</p>
-<pre><code class="language-csharp">#tool &quot;nuget:?package=MSBuild.Extension.Pack&quot;
-#addin &quot;Cake.Issues&quot;
-#addin &quot;Cake.Issues.MsBuild&quot;
-#addin &quot;Cake.Reporting&quot;
-#addin &quot;Cake.Reporting.Generic&quot;
+<pre><code class="language-csharp">#tool "nuget:?package=MSBuild.Extension.Pack"
+#addin "Cake.Issues"
+#addin "Cake.Issues.MsBuild"
+#addin "Cake.Reporting"
+#addin "Cake.Reporting.Generic"
 
-Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
+Task("Create-IssueReport").Does(() =&gt;
 {
-    var repoRootFolder = new DirectoryPath(&#64;&quot;c:\repo&quot;);
+    var repoRootFolder = new DirectoryPath(&#64;"c:\repo");
 
     // Build MySolution.sln solution in the repository root folder and log issues
     // using XmlFileLogger from MSBuild Extension Pack.
-    FilePath msBuildLogFile = &#64;&quot;c:\build\msbuild.log&quot;;
+    FilePath msBuildLogFile = &#64;"c:\build\msbuild.log";
     var settings = new MsBuildSettings()
         .WithLogger(
-            Context.Tools.Resolve(&quot;MSBuild.ExtensionPack.Loggers.dll&quot;).FullPath,
-            &quot;XmlFileLogger&quot;,
+            Context.Tools.Resolve("MSBuild.ExtensionPack.Loggers.dll").FullPath,
+            "XmlFileLogger",
             string.Format(
-                &quot;logfile=\&quot;{0}\&quot;;verbosity=Detailed;encoding=UTF-8&quot;,
+                "logfile=\"{0}\";verbosity=Detailed;encoding=UTF-8",
                 msBuildLogFile)
         );
-    MSBuild(repoRootFolder.CombineWithFilePath(&quot;MySolution.sln&quot;), settings);
+    MSBuild(repoRootFolder.CombineWithFilePath("MySolution.sln"), settings);
 
     // Create HTML report using Diagnostic template.
     CreateIssueReport(
-        new List&lt;IIssueProvider&gt;
+        new List&lt;<a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a>&gt;
         {
             MsBuildIssuesFromFilePath(
                 msBuildLogFile,
                 MsBuildXmlFileLoggerFormat)
         },
-        GenericIssueReportFormatFromFilePath(&#64;&quot;c:\ReportTemplate.cshtml&quot;),
+        GenericIssueReportFormatFromFilePath(&#64;"c:\ReportTemplate.cshtml"),
         repoRootFolder,
-        &#64;&quot;c:\report.html&quot;);
+        &#64;"c:\report.html");
 });
 </code></pre>
 <p><code>ReportTemplate</code> looks like this:</p>
@@ -377,22 +377,22 @@ Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
 
 &lt;!DOCTYPE html&gt;
 
-&lt;html lang=&quot;en&quot; xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+&lt;html lang="en" xmlns="http://www.w3.org/1999/xhtml"&gt;
 &lt;head&gt;
-    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta charset="utf-8" /&gt;
     &lt;title&gt;&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
     &lt;table&gt;
         &lt;thead&gt;
             &lt;tr&gt;
-                &lt;th scope=&quot;col&quot;&gt;AffectedFileRelativePath&lt;/th&gt;
-                &lt;th scope=&quot;col&quot;&gt;Line&lt;/th&gt;
-                &lt;th scope=&quot;col&quot;&gt;Message&lt;/th&gt;
-                &lt;th scope=&quot;col&quot;&gt;Priority&lt;/th&gt;
-                &lt;th scope=&quot;col&quot;&gt;Rule&lt;/th&gt;
-                &lt;th scope=&quot;col&quot;&gt;RuleUrl&lt;/th&gt;
-                &lt;th scope=&quot;col&quot;&gt;ProviderType&lt;/th&gt;
+                &lt;th scope="col"&gt;AffectedFileRelativePath&lt;/th&gt;
+                &lt;th scope="col"&gt;Line&lt;/th&gt;
+                &lt;th scope="col"&gt;Message&lt;/th&gt;
+                &lt;th scope="col"&gt;Priority&lt;/th&gt;
+                &lt;th scope="col"&gt;Rule&lt;/th&gt;
+                &lt;th scope="col"&gt;RuleUrl&lt;/th&gt;
+                &lt;th scope="col"&gt;ProviderType&lt;/th&gt;
             &lt;/tr&gt;
         &lt;/thead&gt;
         &lt;tbody&gt;
@@ -424,7 +424,7 @@ Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
 <li>Cake.Issues.dll</li>
 </ul>
 </div>
-
+</body></html>
 	</section>
                 
             </div>           

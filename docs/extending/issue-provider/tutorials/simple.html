@@ -355,9 +355,9 @@ public class MyIssuesProvider : <a href="/Cake.Issues.Website/api/Cake.Issues/Ba
     public override string ProviderName =&gt; "MyIssuesProvider";
 
     /// &lt;inheritdoc /&gt;
-    protected override IEnumerable&lt;IIssue&gt; InternalReadIssues(IssueCommentFormat format)
+    protected override IEnumerable&lt;<a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a>&gt; InternalReadIssues(IssueCommentFormat format)
     {
-        var result = new List&lt;IIssue&gt;();
+        var result = new List&lt;<a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a>&gt;();
 
         // Implement issue provider logic here.
         result.Add(

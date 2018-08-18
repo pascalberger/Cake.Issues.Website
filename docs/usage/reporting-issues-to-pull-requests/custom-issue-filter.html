@@ -332,42 +332,42 @@
 		<h1>Custom issue filter</h1>
 	</section>
 	<section class="content">
-		<p>You can define custom filters which are applied to issues before they are posted as comments to pull requests.</p>
+		<html><head></head><body><p>You can define custom filters which are applied to issues before they are posted as comments to pull requests.</p>
 <div class="alert alert-info"><p>You can use a custom filter to only have issues introduced with the current code posted to the pull request.</p>
 <p>For this you need to store your log files as artifacts on your build system, then you can define a custom filter
 which retrieves the logs from the previous build, parses them using the appropriate issue provider and filters
 out any issues which were already existing in the previous build.</p>
 </div>
 <p>The following example will filter out all issues from the rule <code>CA1000</code> from being posted to the pull request:</p>
-<pre><code class="language-csharp">#addin &quot;Cake.Issues&quot;
-#addin &quot;Cake.Issues.MsBuild&quot;
-#addin &quot;Cake.Issues.PullRequests&quot;
-#addin &quot;Cake.Issues.PullRequests.Tfs&quot;
+<pre><code class="language-csharp">#addin "Cake.Issues"
+#addin "Cake.Issues.MsBuild"
+#addin "Cake.Issues.PullRequests"
+#addin "Cake.Issues.PullRequests.Tfs"
 
-Task(&quot;ReportIssuesToPullRequest&quot;).Does(() =&gt;
+Task("ReportIssuesToPullRequest").Does(() =&gt;
 {
-    var repoRootFolder = new DirectoryPath(&#64;&quot;C:\repo&quot;);
+    var repoRootFolder = new DirectoryPath(&#64;"C:\repo");
 
     var settings = new ReportIssuesToPullRequestSettings(repoRootFolder);
 
     // Add custom filter.
-    settings.IssueFilters.Add(x =&gt; x.Where(issue =&gt; issue.Rule != &quot;CA1000&quot;));
+    settings.IssueFilters.Add(x =&gt; x.Where(issue =&gt; issue.Rule != "CA1000"));
 
     ReportIssuesToPullRequest(
-        new List&lt;IIssueProvider&gt;
+        new List&lt;<a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a>&gt;
         {
             MsBuildIssuesFromFilePath(
-                &#64;&quot;C:\build\msbuild.log&quot;,
+                &#64;"C:\build\msbuild.log",
                 MsBuildXmlFileLoggerFormat)
         },
         TfsPullRequests(
-            new Uri(&quot;http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository&quot;),
-            &quot;refs/heads/feature/myfeature&quot;,
+            new Uri("http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository"),
+            "refs/heads/feature/myfeature",
             TfsAuthenticationNtlm()),
         settings));
 });
 </code></pre>
-
+</body></html>
 	</section>
                 
             </div>           

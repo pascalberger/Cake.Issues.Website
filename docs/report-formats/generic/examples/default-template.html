@@ -332,33 +332,33 @@
 		<h1>Embedded default template</h1>
 	</section>
 	<section class="content">
-		<p>The following example will create a HTML report for issues logged as warnings by MsBuild.</p>
-<pre><code class="language-csharp">#tool &quot;nuget:?package=MSBuild.Extension.Pack&quot;
-#addin &quot;Cake.Issues&quot;
-#addin &quot;Cake.Issues.MsBuild&quot;
-#addin &quot;Cake.Reporting&quot;
-#addin &quot;Cake.Reporting.Generic&quot;
+		<html><head></head><body><p>The following example will create a HTML report for issues logged as warnings by MsBuild.</p>
+<pre><code class="language-csharp">#tool "nuget:?package=MSBuild.Extension.Pack"
+#addin "Cake.Issues"
+#addin "Cake.Issues.MsBuild"
+#addin "Cake.Reporting"
+#addin "Cake.Reporting.Generic"
 
-Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
+Task("Create-IssueReport").Does(() =&gt;
 {
-    var repoRootFolder = new DirectoryPath(&#64;&quot;c:\repo&quot;);
+    var repoRootFolder = new DirectoryPath(&#64;"c:\repo");
 
     // Build MySolution.sln solution in the repository root folder and log issues
     // using XmlFileLogger from MSBuild Extension Pack.
-    FilePath msBuildLogFile = &#64;&quot;c:\build\msbuild.log&quot;;
+    FilePath msBuildLogFile = &#64;"c:\build\msbuild.log";
     var settings = new MsBuildSettings()
         .WithLogger(
-            Context.Tools.Resolve(&quot;MSBuild.ExtensionPack.Loggers.dll&quot;).FullPath,
-            &quot;XmlFileLogger&quot;,
+            Context.Tools.Resolve("MSBuild.ExtensionPack.Loggers.dll").FullPath,
+            "XmlFileLogger",
             string.Format(
-                &quot;logfile=\&quot;{0}\&quot;;verbosity=Detailed;encoding=UTF-8&quot;,
+                "logfile=\"{0}\";verbosity=Detailed;encoding=UTF-8",
                 msBuildLogFile)
         );
-    MSBuild(repoRootFolder.CombineWithFilePath(&quot;MySolution.sln&quot;), settings);
+    MSBuild(repoRootFolder.CombineWithFilePath("MySolution.sln"), settings);
 
     // Create HTML report using Diagnostic template.
     CreateIssueReport(
-        new List&lt;IIssueProvider&gt;
+        new List&lt;<a href="/Cake.Issues.Website/api/Cake.Issues/IIssueProvider">IIssueProvider</a>&gt;
         {
             MsBuildIssuesFromFilePath(
                 msBuildLogFile,
@@ -366,10 +366,10 @@ Task(&quot;Create-IssueReport&quot;).Does(() =&gt;
         },
         GenericIssueReportFormatFromEmbeddedTemplate(GenericIssueReportTemplate.HtmlDiagnostic),
         repoRootFolder,
-        &#64;&quot;c:\report.html&quot;);
+        &#64;"c:\report.html");
 });
 </code></pre>
-
+</body></html>
 	</section>
                 
             </div>           
