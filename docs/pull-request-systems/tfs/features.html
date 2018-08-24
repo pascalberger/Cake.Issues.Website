@@ -1,22 +1,20 @@
-﻿<!DOCTYPE html>
-<html>
-    <head>
+﻿<!DOCTYPE html><html><head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-        <meta name="description" />
-        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML" />
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <title>Cake Issues - Features</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
-        <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
-        <link href="/Cake.Issues.Website/assets/css/adminlte/AdminLTE.css" rel="stylesheet" />
-        <link href="/Cake.Issues.Website/assets/css/theme/theme.css" rel="stylesheet" />
+        <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/Cake.Issues.Website/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/Cake.Issues.Website/assets/css/theme/theme.css" rel="stylesheet">
         <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <link href="/Cake.Issues.Website/assets/css/override.css" rel="stylesheet" />
+        <link href="/Cake.Issues.Website/assets/css/override.css" rel="stylesheet">
         <script src="/Cake.Issues.Website/assets/js/jquery-2.2.3.min.js"></script>
         <script src="/Cake.Issues.Website/assets/js/bootstrap.min.js"></script>        
         <script src="/Cake.Issues.Website/assets/js/app.min.js"></script>         
@@ -76,7 +74,11 @@
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
         <div><p><a href="https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/docs/pull-request-systems/tfs/features.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
-    <div id="infobar-headings"></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#basic-features">Basic features</a></p>
+<p><a href="#supported-capabilities">Supported capabilities</a></p>
+<p><a href="#supported-authentication-methods">Supported authentication methods</a></p>
+<hr class="infobar-hidden">
+</div>
 
                 </section>
                 <section class="sidebar">    
@@ -246,8 +248,8 @@
                 <li class="treeview">
                     <a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples">Examples</a> <a href="#" class="expand"></a>
                     <ul class="treeview-menu">
-                                        <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/repository-information">Using with repository remote url and source branch name</a></li>
-                <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/voting">Voting for pull requests</a></li>
+                                        <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/pullrequest-id">Using with pull request id</a></li>
+                <li><a href="/Cake.Issues.Website/docs/pull-request-systems/tfs/examples/repository-information">Using with repository remote url and source branch name</a></li>
 
                     </ul>
                 </li>
@@ -332,30 +334,93 @@
 		<h1>Features</h1>
 	</section>
 	<section class="content">
-		<p>The <a href="https://www.nuget.org/packages/Cake.Issues.PullRequests.Tfs">Cake.Issues.PullRequests.Tfs addin</a> provides the following features:</p>
+		<p>The <a href="https://www.nuget.org/packages/Cake.Issues.PullRequests.Tfs">Cake.Issues.PullRequests.Tfs addin</a> provides the following features.</p>
+<h1 id="basic-features">Basic features</h1>
 <ul>
 <li>Writes issues as comments to Team Foundation Server (TFS) or Visual Studio Team Services (VSTS) pull requests.</li>
-<li>Full support for all <a href="../../overview/features#supported-core-functionality">Core features</a>.</li>
-<li>Supported authentication methods:
-<ul>
-<li>NTLM using the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/4E73CD70">TfsAuthenticationNtlm</a> alias.
-Can only be used for on-premise Team Foundation Server.</li>
-<li>Basic authentication using the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/3FA02408">TfsAuthenticationBasic</a> alias.
-Can only be used for on-premise Team Foundation Server <a href="https://www.visualstudio.com/en-us/docs/integrate/get-started/auth/tfs-basic-auth">configured for basic authentication</a>.</li>
-<li>Personal Access Token using the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/B7AA9CF6">TfsAuthenticationPersonalAccessToken</a> alias.
-Can be used for Team Foundation Server or Visual Studio Team Services.</li>
-<li>OAuth using the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/44032AF4">TfsAuthenticationOAuth</a> alias.
-Can only be used with Visual Studio Team Services.</li>
-<li>Azure Active Directory using the <a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/6826C541">TfsAuthenticationAzureActiveDirectory</a> alias.</li>
-</ul>
-</li>
 <li>Identification of pull requests through source branch or pull request ID.</li>
 <li>Comments written by the addin will be rendered with a specific icon corresponding to the state of the issue.</li>
 <li>Adds rule number and, if provided by the issue provider, link to the rule description to the comment.</li>
 <li>Support for issues messages formatted in Markdown format.</li>
-<li>Alias for approving or voting pull requests.</li>
 </ul>
-<p><img src="cake.issues.pullrequests.tfs.png" class="img-fluid" alt="Cake.Issues.PullRequests.Tfs" title="Cake.Issues.PullRequests.Tfs" /></p>
+<h1 id="supported-capabilities">Supported capabilities</h1>
+<p>The <a href="https://www.nuget.org/packages/Cake.Issues.PullRequests.Tfs">Cake.Issues.PullRequests.Tfs addin</a> supports all <a href="../../overview/features#supported-core-functionality">Core features</a>.</p>
+<table class="table">
+<thead>
+<tr>
+<th></th>
+<th>Capability</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td>Checking commit ID</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td>Discussion threads</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td>Filtering by modified files</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="supported-authentication-methods">Supported authentication methods</h1>
+<table class="table">
+<thead>
+<tr>
+<th>On-Premise Team Foundation Server</th>
+<th>Visual Studio Team Services</th>
+<th>Authentication method</th>
+<th>Alias</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><span class="glyphicon glyphicon-remove" style="color:red"></span></td>
+<td>NTLM</td>
+<td><a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/4E73CD70">TfsAuthenticationNtlm</a> alias.</td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><span class="glyphicon glyphicon-remove" style="color:red"></span></td>
+<td>Basic authentication</td>
+<td><a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/3FA02408">TfsAuthenticationBasic</a> alias.</td>
+<td>See <a href="https://docs.microsoft.com/en-us/vsts/integrate/get-started/auth/tfs-basic-auth?view=vsts#configure-tfs-to-use-basic-authentication">Configure TFS to use Basic Authentication</a></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td>Personal access token</td>
+<td><a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/B7AA9CF6">TfsAuthenticationPersonalAccessToken</a></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-remove" style="color:red"></span></td>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td>OAuth</td>
+<td><a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/44032AF4">TfsAuthenticationOAuth</a></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="glyphicon glyphicon-remove" style="color:red"></span></td>
+<td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+<td>Azure Active Directory</td>
+<td><a href="../../../api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases/6826C541">TfsAuthenticationAzureActiveDirectory</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><img src="cake.issues.pullrequests.tfs.png" class="img-fluid" alt="Cake.Issues.PullRequests.Tfs" title="Cake.Issues.PullRequests.Tfs"></p>
 
 	</section>
                 
@@ -369,8 +434,8 @@ Can only be used with Visual Studio Team Services.</li>
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
                 <p class="text-muted">
-    Copyright &copy; <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/cake-contrib/Cake.Issues/graphs/contributors" target="_blank">contributors</a>.
-    <br/>
+    Copyright © <a href="http://bbtsoftware.ch" target="_blank">BBT Software AG</a> and <a href="https://github.com/cake-contrib/Cake.Issues/graphs/contributors" target="_blank">contributors</a>.
+    <br>
     Website generated by <a href="http://wyam.io" target="_blank">Wyam</a>
 </p>
 
@@ -378,14 +443,14 @@ Can only be used with Visual Studio Team Services.</li>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
         <div class="github-button">
-    <a href="https://github.com/search?q=topic%3Acake-issues&type=Repositories" target="_blank"><i class="fa fa-github"></i> GitHub</a>
+    <a href="https://github.com/search?q=topic%3Acake-issues&amp;type=Repositories" target="_blank"><i class="fa fa-github"></i> GitHub</a>
 </div>
 <script>
     ((window.gitter = {}).chat = {}).options = {
         room: 'cake-contrib/Lobby'
     };
 </script>
-<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async="" defer=""></script>
 
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/anchor.min.js"></script>
 <script type="text/javascript" src="/Cake.Issues.Website/assets/js/clipboard.min.js"></script>
@@ -471,5 +536,5 @@ Can only be used with Visual Studio Team Services.</li>
                 }, 500);
             });
         </script>
-    </body>
-</html>
+    
+</body></html>

@@ -201,7 +201,37 @@
             </td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystemExtension">I<wbr>Pull<wbr>Request<wbr>System<wbr>Extension</a></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/BaseCheckingCommitIdCapability_1">Base<wbr>Checking<wbr>Commit<wbr>Id<wbr>Capability<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            Capability to post issues only if pull request is for a specific commit.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/BaseDiscussionThreadsCapability_1">Base<wbr>Discussion<wbr>Threads<wbr>Capability<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            Capability to read, resolve and reopen discussion threads.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/BaseFilteringByModifiedFilesCapability_1">Base<wbr>Filtering<wbr>By<wbr>Modified<wbr>Files<wbr>Capability<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            Capability to filter issues to only those affecting files modified in the pull request.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/BasePullRequestSystem">Base<wbr>Pull<wbr>Request<wbr>System</a></td>
+									<td>
+            Base class for all pull request system implementations.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/BasePullRequestSystemCapability_1">Base<wbr>Pull<wbr>Request<wbr>System<wbr>Capability<wbr>&lt;T&gt;<wbr></a></td>
+									<td>
+            Base class for all optional pull request system capabilities.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ISupportCheckingCommitIdExtensions">I<wbr>Support<wbr>Checking<wbr>Commit<wbr>Id<wbr>Extensions</a></td>
 									<td>
             Interface describing a pull request server.
             </td>
@@ -249,12 +279,6 @@
             </td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem">PullRequestSystem</a></td>
-									<td>
-            Base class for all pull request system implementations.
-            </td>
-							</tr>
-							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>Settings</a></td>
 									<td>
             Settings affecting how issues are reported to pull requests.
@@ -290,6 +314,30 @@
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem">IPullRequestSystem</a></td>
 									<td>
             Interface describing a pull request server.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystemCapability">I<wbr>Pull<wbr>Request<wbr>System<wbr>Capability</a></td>
+									<td>
+            Interface for all optional pull request system capabilities.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ISupportCheckingCommitId">I<wbr>Support<wbr>Checking<wbr>Commit<wbr>Id</a></td>
+									<td>
+            Interface describing that a pull request system supports checking if commit Id is still up to date.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ISupportDiscussionThreads">I<wbr>Support<wbr>Discussion<wbr>Threads</a></td>
+									<td>
+            Interface describing that a pull request system supports discussion threads.
+            </td>
+							</tr>
+							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ISupportFilteringByModifiedFiles">I<wbr>Support<wbr>Filtering<wbr>By<wbr>Modified<wbr>Files</a></td>
+									<td>
+            Interface describing that a pull request system supports filtering by modified files.
             </td>
 							</tr>
 					</tbody></table>

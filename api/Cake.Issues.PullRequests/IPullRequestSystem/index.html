@@ -142,7 +142,12 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Class Types</li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases">Aliases</a></li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystemExtension">I<wbr>Pull<wbr>Request<wbr>System<wbr>Extension</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/BaseCheckingCommitIdCapability_1">Base<wbr>Checking<wbr>Commit<wbr>Id<wbr>Capability<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/BaseDiscussionThreadsCapability_1">Base<wbr>Discussion<wbr>Threads<wbr>Capability<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/BaseFilteringByModifiedFilesCapability_1">Base<wbr>Filtering<wbr>By<wbr>Modified<wbr>Files<wbr>Capability<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/BasePullRequestSystem">Base<wbr>Pull<wbr>Request<wbr>System</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/BasePullRequestSystemCapability_1">Base<wbr>Pull<wbr>Request<wbr>System<wbr>Capability<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ISupportCheckingCommitIdExtensions">I<wbr>Support<wbr>Checking<wbr>Commit<wbr>Id<wbr>Extensions</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionComment">Pull<wbr>Request<wbr>Discussion<wbr>Comment</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionResolution">Pull<wbr>Request<wbr>Discussion<wbr>Resolution</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestDiscussionStatus">Pull<wbr>Request<wbr>Discussion<wbr>Status</a></li>
@@ -150,12 +155,15 @@
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssueResult">Pull<wbr>Request<wbr>Issue<wbr>Result</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssuesException">Pull<wbr>Request<wbr>Issues<wbr>Exception</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestsAliasConstants">Pull<wbr>Requests<wbr>Alias<wbr>Constants</a></li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem">PullRequestSystem</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>Settings</a></li>
 			<li class="header">Interface Types</li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestDiscussionComment">I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Comment</a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestDiscussionThread">I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread</a></li>
 				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem">IPullRequestSystem</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystemCapability">I<wbr>Pull<wbr>Request<wbr>System<wbr>Capability</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ISupportCheckingCommitId">I<wbr>Support<wbr>Checking<wbr>Commit<wbr>Id</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ISupportDiscussionThreads">I<wbr>Support<wbr>Discussion<wbr>Threads</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ISupportFilteringByModifiedFiles">I<wbr>Support<wbr>Filtering<wbr>By<wbr>Modified<wbr>Files</a></li>
 
 
                     </ul>
@@ -203,7 +211,7 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem">PullRequestSystem</a></li>								
+											<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/BasePullRequestSystem">Base<wbr>Pull<wbr>Request<wbr>System</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -215,8 +223,8 @@
 	click Interface0 "/Cake.Issues.Website/api/Cake.Issues/IBaseIssueComponent_1"
 	Type["IPullRequestSystem"]
 class Type type-node
-	Type-.-&gt;Implementing0["PullRequestSystem"]
-	click Implementing0 "/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestSystem"
+	Type-.-&gt;Implementing0["BasePullRequestSystem"]
+	click Implementing0 "/Cake.Issues.Website/api/Cake.Issues.PullRequests/BasePullRequestSystem"
 
 						</div>
 					</div>
@@ -248,29 +256,20 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/7FE38ABB">Fetch<wbr>Discussion<wbr>Threads<wbr>(string)<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/28049E04">AddCapability<wbr>(<wbr>I<wbr>Pull<wbr>Request<wbr>System<wbr>Capability)<wbr></a></td>
+								<td>void</td>
 								<td>
 									<div>
-            Returns a list of all discussion threads.
+            Adds a capability.
             </div>
 								</td>
 							</tr>
 							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/4E850B1F">Get<wbr>Last<wbr>Source<wbr>Commit<wbr>Id<wbr>()<wbr></a></td>
-								<td>string</td>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/3C2702C0">GetCapability<wbr>&lt;T&gt;<wbr><wbr>()<wbr></a></td>
+								<td>T</td>
 								<td>
 									<div>
-            Gets the hash of the latest commit on the source branch.
-            </div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/8F85EAE4">Get<wbr>Modified<wbr>Files<wbr>In<wbr>Pull<wbr>Request<wbr>()<wbr></a></td>
-								<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
-								<td>
-									<div>
-            Returns a list of all files modified in a pull request.
+            Returns the instance of a specific capability.
             </div>
 								</td>
 							</tr>
@@ -284,29 +283,20 @@ class Type type-node
 								</td>
 							</tr>
 							<tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/A58F59A1">HasCapability<wbr>&lt;T&gt;<wbr><wbr>()<wbr></a></td>
+								<td>bool</td>
+								<td>
+									<div>
+            Checks if a pull request has a specific capability.
+            </div>
+								</td>
+							</tr>
+							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/40F0FB1E">Post<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>string)<wbr></a></td>
 								<td>void</td>
 								<td>
 									<div>
             Posts discussion threads for all issues which need to be posted.
-            </div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/1AAB62B3">Reopen<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Marks a list of discussion threads as active.
-            </div>
-								</td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem/00450B43">Resolve<wbr>Discussion<wbr>Threads<wbr>(IEnumerable<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>Discussion<wbr>Thread&gt;<wbr>)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Marks a list of discussion threads as resolved.
             </div>
 								</td>
 							</tr>
@@ -328,16 +318,6 @@ class Type type-node
 							</tr>
 						</thead>
 							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystemExtension/061F3E6C">IsCurrentCommitId<wbr>(string)<wbr></a></td>
-								<td>bool</td>
-								<td>
-									<div>
-            Checks if a specific commit hash is the last commit on the source branch of a pull request.
-            </div>
-										<div><small><em>From <a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystemExtension">I<wbr>Pull<wbr>Request<wbr>System<wbr>Extension</a></em></small></div>
-								</td>
-							</tr>
-							<tr>
 								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>I<wbr>Pull<wbr>Request<wbr>System&gt;<wbr><wbr>(string)<wbr></a></td>
 								<td>void</td>
 								<td>
