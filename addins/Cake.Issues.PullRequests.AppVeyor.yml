@@ -1,0 +1,13 @@
+Name: AppVeyor Support
+NuGet: Cake.Issues.PullRequests.AppVeyor
+Prerelease: false
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.PullRequests.AppVeyor
+Documentation: /docs/pull-request-systems/appveyor
+ReleaseNotesFilePath: "input/docs/pull-request-systems/appveyor/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.PullRequests.AppVeyor.dll"
+Author: Pascal Berger
+Description: "Support for writing issues to AppVeyor builds."
+Categories:
+- Pull Request System
