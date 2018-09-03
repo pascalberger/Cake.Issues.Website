@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - API - FileLinkSettings.GetFileLink(IIssue) Method</title>
+        <title>Cake Issues - API - IIssueExtensions Class</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -75,8 +75,7 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Parameters">Parameters</a></p>
-<p><a href="#ReturnValue">Return Value</a></p>
+<p><a href="#Methods">Methods</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -139,17 +138,23 @@
 		<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic.dll">Cake<wbr>.Issues<wbr>.Reporting<wbr>.Generic<wbr>.dll</a></li>
 		<li class="header">Namespace</li>
 		<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic">Cake<wbr>.Issues<wbr>.Reporting<wbr>.Generic</a></li>
-		<li class="header">Type</li>
-		<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/FileLinkSettings">FileLinkSettings</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Constructors</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/FileLinkSettings/00FB60C0">FileLinkSettings<wbr>()<wbr></a></li>
-			<li class="header">Method Members</li>
-				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/FileLinkSettings/86F48E74">GetFileLink<wbr>(IIssue)<wbr></a></li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/FileLinkSettings/7D232B67">GitHub<wbr>(Uri, <wbr>string, <wbr>string)<wbr></a></li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/FileLinkSettings/34886173">TeamFoundationServer<wbr>(Uri, <wbr>string, <wbr>string)<wbr></a></li>
-			<li class="header">Property Members</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/FileLinkSettings/02195311">FileLinkPattern</a></li>
+			<li class="header">Enum Types</li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/ColumnSortOrder">ColumnSortOrder</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/DevExtremeTheme">DevExtremeTheme</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/GenericIssueReportTemplate">Generic<wbr>Issue<wbr>Report<wbr>Template</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/HtmlDxDataGridOption">HtmlDxDataGridOption</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/ReportColumn">ReportColumn</a></li>
+			<li class="header">Class Types</li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/ColumnSortOrderExtensions">Column<wbr>Sort<wbr>Order<wbr>Extensions</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/DevExtremeThemeExtensions">Dev<wbr>Extreme<wbr>Theme<wbr>Extensions</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/FileLinkSettings">FileLinkSettings</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/GenericIssueReportFormatAliases">Generic<wbr>Issue<wbr>Report<wbr>Format<wbr>Aliases</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/GenericIssueReportFormatSettings">Generic<wbr>Issue<wbr>Report<wbr>Format<wbr>Settings</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/GenericIssueReportFormatSettingsExtensions">Generic<wbr>Issue<wbr>Report<wbr>Format<wbr>Settings<wbr>Extensions</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/HtmlDxDataGridColumnDescription">Html<wbr>Dx<wbr>Data<wbr>Grid<wbr>Column<wbr>Description</a></li>
+				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/IIssueExtensions">IIssueExtensions</a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/ViewBagHelper">ViewBagHelper</a></li>
 
 
                     </ul>
@@ -164,78 +169,89 @@
 
 
 <section class="content-header">
-			<h3><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/FileLinkSettings">FileLinkSettings</a>.</h3>
-	<h1>GetFileLink<wbr>(IIssue)<wbr> <small>Method</small></h1>
+	<h1>IIssueExtensions <small>Class</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-            Returns the file link with all patterns of <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/FileLinkSettings/02195311">FileLinkPattern</a></code> replaced
-            by the values of <span name="issue" class="paramref">issue</span>.
+            Extension for <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a></code>.
             </div>
 
 		<div class="panel panel-default">
-  			<div class="panel-body">	
-				<dl class="dl-horizontal">	
-						<dt>Assembly</dt>
-						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic.dll">Cake<wbr>.Issues<wbr>.Reporting<wbr>.Generic<wbr>.dll</a></dd>
-						
-						<dt>Namespace</dt>
-						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic">Cake<wbr>.Issues<wbr>.Reporting<wbr>.Generic</a></dd>
-					
-						<dt>Containing Type</dt>
-						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/FileLinkSettings">FileLinkSettings</a></dd>		
-					
-				</dl>
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic.dll">Cake<wbr>.Issues<wbr>.Reporting<wbr>.Generic<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic">Cake<wbr>.Issues<wbr>.Reporting<wbr>.Generic</a></dd>
+											
+							
+								<dt>Base Types</dt>
+								<dd>
+									<ul class="list-unstyled">										
+											<li>object</li>								
+									</ul>
+								</dd>				
+							
+							
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph TD
+	Base0["object"]--&gt;Type
+	Type["IIssueExtensions"]
+class Type type-node
+
+						</div>
+					</div>
+				</div>
   			</div>
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public string GetFileLink(IIssue issue)</code></pre>
+	<pre><code>public static class IIssueExtensions</code></pre>
 
 
 
 
 
-	<h1 id="Parameters">Parameters</h1>
-	<div class="box">
-		<div class="box-body no-padding table-responsive">
-			<table class="table table-striped table-hover three-cols">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Type</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-					<tbody><tr>
-						<td>issue</td>
-						<td><a href="/Cake.Issues.Website/api/Cake.Issues/IIssue">IIssue</a></td>
-						<td>Issue whose values should be used to replace the patterns.</td>
-					</tr>
-			</tbody></table>
-		</div>
-	</div>	
 
-	<h1 id="ReturnValue">Return Value</h1>
-	<div class="box">
-		<div class="box-body no-padding table-responsive">
-			<table class="table table-striped table-hover two-cols">
-				<thead>
-					<tr>
-						<th>Type</th>
-						<th>Description</th>
-					</tr>
-				</thead>
-				<tbody><tr>
-					<td>string</td>
-					<td>File link with all patterns replaced.</td>
-				</tr>
-			</tbody></table>
-		</div>
-	</div>	
+
+
+
+
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/Cake.Issues.Website/api/Cake.Issues.Reporting.Generic/IIssueExtensions/B312977E">GetExpandoObject<wbr>(IIssue, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>bool, <wbr>FileLinkSettings, <wbr>IDictionary<wbr>&lt;string, <wbr>Func<wbr>&lt;IIssue, <wbr>object&gt;<wbr>&gt;<wbr>)<wbr></a></td>
+								<td>ExpandoObject</td>
+								<td>
+									<div>
+            Returns an dynamic object containing the properties of an issue.
+            </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
 
 
 	
