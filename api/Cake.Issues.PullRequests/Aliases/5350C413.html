@@ -145,6 +145,8 @@
 		<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases">Aliases</a></li>
 		<li role="separator" class="divider"></li>
 			<li class="header">Method Members</li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases/E38BAAF1">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>IPullRequestSystem, <wbr>DirectoryPath)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases/E8FB3683">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>IPullRequestSystem, <wbr>Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>Settings)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases/0CDF678A">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IIssueProvider, <wbr>IPullRequestSystem, <wbr>DirectoryPath)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases/EFA4C9B7">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IPullRequestSystem, <wbr>DirectoryPath)<wbr></a></li>
 				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases/24B0C856">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IIssueProvider, <wbr>IPullRequestSystem, <wbr>Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>Settings)<wbr></a></li>
@@ -197,7 +199,7 @@
 	<div>
              <p>Report issues reported as MsBuild warnings to a TFS pull request and limit number of comments to ten:</p>
              <pre><code class="cs"> var settings =
-         new ReportIssuesToPullRequestSettings(new DirectoryPath("c:\repo"))
+         new ReportIssuesToPullRequestSettings(@"C:\repo")
          {
              MaxIssuesToPost = 10
          };

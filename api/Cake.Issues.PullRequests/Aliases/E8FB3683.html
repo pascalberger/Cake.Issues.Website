@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
         <link rel="icon" href="/Cake.Issues.Website/assets/img/favicon.ico" type="image/x-icon">
-        <title>Cake Issues - API - TfsPullRequestSystemSettings Class</title>
+        <title>Cake Issues - API - Aliases.ReportIssuesToPullRequest(ICakeContext, IEnumerable&lt;IIssue&gt;, IPullRequestSystem, ReportIssuesToPullRequestSettings) Method</title>
         <link href="/Cake.Issues.Website/assets/css/mermaid.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/highlight.css" rel="stylesheet">
         <link href="/Cake.Issues.Website/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
@@ -75,8 +75,10 @@
                     	
 	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
 <p><a href="#Syntax">Syntax</a></p>
-<p><a href="#Constructors">Constructors</a></p>
-<p><a href="#ExtensionMethods">Extension Methods</a></p>
+<p><a href="#Examples">Examples</a></p>
+<p><a href="#Attributes">Attributes</a></p>
+<p><a href="#Parameters">Parameters</a></p>
+<p><a href="#ReturnValue">Return Value</a></p>
 <hr class="infobar-hidden">
 </div>
 
@@ -136,13 +138,19 @@
                     <ul class="sidebar-menu">
                         
 			<li class="header">Assembly</li>
-		<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs.dll">Cake<wbr>.Issues<wbr>.PullRequests<wbr>.Tfs<wbr>.dll</a></li>
+		<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.dll">Cake<wbr>.Issues<wbr>.PullRequests<wbr>.dll</a></li>
 		<li class="header">Namespace</li>
-		<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs">Cake<wbr>.Issues<wbr>.PullRequests<wbr>.Tfs</a></li>
+		<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests">Cake<wbr>.Issues<wbr>.PullRequests</a></li>
+		<li class="header">Type</li>
+		<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases">Aliases</a></li>
 		<li role="separator" class="divider"></li>
-			<li class="header">Class Types</li>
-				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases">Tfs<wbr>Pull<wbr>Request<wbr>System<wbr>Aliases</a></li>
-				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemSettings">Tfs<wbr>Pull<wbr>Request<wbr>System<wbr>Settings</a></li>
+			<li class="header">Method Members</li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases/E38BAAF1">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>IPullRequestSystem, <wbr>DirectoryPath)<wbr></a></li>
+				<li class="selected"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases/E8FB3683">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>IPullRequestSystem, <wbr>Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>Settings)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases/0CDF678A">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IIssueProvider, <wbr>IPullRequestSystem, <wbr>DirectoryPath)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases/EFA4C9B7">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IPullRequestSystem, <wbr>DirectoryPath)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases/24B0C856">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IIssueProvider, <wbr>IPullRequestSystem, <wbr>Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>Settings)<wbr></a></li>
+				<li><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases/5350C413">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;<wbr>I<wbr>Issue<wbr>Provider&gt;<wbr>, <wbr>IPullRequestSystem, <wbr>Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>Settings)<wbr></a></li>
 
 
                     </ul>
@@ -157,123 +165,131 @@
 
 
 <section class="content-header">
-	<h1>Tfs<wbr>Pull<wbr>Request<wbr>System<wbr>Settings <small>Class</small></h1>
+			<h3><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases">Aliases</a>.</h3>
+	<h1>Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>(ICakeContext, <wbr>IEnumerable<wbr>&lt;IIssue&gt;<wbr>, <wbr>IPullRequestSystem, <wbr>Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>Settings)<wbr> <small>Method</small></h1>
 </section>
 <section class="content">
 	
 	
 		<h1 id="Summary">Summary</h1>
 	<div class="lead">
-            Settings for <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemAliases">TfsPullRequestSystemAliases</a></code>.
-            </div>
+             Reports issues to pull requests using the specified settings.
+             </div>
 
 		<div class="panel panel-default">
-  			<div class="panel-body">
-				<div class="row">
-					<div class="col-md-6">
-						<dl class="dl-horizontal">		
-								<dt>Assembly</dt>
-								<dd><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs.dll">Cake<wbr>.Issues<wbr>.PullRequests<wbr>.Tfs<wbr>.dll</a></dd>
-
-								<dt>Namespace</dt>
-								<dd><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs">Cake<wbr>.Issues<wbr>.PullRequests<wbr>.Tfs</a></dd>
-											
-							
-								<dt>Base Types</dt>
-								<dd>
-									<ul class="list-unstyled">										
-											<li>Tfs<wbr>Pull<wbr>Request<wbr>Settings</li>								
-									</ul>
-								</dd>				
-							
-							
-						</dl>
-					</div>		
-					<div class="col-md-6">
-						<div class="mermaid">
-							graph TD
-	Base0["TfsPullRequestSettings"]--&gt;Type
-	Type["TfsPullRequestSystemSettings"]
-class Type type-node
-
-						</div>
-					</div>
-				</div>
+  			<div class="panel-body">	
+				<dl class="dl-horizontal">	
+						<dt>Assembly</dt>
+						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.dll">Cake<wbr>.Issues<wbr>.PullRequests<wbr>.dll</a></dd>
+						
+						<dt>Namespace</dt>
+						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests">Cake<wbr>.Issues<wbr>.PullRequests</a></dd>
+					
+						<dt>Containing Type</dt>
+						<dd><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/Aliases">Aliases</a></dd>		
+					
+				</dl>
   			</div>
 		</div>
 
 	<h1 id="Syntax">Syntax</h1>
-	<pre><code>public class TfsPullRequestSystemSettings : TfsPullRequestSettings</code></pre>
+	<pre><code>public static PullRequestIssueResult ReportIssuesToPullRequest(this ICakeContext context, IEnumerable&lt;IIssue&gt; issues, IPullRequestSystem pullRequestSystem, ReportIssuesToPullRequestSettings settings)</code></pre>
+
+	<h1 id="Examples">Examples</h1>
+	<div>
+             <p>Report issues reported as MsBuild warnings to a TFS pull request and limit number of comments to ten:</p>
+             <pre><code class="cs"> var settings =
+         new ReportIssuesToPullRequestSettings(@"C:\repo")
+         {
+             MaxIssuesToPost = 10
+         };
+
+     ReportIssuesToPullRequest(
+         issues,
+         TfsPullRequests(
+             new Uri("http://myserver:8080/tfs/defaultcollection/myproject/_git/myrepository"),
+             "refs/heads/feature/myfeature",
+             TfsAuthenticationNtlm()),
+         settings));</code></pre>
+             </div>
 
 
+	<h1 id="Attributes">Attributes</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>Cake<wbr>Method<wbr>Alias<wbr>Attribute</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>Cake<wbr>Alias<wbr>Category<wbr>Attribute</td>
+						<td></td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
 
 
+	<h1 id="Parameters">Parameters</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover three-cols">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+					<tbody><tr>
+						<td>context</td>
+						<td>ICakeContext</td>
+						<td>The context.</td>
+					</tr>
+					<tr>
+						<td>issues</td>
+						<td>IEnumerable<wbr>&lt;&gt;<wbr></td>
+						<td>Issues which should be reported.</td>
+					</tr>
+					<tr>
+						<td>pullRequestSystem</td>
+						<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/IPullRequestSystem">IPullRequestSystem</a></td>
+						<td>The pull request system.</td>
+					</tr>
+					<tr>
+						<td>settings</td>
+						<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/ReportIssuesToPullRequestSettings">Report<wbr>Issues<wbr>To<wbr>Pull<wbr>Request<wbr>Settings</a></td>
+						<td>The settings.</td>
+					</tr>
+			</tbody></table>
+		</div>
+	</div>	
 
+	<h1 id="ReturnValue">Return Value</h1>
+	<div class="box">
+		<div class="box-body no-padding table-responsive">
+			<table class="table table-striped table-hover two-cols">
+				<thead>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody><tr>
+					<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests/PullRequestIssueResult">Pull<wbr>Request<wbr>Issue<wbr>Result</a></td>
+					<td>Information about the reported and written issues.</td>
+				</tr>
+			</tbody></table>
+		</div>
+	</div>	
 
-			<h1 id="Constructors">Constructors</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover two-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-									<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemSettings/8811F746">Tfs<wbr>Pull<wbr>Request<wbr>System<wbr>Settings<wbr>(<wbr>Tfs<wbr>Pull<wbr>Request<wbr>Settings)<wbr></a></td>
-									<td>
-            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemSettings">TfsPullRequestSystemSettings</a></code> class
-            based on the instance of a <code class="cs">Cake.Tfs.PullRequest.TfsPullRequestSettings</code> class.
-            </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemSettings/36400A1C">Tfs<wbr>Pull<wbr>Request<wbr>System<wbr>Settings<wbr>(Uri, <wbr>int, <wbr>ITfsCredentials)<wbr></a></td>
-									<td>
-            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemSettings">TfsPullRequestSystemSettings</a></code> class.
-            </td>
-							</tr>
-							<tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemSettings/CAEE5D89">Tfs<wbr>Pull<wbr>Request<wbr>System<wbr>Settings<wbr>(Uri, <wbr>string, <wbr>ITfsCredentials)<wbr></a></td>
-									<td>
-            Initializes a new instance of the <code class="cs"><a href="/Cake.Issues.Website/api/Cake.Issues.PullRequests.Tfs/TfsPullRequestSystemSettings">TfsPullRequestSystemSettings</a></code> class.
-            </td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
-
-
-
-
-
-
-			<h1 id="ExtensionMethods">Extension Methods</h1>
-			<div class="box">
-				<div class="box-body no-padding table-responsive">
-					<table class="table table-striped table-hover three-cols">
-						<thead>
-							<tr>
-								<th>Name</th>
-								<th>Value</th>
-								<th>Summary</th>
-							</tr>
-						</thead>
-							<tbody><tr>
-								<td><a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks/5D006BAA">NotNull<wbr>&lt;<wbr>Tfs<wbr>Pull<wbr>Request<wbr>System<wbr>Settings&gt;<wbr><wbr>(string)<wbr></a></td>
-								<td>void</td>
-								<td>
-									<div>
-            Throws an exception if the specified parameter's value is null.
-            </div>
-										<div><small><em>From <a href="/Cake.Issues.Website/api/Cake.Issues/IssuesArgumentChecks">IssuesArgumentChecks</a></em></small></div>
-								</td>
-							</tr>
-					</tbody></table>
-				</div>
-			</div>
-		
 
 	
 </section>
