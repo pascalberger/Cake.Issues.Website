@@ -23,14 +23,14 @@ Adding an addin here will trigger downloading its NuGet Package during site gene
 The format of an addin file generally looks like:
 
 ```yml
-Name: Team Foundation Server (TFS) & Visual Studio Team Services (VSTS) Support
+Name: Team Foundation Server (TFS) & Azure DevOps Support
 NuGet: Cake.Issues.PullRequests.Tfs
 Prerelease: true
 Repository: https://github.com/cake-contrib/Cake.Issues.PullRequests.Tfs
 Assemblies:
 - "/**/Cake.Issues.PullRequests.Tfs.dll"
 Author: BBT Software AG
-Description: "Support for writing issues as comments to Team Foundation Server or Visual Studio Team Services pull requests."
+Description: "Support for writing issues as comments to Team Foundation Server or Azure DevOps pull requests."
 Categories:
 - Pull Request System
 ```
