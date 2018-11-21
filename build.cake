@@ -1,12 +1,14 @@
 #load nuget:https://www.myget.org/F/cake-contrib/api/v2?package=Cake.Wyam.Recipe&prerelease
 
-#addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.Yaml&version=2.1.0"
-#addin "nuget:https://api.nuget.org/v3/index.json?package=YamlDotNet&version=4.2.1"
-#addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.FileHelpers&version=3.0.0"
+#addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.Yaml&version=3.0.0"
+#addin "nuget:https://api.nuget.org/v3/index.json?package=YamlDotNet&version=5.2.1"
+#addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.FileHelpers&version=3.1.0"
 
 //////////////////////////////////////////////////////////////////////
 // PARAMETERS
 //////////////////////////////////////////////////////////////////////
+
+private const string GitReleaseManagerTool = "#tool nuget:?package=gitreleasemanager&version=0.7.1";
 
 // Definitions
 class AddinSpec
