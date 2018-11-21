@@ -8,6 +8,8 @@
 // PARAMETERS
 //////////////////////////////////////////////////////////////////////
 
+private const string GitReleaseManagerTool = "#tool nuget:?package=gitreleasemanager&version=0.7.1";
+
 // Definitions
 class AddinSpec
 {
