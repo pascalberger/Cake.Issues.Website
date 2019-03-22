@@ -15,6 +15,11 @@
 #load create-reports-htmldxdatagrid-theme-materialorangelight.cake
 #load create-reports-htmldxdatagrid-theme-materialpurplelight.cake
 #load create-reports-htmldxdatagrid-theme-materialteallight.cake
+#load create-reports-htmldxdatagrid-theme-materialbluedark.cake
+#load create-reports-htmldxdatagrid-theme-materiallimedark.cake
+#load create-reports-htmldxdatagrid-theme-materialorangedark.cake
+#load create-reports-htmldxdatagrid-theme-materialpurpledark.cake
+#load create-reports-htmldxdatagrid-theme-materialtealdark.cake
 #load create-reports-htmldxdatagrid-hide-columns.cake
 #load create-reports-htmldxdatagrid-additional-columns.cake
 #load create-reports-htmldxdatagrid-sorting.cake
@@ -25,6 +30,7 @@
 #load create-reports-htmldxdatagrid-disable-filtering.cake
 #load create-reports-htmldxdatagrid-disable-searching.cake
 #load create-reports-htmldxdatagrid-file-linking.cake
+#load create-reports-htmldxdatagrid-custom-script-location.cake
 
 Task("Create-Reports-HtmlDxDataGrid")
     .Description("Creates HtmlDxDataGrid demo reports")
@@ -45,6 +51,11 @@ Task("Create-Reports-HtmlDxDataGrid")
     .IsDependentOn("Create-Reports-HtmlDxDataGrid-Theme-MaterialOrangeLight")
     .IsDependentOn("Create-Reports-HtmlDxDataGrid-Theme-MaterialPurpleLight")
     .IsDependentOn("Create-Reports-HtmlDxDataGrid-Theme-MaterialTealLight")
+    .IsDependentOn("Create-Reports-HtmlDxDataGrid-Theme-MaterialBlueDark")
+    .IsDependentOn("Create-Reports-HtmlDxDataGrid-Theme-MaterialLimeDark")
+    .IsDependentOn("Create-Reports-HtmlDxDataGrid-Theme-MaterialOrangeDark")
+    .IsDependentOn("Create-Reports-HtmlDxDataGrid-Theme-MaterialPurpleDark")
+    .IsDependentOn("Create-Reports-HtmlDxDataGrid-Theme-MaterialTealDark")
     .IsDependentOn("Create-Reports-HtmlDxDataGrid-Hide-Columns")
     .IsDependentOn("Create-Reports-HtmlDxDataGrid-Additional-Columns")
     .IsDependentOn("Create-Reports-HtmlDxDataGrid-Sorting")
@@ -54,4 +65,5 @@ Task("Create-Reports-HtmlDxDataGrid")
     .IsDependentOn("Create-Reports-HtmlDxDataGrid-Disable-Header")
     .IsDependentOn("Create-Reports-HtmlDxDataGrid-Disable-Filtering")
     .IsDependentOn("Create-Reports-HtmlDxDataGrid-Disable-Searching")
-    .IsDependentOn("Create-Reports-HtmlDxDataGrid-File-Linking");
+    .IsDependentOn("Create-Reports-HtmlDxDataGrid-File-Linking")
+    .IsDependentOn("Create-Reports-HtmlDxDataGrid-Custom-Script-Location");
