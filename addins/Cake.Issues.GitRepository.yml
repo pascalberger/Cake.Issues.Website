@@ -1,0 +1,13 @@
+Name: Git repository linting support
+NuGet: Cake.Issues.GitRepository
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.GitRepository
+Documentation: /docs/issue-providers/gitrepository
+ReleaseNotesFilePath: "input/docs/issue-providers/gitrepository/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.GitRepository.dll"
+Author: Pascal Berger
+Description: "Support for analyzing Git repositories and create issues resulting from it"
+Categories:
+- Issue Provider
