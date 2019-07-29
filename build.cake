@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Wyam.Recipe&version=0.6.0
+#load nuget:?package=Cake.Wyam.Recipe&version=0.7.0
 
 #addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.Yaml&version=3.0.0"
 #addin "nuget:https://api.nuget.org/v3/index.json?package=YamlDotNet&version=5.2.1"
