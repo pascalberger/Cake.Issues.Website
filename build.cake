@@ -1,7 +1,7 @@
 #load nuget:?package=Cake.Wyam.Recipe&version=0.7.1
 
 #addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.Yaml&version=3.0.0"
-#addin "nuget:https://api.nuget.org/v3/index.json?package=YamlDotNet&version=5.2.1"
+#addin "nuget:https://api.nuget.org/v3/index.json?package=YamlDotNet&version=6.1.2"
 #addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.FileHelpers&version=3.1.0"
 
 //////////////////////////////////////////////////////////////////////
