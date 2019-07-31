@@ -2,7 +2,7 @@
 
 #addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.Yaml&version=3.0.0"
 #addin "nuget:https://api.nuget.org/v3/index.json?package=YamlDotNet&version=6.1.2"
-#addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.FileHelpers&version=3.1.0"
+#addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.FileHelpers&version=3.2.0"
 
 //////////////////////////////////////////////////////////////////////
 // PARAMETERS
