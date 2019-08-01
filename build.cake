@@ -39,8 +39,7 @@ BuildParameters.SetParameters(
     title: "Cake.Issues.Website",
     repositoryOwner: "cake-contrib",
     repositoryName: "Cake.Issues.Website",
-    webHost: "cake-contrib.github.io",
-    webLinkRoot: "Cake.Issues.Website",
+    webHost: "cakeissues.net",
     wyamRecipe: "Docs",
     wyamTheme: "Samson",
     shouldPublishDocumentation: StringComparer.OrdinalIgnoreCase.Equals("master", AppVeyor.Environment.Repository.Branch));
