@@ -7,5 +7,6 @@ nuget.exe
 [Ll]ocal[Dd]eploy/
 
 release-notes.md
+input/docs/issue-providers/gitrepository/
 input/docs/overview/release-notes/
 BuildArtifacts
