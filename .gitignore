@@ -8,5 +8,6 @@ nuget.exe
 
 release-notes.md
 input/docs/issue-providers/gitrepository/
+input/docs/pull-request-systems/appveyor/
 input/docs/overview/release-notes/
 BuildArtifacts
