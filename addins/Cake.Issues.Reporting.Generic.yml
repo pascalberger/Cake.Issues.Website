@@ -3,6 +3,7 @@ NuGet: Cake.Issues.Reporting.Generic
 Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.Reporting.Generic
+RepositoryDocumentationPath: ./docs
 DocumentationLink: /docs/report-formats/generic
 ReleaseNotesFilePath: "input/docs/report-formats/generic/release-notes.md"
 Assemblies:
