@@ -3,7 +3,7 @@ NuGet: Cake.Issues.EsLint
 Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.EsLint
-Documentation: /docs/issue-providers/eslint
+DocumentationLink: /docs/issue-providers/eslint
 ReleaseNotesFilePath: "input/docs/issue-providers/eslint/release-notes.md"
 Assemblies:
 - "/**/Cake.Issues.EsLint.dll"

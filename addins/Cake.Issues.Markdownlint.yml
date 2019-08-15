@@ -3,7 +3,7 @@ NuGet: Cake.Issues.Markdownlint
 Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.Markdownlint
-Documentation: /docs/issue-providers/markdownlint
+DocumentationLink: /docs/issue-providers/markdownlint
 ReleaseNotesFilePath: "input/docs/issue-providers/markdownlint/release-notes.md"
 Assemblies:
 - "/**/Cake.Issues.Markdownlint.dll"
