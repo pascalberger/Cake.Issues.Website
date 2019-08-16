@@ -3,6 +3,7 @@ NuGet: Cake.Issues.DocFx
 Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.DocFx
+RepositoryDocumentationPath: ./docs
 DocumentationLink: /docs/issue-providers/docfx
 ReleaseNotesFilePath: "input/docs/issue-providers/docfx/release-notes.md"
 Assemblies:
