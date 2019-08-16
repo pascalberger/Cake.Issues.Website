@@ -3,7 +3,8 @@ NuGet: Cake.Issues.GitRepository
 Prerelease: true
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.GitRepository
-Documentation: /docs/issue-providers/gitrepository
+RepositoryDocumentationPath: ./docs
+DocumentationLink: /docs/issue-providers/gitrepository
 ReleaseNotesFilePath: "input/docs/issue-providers/gitrepository/release-notes.md"
 Assemblies:
 - "/**/Cake.Issues.GitRepository.dll"

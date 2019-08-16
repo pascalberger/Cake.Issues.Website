@@ -3,7 +3,8 @@ NuGet: Cake.Issues.InspectCode
 Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.InspectCode
-Documentation: /docs/issue-providers/inspectcode
+RepositoryDocumentationPath: ./docs
+DocumentationLink: /docs/issue-providers/inspectcode
 ReleaseNotesFilePath: "input/docs/issue-providers/inspectcode/release-notes.md"
 Assemblies:
 - "/**/Cake.Issues.InspectCode.dll"

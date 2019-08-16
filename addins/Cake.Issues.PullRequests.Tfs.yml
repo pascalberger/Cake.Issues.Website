@@ -3,7 +3,8 @@ NuGet: Cake.Issues.PullRequests.Tfs
 Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.PullRequests.Tfs
-Documentation: /docs/pull-request-systems/tfs
+RepositoryDocumentationPath: ./docs
+DocumentationLink: /docs/pull-request-systems/tfs
 ReleaseNotesFilePath: "input/docs/pull-request-systems/tfs/release-notes.md"
 Assemblies:
 - "/**/Cake.Issues.PullRequests.Tfs.dll"

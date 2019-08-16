@@ -3,7 +3,8 @@ NuGet: Cake.Issues.Recipe
 Prerelease: true
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.Recipe
-Documentation: /docs/recipe/
+RepositoryDocumentationPath: ./docs
+DocumentationLink: /docs/recipe/
 ReleaseNotesFilePath: "input/docs/recipe/release-notes.md"
 Assemblies:
 Author: Pascal Berger
