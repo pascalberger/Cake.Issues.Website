@@ -3,6 +3,7 @@ NuGet: Cake.Issues.MsBuild
 Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.MsBuild
+RepositoryDocumentationPath: ./docs
 DocumentationLink: /docs/issue-providers/msbuild
 ReleaseNotesFilePath: "input/docs/issue-providers/msbuild/release-notes.md"
 Assemblies:

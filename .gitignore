@@ -12,6 +12,7 @@ input/docs/issue-providers/eslint/
 input/docs/issue-providers/gitrepository/
 input/docs/issue-providers/inspectcode/
 input/docs/issue-providers/markdownlint/
+input/docs/issue-providers/msbuild/
 input/docs/pull-request-systems/appveyor/
 input/docs/recipe/
 input/docs/report-formats/generic/
