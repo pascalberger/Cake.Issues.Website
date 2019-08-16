@@ -3,7 +3,7 @@ NuGet: Cake.Issues.Testing
 Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues
-Documentation: /docs/extending/testing
+DocumentationLink: /docs/extending/testing
 Assemblies:
 - "/**/Cake.Issues.Testing.dll"
 Author: BBT Software AG and contributors

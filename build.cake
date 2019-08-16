@@ -1,30 +1,12 @@
 #load nuget:?package=Cake.Wyam.Recipe&version=0.7.1
 
-#addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.Yaml&version=3.0.0"
-#addin "nuget:https://api.nuget.org/v3/index.json?package=YamlDotNet&version=6.1.2"
-#addin "nuget:https://api.nuget.org/v3/index.json?package=Cake.FileHelpers&version=3.2.0"
+#load build\build.cake
 
 //////////////////////////////////////////////////////////////////////
 // PARAMETERS
 //////////////////////////////////////////////////////////////////////
 
 private const string GitReleaseManagerTool = "#tool nuget:?package=gitreleasemanager&version=0.8.0";
-
-// Definitions
-class AddinSpec
-{
-    public string Name { get; set; }
-    public string NuGet { get; set; }
-    public bool Prerelease { get; set; }
-    public List<string> Assemblies { get; set; }
-    public string RepositoryOwner { get; set; }
-    public string RepositoryName { get; set; }
-    public string Documentation { get; set; }
-    public string ReleaseNotesFilePath { get; set; }
-    public string Author { get; set; }
-    public string Description { get; set; }
-    public List<string> Categories { get; set; }
-}
 
 // Variables
 var addinDir = Directory("./release/addins");
@@ -75,6 +57,22 @@ Task("GetAddinSpecs")
         BuildParameters.WyamAssemblyFiles.Add(addinSpec);
     }
 });
+
+Task("GetAddinDocumentation")
+    .IsDependentOn("CleanAddinPackages")
+    .IsDependentOn("GetAddinSpecs")
+    .Does(() =>
+    {
+        foreach(var addinSpec in addinSpecs.Where(x => !string.IsNullOrEmpty(x.RepositoryDocumentationPath) && !string.IsNullOrEmpty(x.DocumentationLink)))
+        {
+            Information("Cloning " + addinSpec.RepositoryName + "...");
+            RepositoryHelper.GitCopyFromRepository(
+                Context,
+                new Uri("https://github.com/" + addinSpec.RepositoryOwner + "/" + addinSpec.RepositoryName),
+                new List<DirectoryPath> {addinSpec.RepositoryDocumentationPath},
+                "input" + addinSpec.DocumentationLink);
+        }
+    });
 
 Task("GetAddinPackages")
     .IsDependentOn("CleanAddinPackages")
@@ -134,6 +132,7 @@ Task("GetReleaseNotes")
     }));
 
 Task("GetArtifacts")
+    .IsDependentOn("GetAddinDocumentation")
     .IsDependentOn("GetAddinPackages")
     .IsDependentOn("GetReleaseNotes");
 

@@ -3,7 +3,7 @@ NuGet: Cake.Issues
 Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues
-Documentation: /docs/usage/reading-issues/
+DocumentationLink: /docs/usage/reading-issues/
 ReleaseNotesFilePath: "input/docs/overview/release-notes/Cake.Issues.md"
 Assemblies:
 - "/**/Cake.Issues.dll"

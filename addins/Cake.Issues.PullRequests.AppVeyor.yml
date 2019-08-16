@@ -3,7 +3,8 @@ NuGet: Cake.Issues.PullRequests.AppVeyor
 Prerelease: false
 RepositoryOwner: cake-contrib
 RepositoryName: Cake.Issues.PullRequests.AppVeyor
-Documentation: /docs/pull-request-systems/appveyor
+RepositoryDocumentationPath: ./docs
+DocumentationLink: /docs/pull-request-systems/appveyor
 ReleaseNotesFilePath: "input/docs/pull-request-systems/appveyor/release-notes.md"
 Assemblies:
 - "/**/Cake.Issues.PullRequests.AppVeyor.dll"
