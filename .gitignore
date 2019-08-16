@@ -7,6 +7,7 @@ nuget.exe
 [Ll]ocal[Dd]eploy/
 
 release-notes.md
+input/docs/issue-providers/eslint/
 input/docs/issue-providers/gitrepository/
 input/docs/pull-request-systems/appveyor/
 input/docs/recipe/
