@@ -1,4 +1,4 @@
-#load nuget:?package=Cake.Wyam.Recipe&version=0.7.1
+#load nuget:?package=Cake.Wyam.Recipe&version=0.8.0
 
 #load build\build.cake
 
