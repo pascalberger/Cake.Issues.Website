@@ -1,0 +1,14 @@
+Name: Azure DevOps Support
+NuGet: Cake.Issues.PullRequests.AzureDevOps
+Prerelease: false
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.PullRequests.AzureDevOps
+RepositoryDocumentationPath: ./docs
+DocumentationLink: /docs/pull-request-systems/azure-devops
+ReleaseNotesFilePath: "input/docs/pull-request-systems/azure-devops/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.PullRequests.AzureDevOps.dll"
+Author: BBT Software AG and contributors
+Description: "Support for writing issues as comments to Azure DevOps pull requests."
+Categories:
+- Pull Request System

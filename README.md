@@ -81,4 +81,3 @@ The URL of the generated preview site is `http://localhost:5080/`.
 
 The site is deployed for every release tagged on the `master` branch.
 Release numbering is in sync with numbering of the core `Cake.Issues` addins.
-
