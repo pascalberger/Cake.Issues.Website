@@ -17,5 +17,6 @@ input/docs/pull-request-systems/appveyor/
 input/docs/pull-request-systems/azure-devops/
 input/docs/recipe/
 input/docs/report-formats/generic/
+input/docs/report-formats/sarif/
 input/docs/overview/release-notes/
 BuildArtifacts
