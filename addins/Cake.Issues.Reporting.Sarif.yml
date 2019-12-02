@@ -1,0 +1,14 @@
+Name: Cake.Issues.Reporting.Sarif
+NuGet: Cake.Issues.Reporting.Sarif
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.Reporting.Sarif
+RepositoryDocumentationPath: ./docs
+DocumentationLink: /docs/report-formats/sarif
+ReleaseNotesFilePath: "input/docs/report-formats/sarif/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.Reporting.Sarif.dll"
+Author: Pascal Berger
+Description: "Support for creating SARIF compatible files"
+Categories:
+- Reporting Format
