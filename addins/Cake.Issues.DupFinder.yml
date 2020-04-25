@@ -1,0 +1,14 @@
+Name: JetBrains dupFinder Support
+NuGet: Cake.Issues.DupFinder
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.DupFinder
+RepositoryDocumentationPath: ./docs
+DocumentationLink: /docs/issue-providers/dupfinder
+ReleaseNotesFilePath: "input/docs/issue-providers/dupfinder/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.DupFinder.dll"
+Author: janniksam
+Description: "Support for reading issues reported by JetBrains dupFinder"
+Categories:
+- Issue Provider
