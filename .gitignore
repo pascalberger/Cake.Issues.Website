@@ -8,6 +8,7 @@ nuget.exe
 
 release-notes.md
 input/docs/issue-providers/docfx/
+input/docs/issue-providers/dupfinder/
 input/docs/issue-providers/eslint/
 input/docs/issue-providers/gitrepository/
 input/docs/issue-providers/inspectcode/
