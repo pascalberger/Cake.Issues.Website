@@ -91,7 +91,7 @@ Task("GetAddinPackages")
                     Verbosity = NuGetVerbosity.Quiet,
                     Source = new [] { "https://api.nuget.org/v3/index.json" },
                     NoCache = true,
-                    EnvironmentVariables = 
+                    EnvironmentVariables =
                         new Dictionary<string, string>
                         {
                             {"EnableNuGetPackageRestore", "true"},
@@ -117,12 +117,11 @@ Task("GetReleaseNotes")
             Information("Adding metadata for " + addinSpec.Name);
             string fileContent = FileReadText(addinSpec.ReleaseNotesFilePath);
             DeleteFile(addinSpec.ReleaseNotesFilePath);
-            var title = addinSpec.Categories.Contains("Core") ? addinSpec.Name : "Release Notes";
             var frontMatter =
                 new List<string>
                 {
                     "---",
-                    "Title: " + title,
+                    "Title: " + addinSpec.Name + " Release Notes",
                     "Description: Release notes for " + addinSpec.Name,
                     "---"
                 };
