@@ -2,6 +2,8 @@ Settings[Keys.Host] = "cake-contrib.github.io/Cake.Issues.Website";
 Settings[DocsKeys.Title] = "Cake Issues";
 Settings[DocsKeys.BaseEditUrl] = "https://github.com/cake-contrib/Cake.Issues.Website/blob/develop/input/";
 Settings[DocsKeys.IncludeGlobalNamespace] = false;
+Settings[DocsKeys.BlogPath] = "news";
+Settings[DocsKeys.BlogTitle] = "News";
 
 Pipelines.InsertBefore(Docs.Code, "Addins",
     ReadFiles("../addins/*.yml"),
