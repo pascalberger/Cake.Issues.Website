@@ -1,0 +1,14 @@
+Name: GitHub Actions Support
+NuGet: Cake.Issues.PullRequests.GitHubActions
+Prerelease: false
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.PullRequests.GitHubActions
+RepositoryDocumentationPath: ./docs
+DocumentationLink: /docs/pull-request-systems/github-actions
+ReleaseNotesFilePath: "input/docs/pull-request-systems/github-actions/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.PullRequests.GitHubActions.dll"
+Author: Pascal Berger
+Description: "Support for writing issues to GitHub Actions builds."
+Categories:
+- Pull Request System

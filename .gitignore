@@ -16,6 +16,7 @@ input/docs/issue-providers/markdownlint/
 input/docs/issue-providers/msbuild/
 input/docs/pull-request-systems/appveyor/
 input/docs/pull-request-systems/azure-devops/
+input/docs/pull-request-systems/github-actions/
 input/docs/recipe/
 input/docs/report-formats/generic/
 input/docs/report-formats/sarif/
