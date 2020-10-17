@@ -6,7 +6,7 @@
 // PARAMETERS
 //////////////////////////////////////////////////////////////////////
 
-private const string GitReleaseManagerTool = "#tool nuget:?package=gitreleasemanager&version=0.8.0";
+private const string GitReleaseManagerTool = "#tool nuget:?package=gitreleasemanager&version=0.11.0";
 
 // Variables
 var addinDir = Directory("./release/addins");
