@@ -1,0 +1,14 @@
+Name: Terraform Support
+NuGet: Cake.Issues.Terraform
+Prerelease: true
+RepositoryOwner: cake-contrib
+RepositoryName: Cake.Issues.Terraform
+RepositoryDocumentationPath: ./docs
+DocumentationLink: /docs/issue-providers/terraform
+ReleaseNotesFilePath: "input/docs/issue-providers/terraform/release-notes.md"
+Assemblies:
+- "/**/Cake.Issues.Terraform.dll"
+Author: Pascal Berger
+Description: "Support for reading output from `terraform validate -json` command"
+Categories:
+- Issue Provider
